@@ -8,11 +8,11 @@
         </div>
       </div>
       <div class="right">
-  
         <div class="image me">
         </div>
       </div>
     </section>
+
     <section class="how">
       <div class="left">
         <div class="image laptop">
@@ -26,34 +26,28 @@
       </div>
 
     </section>
-    <section class="why mobile-reverse">
-      <div class="left">
-        <div class="content">
-          <h1>Currently available for hire</h1>
-          <p>I am currently searching for a junior position in a the web development industry. I dream of a strong team who can mentor me into becoming a senior developer. If your company is looking for someone like me please checkout my github account and get in touch.</p>
-        </div>
+    <section class="why">
+      <div class="content">
+        <h1>Available for hire</h1>
+        <p>I am currently searching for a junior position in a the web development industry. I dream of a strong team who can mentor me into becoming a senior developer. If your company is looking for someone like me please checkout my github account and get in touch.</p>
+        <a class="github"><span>Github</span>
+        </a>
+        <a class="github"><span>Contact</span>
+        </a>
       </div>
-      <!-- <div class="right">
-        <div class="image hire">
-        </div>
-      </div> -->
-
     </section>
-    <Slide />
+
   </div>
 
 </template>
 
 <script>
-import Slide from "../components/Slide.vue";
 export default {
   name: "home",
   data() {
     return {};
   },
-  components: {
-    Slide
-  },
+  components: {},
   computed: {},
   methods: {},
   mounted: function() {}
@@ -62,20 +56,49 @@ export default {
 
 <style lang="scss">
 .home {
-  padding-bottom: 40px;
-
   .what,
-  .how,
-  .why {
+  .how {
     display: flex;
     flex-direction: column;
+    @media only screen and (min-width: 768px) {
+      min-height: 100vh;
+    }
+    @media only screen and (min-width: 1366px) {
+      flex-direction: row;
+    }
   }
+
   .mobile-reverse {
     flex-direction: column-reverse;
+    @media only screen and (min-width: 1366px) {
+      flex-direction: row;
+    }
   }
+
   .how {
     background-color: $secondary;
     color: $primary;
+    .right {
+      min-height: 100vh;
+      display: flex;
+      .content {
+        align-self: center;
+      }
+    }
+  }
+
+  .how .left {
+    display: none;
+    @media only screen and (min-width: 1366px) {
+      display: block;
+    }
+  }
+
+  .left,
+  .right {
+    @media only screen and (min-width: 1366px) {
+      display: flex;
+    }
   }
 
   .image {
@@ -83,18 +106,27 @@ export default {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    @media only screen and (min-width: 1366px) {
+      width: 50vw;
+      height: 100vh;
+    }
   }
+
   .me {
     background-image: url("../assets/me-temp.jpg");
   }
   .laptop {
     background-image: url("../assets/experience.jpg");
   }
-  .hire {
-    background-image: url("../assets/hire.jpg");
-  }
   .content {
     padding: 40px 40px;
+    @media only screen and (min-width: 768px) {
+      padding: 100px;
+    }
+    @media only screen and (min-width: 1366px) {
+      align-self: center;
+      padding: 40px 100px;
+    }
     h1 {
       font-size: 40px;
       text-transform: uppercase;
@@ -102,10 +134,64 @@ export default {
       @media only screen and (min-width: 375px) {
         font-size: 48px;
       }
+      @media only screen and (min-width: 768px) {
+        font-size: 60px;
+      }
+      @media only screen and (min-width: 1366px) {
+        font-size: 48px;
+      }
     }
     p {
       font-size: 18px;
       line-height: 1.7em;
+      @media only screen and (min-width: 768px) {
+        font-size: 20px;
+        margin: 30px 0 0 0;
+      }
+      @media only screen and (min-width: 1366px) {
+        font-size: 18px;
+      }
+    }
+    a {
+      height: 50px;
+      background-color: $secondary;
+      display: block;
+      border-radius: 3px;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      &:nth-of-type(even) {
+        margin-top: 3em;
+      }
+      @media only screen and (min-width: 1366px) {
+        width: 350px;
+      }
+      span {
+        color: $primary;
+        align-self: center;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .why {
+    min-height: 100vh;
+    display: flex;
+    @media only screen and (min-width: 1366px) {
+      justify-content: center;
+    }
+    .content {
+      align-self: center;
+      @media only screen and (min-width: 1366px) {
+        text-align: center;
+        width: 70vw;
+      }
+      p {
+        margin-bottom: 30px;
+        @media only screen and (min-width: 768px) {
+          margin-bottom: 50px;
+        }
+      }
     }
   }
 }

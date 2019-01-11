@@ -61,7 +61,6 @@ export default {};
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  // transition: 0.1s ease;
   pointer-events: none;
   .top-slide {
     display: flex;

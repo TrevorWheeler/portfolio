@@ -1,36 +1,26 @@
 <template>
   <div id="app">
     <Navigation />
-    <Icons />
     <transition
       name="main"
       mode="out-in"
     >
-      <router-view />
+      <router-view :key="$route.params.id"/>
     </transition>
-
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation.vue";
-import Icons from "./components/Icons.vue";
-
 export default {
   name: "app",
   components: {
-    Navigation,
-    Icons
-    // Slide
+    Navigation
   },
   data() {
     return {};
   },
-  computed: {
-    welcome() {
-      return this.$store.state.welcome;
-    }
-  }
+  computed: {}
 };
 </script>
 
@@ -58,32 +48,18 @@ p {
 
 a {
   text-decoration: none;
-  // color:$primary;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  li {
-    font-size: 10px;
-    border: 2px solid $secondary;
-  }
-}
-
+// Route Navigation Transition
 .main-enter-active {
-  transition: opacity 0.7s;
-  transition: transform 0.7s;
+  transition: all 0.4s ease;
 }
-
 .main-leave-active {
-  transition: opacity 0.7s;
-  transition: transform 0.7s;
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
-
 .main-enter,
 .main-leave-to {
-  opacity: 1;
+  transform: translateY(100px);
+  opacity: 0;
 }
 </style>

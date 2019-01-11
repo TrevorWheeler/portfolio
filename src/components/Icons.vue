@@ -23,6 +23,7 @@ export default {};
   bottom: 0px;
   left: 0px;
   z-index: 15;
+  display: none;
 
   svg {
     fill: $purple;
@@ -30,6 +31,9 @@ export default {};
     display: block;
     &:nth-child(2) {
       margin-top: 1em;
+    }
+    @media only screen and (min-width: 375px) {
+      width: 40px;
     }
   }
 }

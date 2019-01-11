@@ -1,94 +1,269 @@
 <template>
-  <div class="navigation">
-    <router-link
-      :to="{ name: 'home', }"
-      tag="a"
-      routerLinkActiveOptions="{ exact: true }"
-    >
+  <div class="menu">
 
-      <div class="logo">
-        <svg
-          viewBox="0 0 120 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M120 0H0V120H120V0ZM40.8715 57.4066H47.7989V30.7188H56.6704V25H32V30.7188H40.8715V57.4066ZM70.1006 39.3857H67.8659V30.6301H69.9665C72.2011 30.6301 73.8473 30.9552 74.905 31.6054C75.9777 32.2556 76.514 33.3492 76.514 34.886C76.514 36.4376 75.9926 37.5755 74.9497 38.2996C73.9069 39.0236 72.2905 39.3857 70.1006 39.3857ZM67.8659 57.4066V44.9715H71.5531L79.352 57.4066H87.0391C85.5493 55.2787 82.3464 50.5721 77.4302 43.2869C79.3669 42.4446 80.8641 41.2846 81.9218 39.8068C82.9795 38.3143 83.5084 36.6149 83.5084 34.7087C83.5084 31.4429 82.4432 29.012 80.3129 27.4161C78.1825 25.8054 74.8976 25 70.4581 25H60.9385V57.4066H67.8659ZM54.0112 95H35.1955V62.5934H54.0112V68.2236H42.1229V75.3388H53.1844V80.969H42.1229V89.3255H54.0112V95ZM88 62.5934H81.0056L74.8156 81.8778C73.8622 85.2766 73.3035 87.6557 73.1397 89.0152C73.0503 88.4241 72.8194 87.3749 72.4469 85.8676C72.0894 84.3456 71.7393 83.0156 71.3966 81.8778L65.2514 62.5934H58.257L69.3408 95H76.8939L88 62.5934Z"
-            fill="#EF476F"
-          />
-        </svg>
-      </div>
-    </router-link>
-
-    <router-link
-      :to="{ name: 'featured', }"
-      tag="div"
-      class="works-link"
-    >
-      <svg
-        viewBox="0 0 120 53"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+    <div class="navigation">
+      <router-link
+        to="/"
+        tag="a"
+        routerLinkActiveOptions="{ exact: true }"
+        class="brand"
       >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M120 0H0V53H120V0ZM30.707 36H34.8438L39.2031 18.8672H35.6289L33.4492 28.2188C33.3086 28.7812 33.1523 29.5195 32.9805 30.4336C32.8086 31.3398 32.6836 32.0977 32.6055 32.707C32.5195 32.0742 32.3945 31.3164 32.2305 30.4336C32.0664 29.5508 31.9297 28.8945 31.8203 28.4648L29.3242 18.8672H25.8906L23.3945 28.4648C23.2461 28.9805 23.0859 29.707 22.9141 30.6445C22.75 31.5742 22.6445 32.2617 22.5977 32.707C22.4258 31.4414 22.1484 29.9453 21.7656 28.2188L19.5742 18.8672H16L20.3711 36H24.4961L26.8047 27.0234C26.9062 26.625 27.0508 25.9609 27.2383 25.0312C27.4258 24.0938 27.543 23.4141 27.5898 22.9922C27.6055 23.1621 27.6426 23.4132 27.6992 23.7454C27.7578 24.0852 27.8379 24.5099 27.9414 25.0195C28.1523 26.0195 28.3008 26.6797 28.3867 27L30.707 36ZM54.8008 33.9492C56.207 32.4258 56.9102 30.2461 56.9102 27.4102C56.9102 24.5664 56.2109 22.3867 54.8125 20.8711C53.4219 19.3555 51.4102 18.5977 48.7773 18.5977C46.1445 18.5977 44.1211 19.3516 42.707 20.8594C41.3008 22.3594 40.5977 24.5352 40.5977 27.3867C40.5977 30.2383 41.3008 32.4258 42.707 33.9492C44.1133 35.4727 46.1289 36.2344 48.7539 36.2344C51.3789 36.2344 53.3945 35.4727 54.8008 33.9492ZM45.4961 31.7344C44.7695 30.7656 44.4062 29.3242 44.4062 27.4102C44.4062 25.4961 44.7734 24.0547 45.5078 23.0859C46.2422 22.1094 47.332 21.6211 48.7773 21.6211C51.6602 21.6211 53.1016 23.5508 53.1016 27.4102C53.1016 31.2617 51.6523 33.1875 48.7539 33.1875C47.3086 33.1875 46.2227 32.7031 45.4961 31.7344ZM65.2656 26.4727H64.0938V21.8438H65.1953C66.3672 21.8438 67.2305 22.0156 67.7852 22.3594C68.3477 22.7031 68.6289 23.2812 68.6289 24.0938C68.6289 24.9141 68.3555 25.5156 67.8086 25.8984C67.2617 26.2812 66.4141 26.4727 65.2656 26.4727ZM64.0938 36V29.4258H66.0273L70.1172 36H74.1484C73.3672 34.875 71.6875 32.3867 69.1094 28.5352C70.125 28.0898 70.9102 27.4766 71.4648 26.6953C72.0195 25.9062 72.2969 25.0078 72.2969 24C72.2969 22.2734 71.7383 20.9883 70.6211 20.1445C69.5039 19.293 67.7812 18.8672 65.4531 18.8672H60.4609V36H64.0938ZM85.9609 36H90.0859L84.0625 26.4492L90.0391 18.8672H86.0078L81.3672 24.6914L79.9375 26.707V18.8672H76.3047V36H79.9375V29.8828L81.4727 28.7812L85.9609 36ZM100.68 34.8984C101.797 34.0078 102.355 32.7891 102.355 31.2422C102.355 30.125 102.059 29.1836 101.465 28.418C100.871 27.6445 99.7734 26.875 98.1719 26.1094C96.9609 25.5312 96.1914 25.1328 95.8633 24.9141C95.543 24.6875 95.3086 24.457 95.1602 24.2227C95.0117 23.9805 94.9375 23.6992 94.9375 23.3789C94.9375 22.8633 95.1211 22.4453 95.4883 22.125C95.8555 21.8047 96.3828 21.6445 97.0703 21.6445C97.2344 21.6445 97.3984 21.6505 97.5645 21.6625C97.9824 21.6927 98.4023 21.761 98.8281 21.8672C99.168 21.9513 99.5605 22.0717 100 22.2285C100.338 22.3484 100.705 22.4897 101.102 22.6523L102.273 19.8281C101.391 19.4453 100.543 19.1484 99.7305 18.9375C99.1875 18.7952 98.625 18.7009 98.043 18.6546C97.7617 18.6323 97.4766 18.6211 97.1875 18.6211C95.375 18.6211 93.9531 19.0547 92.9219 19.9219C91.8984 20.7891 91.3867 21.9805 91.3867 23.4961C91.3867 23.9524 91.4375 24.3761 91.5371 24.7671C91.6133 25.0656 91.7207 25.345 91.8555 25.6055C92.168 26.207 92.5859 26.7344 93.1094 27.1875C93.6328 27.6406 94.418 28.1133 95.4648 28.6055C96.582 29.1367 97.3203 29.5234 97.6797 29.7656C97.8691 29.8911 98.0371 30.0197 98.1797 30.1516C98.3105 30.2741 98.4219 30.3994 98.5117 30.5273C98.6992 30.7852 98.793 31.082 98.793 31.418C98.793 32.0195 98.5781 32.4727 98.1484 32.7773C97.7266 33.082 97.1172 33.2344 96.3203 33.2344C95.6562 33.2344 94.9219 33.1289 94.1172 32.918C93.3203 32.707 92.3438 32.3438 91.1875 31.8281V35.2031C92.5938 35.8906 94.2109 36.2344 96.0391 36.2344C98.0234 36.2344 99.5703 35.7891 100.68 34.8984Z"
-          fill="#EF476F"
-        />
-      </svg>
+        <div class="logo">
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            v-bind:class="{ logoToggle: menuActive }"
+            v-on:click="menuActive = false"
+          >
+            <circle
+              cx="25"
+              cy="25"
+              r="25"
+            />
+            <path
+              d="M16.6364 19.8564H16.4062C15.2684 19.8564 14.3799 20.1463 13.7407 20.7262C13.1142 21.2932 12.801 22.3047 12.801 23.7608C12.801 24.2376 12.8458 24.5726 12.9352 24.7659C13.0247 24.9463 13.0695 25.0494 13.0695 25.0752C12.3791 25.0752 11.8614 24.9335 11.5162 24.65C11.1838 24.3536 11.0176 23.8704 11.0176 23.2003C11.0176 22.2854 11.2413 21.4543 11.6888 20.7069C12.1362 19.9466 12.8458 19.3345 13.8174 18.8706C14.8018 18.4068 16.0483 18.1748 17.5568 18.1748C18.4006 18.1748 19.3083 18.2521 20.2799 18.4067C21.0981 18.5485 21.8118 18.668 22.451 18.668C23.3102 18.6718 23.8185 18.668 24.5808 18.4438C24.5552 19.2814 23.6544 18.8066 23.2581 19.2061C22.8617 19.6055 22.917 20.0131 22.1371 20.0131C21.728 20.0131 21.4753 20.636 21.0662 20.5716C20.6571 20.5071 20.0754 20.3976 19.3211 20.243L16.6895 32.5226H13.9544L16.6364 19.8564Z"
+              fill="#19023E"
+            />
+            <path
+              d="M24.4093 19.4319C23.5206 19.7699 22.8321 20.2957 22.3438 21.0092C21.8556 21.7102 21.6115 22.574 21.6115 23.6005C21.6115 24.0637 21.6553 24.3891 21.743 24.5769C21.8306 24.7522 21.8744 24.8523 21.8744 24.8773C21.1984 24.8773 20.6914 24.7396 20.3534 24.4642C20.028 24.1763 19.8652 23.7069 19.8652 23.0559C19.8652 22.2548 20.1907 21.4786 20.8417 20.7275C21.5051 19.9639 22.3501 19.3505 23.3766 18.8874C24.4031 18.4117 25.4296 18.1738 26.4561 18.1738C26.6313 18.1738 26.8817 18.1863 27.2072 18.2114L27.3762 29.7594L31.3516 18.1738L33.7055 18.1738L33.8731 29.7594L37.8753 18.1738H39.1308L33.8176 32.5217H31.1722L30.9814 22.6992L27.3162 32.5217H24.7381L24.4093 19.4319Z"
+              fill="#19023E"
+            />
+          </svg>
+        </div>
+      </router-link>
 
-    </router-link>
+      <a
+        v-on:click="menuActive = !menuActive"
+        class="menu-btn"
+      >
+        <div
+          class="burger"
+          v-bind:class="{ burgerToggle: menuActive }"
+        >
+          <div class="bar first">
+          </div>
+          <div class="bar second">
+          </div>
+          <div class="bar third">
+          </div>
+        </div>
+      </a>
+    </div>
 
+    <div
+      class="overlay"
+      v-bind:class="{ overlayActive: menuActive }"
+    >
+      <div class="container">
+        <div class="content">
+          <h2>About</h2>
+          <router-link
+            :to="{ name: 'home' }"
+            tag="a"
+            class="item">
+             <span v-on:click="menuActive = false">
+       
+          Home</span></router-link>
+        </div>
+        <div class="content">
+          <h2>Work</h2>
+          <!-- <a>The Caf</a>
+          <a>Sandy Pages Books</a> -->
+          <router-link
+            :to="{ name: 'work', params: { id: work.route } }"
+            tag="a"
+            class="item"
+            v-for="(work, index) in works"
+            :key="index"
+       
+          >
+              <span v-on:click="selectedWork(index); menuActive = false">
+              {{work.title}}
+              </span>
+
+          </router-link>
+          <a>Github</a>
+        </div>
+
+        <div class="content">
+          <h2>contact</h2>
+          <a>Let's talk</a>
+        </div>
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script>
 export default {
   name: "Navigation",
+  data() {
+    return {
+      menuActive: false
+    };
+  },
   components: {},
   computed: {
-    welcome() {
-      return this.$store.state.welcome;
+    works() {
+      return this.$store.state.works;
+    }
+  },
+  methods: {
+    selectedWork(index) {
+      this.$store.commit("selected", index);
     }
   }
 };
 </script>
-
-
 <style scoped lang="scss">
-// .navigation a.exact-active {
-//   border-bottom: 4px solid $accent;
-//   cursor: pointer;
-// }
-
-// .navigation li.active,
-// .navigation li.exact-active {
-//   border-bottom: 4px solid $accent;
-//   cursor: pointer;
-//   height: 30px;
-// }
+.menu {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.overlay {
+  z-index: 1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 56%, 0% 100%);
+  background-color: $accent;
+  transform: translateY(-100vh);
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  .container {
+    align-self: center;
+    width: 65%;
+    @media only screen and (min-width: 700px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .content {
+    margin: 0 0 50px 0;
+    &:nth-child(3) {
+      margin: 0;
+    }
+    h2 {
+      font-size: 16px;
+      text-transform: uppercase;
+      margin: 0 0 20px 0;
+      letter-spacing: 2px;
+      color: $secondary;
+      font-weight: 900;
+    }
+    a {
+      font-size: 20px;
+      color: $secondary;
+      display: block;
+      margin: 15px 0;
+      font-weight: 600;
+      text-decoration: underline;
+      transition: 0.2s ease;
+    }
+  }
+}
+.overlayActive {
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
 .navigation {
-  z-index: 15;
+  z-index: 2;
   width: 100%;
   position: fixed;
   top: 0;
   display: flex;
   justify-content: space-between;
-
+  border-top: 5px solid $accent;
   .logo {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
     svg {
-      display: block;
-      fill: $purple;
-      width: 70px;
+      align-self: center;
+      circle {
+        fill: $accent;
+        transition: 0.2 ease;
+        transition: all 0.2s linear;
+        transition-delay: 0.3s;
+      }
+      path {
+        fill: $secondary;
+        transition: all 0.2s linear;
+        transition-delay: 0.3s;
+      }
+    }
+    .logoToggle {
+      circle {
+        fill: $secondary;
+        transition: all 0.2s linear;
+      }
+      path {
+        fill: $accent;
+        transition: all 0.2s linear;
+      }
     }
   }
-  .works-link {
-    svg {
-      width: 70px;
+  .menu-btn {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    .burger {
+      width: 35px;
+      align-self: center;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      .bar {
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $accent;
+        margin-bottom: 5px;
+        transition: all 0.3s linear;
+        transition-delay: 0.3s;
+      }
+      .third {
+        width: 70%;
+        float: right;
+        margin: 0;
+      }
+    }
+    .burgerToggle {
+      margin-top: 15px;
+      transition: all 0.3s ease-in-out;
+      .bar {
+        background-color: $secondary;
+        transition: all 0.3s ease-in-out;
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          transform: rotate(-45deg) translateY(-6px) translateX(7px);
+        }
+        &:nth-child(3) {
+          opacity: 0;
+          background-color: $accent;
+        }
+      }
     }
   }
+}
+.active {
+  text-decoration: none !important;
+  transition: 0.2s ease;
+}
+.active span {
+  text-decoration: line-through;
+  color: $accent-secondary;
 }
 </style>
