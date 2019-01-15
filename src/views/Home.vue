@@ -26,13 +26,13 @@
       </div>
 
     </section>
-    <section class="why">
+    <section class="hire-me">
       <div class="content">
         <h1>Available for hire</h1>
         <p>I am currently searching for a junior position in a the web development industry. I dream of a strong team who can mentor me into becoming a senior developer. If your company is looking for someone like me please checkout my github account and get in touch.</p>
-        <a class="github"><span>Github</span>
+        <a href="https://github.com/trevorwheeler"><span>Github</span>
         </a>
-        <a class="github"><span>Contact</span>
+        <a href="#"><span>Contact</span>
         </a>
       </div>
     </section>
@@ -49,8 +49,7 @@ export default {
   },
   components: {},
   computed: {},
-  methods: {},
-  mounted: function() {}
+  methods: {}
 };
 </script>
 
@@ -107,16 +106,16 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     @media only screen and (min-width: 1366px) {
-      width: 50vw;
+      width: calc(50vw - 8px);
       height: 100vh;
     }
   }
 
   .me {
-    background-image: url("../assets/me-temp.jpg");
+    background-image: url("../assets/me.jpg");
   }
   .laptop {
-    background-image: url("../assets/experience.jpg");
+    background-image: url("../assets/laptop.jpg");
   }
   .content {
     padding: 40px 40px;
@@ -126,6 +125,12 @@ export default {
     @media only screen and (min-width: 1366px) {
       align-self: center;
       padding: 40px 100px;
+    }
+    @media only screen and (min-width: 1920px) {
+      padding: 160px;
+    }
+    @media only screen and (min-width: 2560px) {
+      padding: 350px;
     }
     h1 {
       font-size: 40px;
@@ -143,7 +148,7 @@ export default {
     }
     p {
       font-size: 18px;
-      line-height: 1.7em;
+      line-height: 1.8em;
       @media only screen and (min-width: 768px) {
         font-size: 20px;
         margin: 30px 0 0 0;
@@ -153,13 +158,26 @@ export default {
       }
     }
     a {
+      display: block;
       height: 50px;
       background-color: $secondary;
-      display: block;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
       border-radius: 3px;
       display: flex;
       justify-content: center;
       margin: 0 auto;
+      transition: 0.2s ease;
+      &:hover {
+        background-color: $accent;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+        // border-bottom:3px solid $secondary;
+        transform: translateY(-2px);
+        span {
+          color: $secondary;
+          font-weight: 900;
+        }
+      }
+
       &:nth-of-type(even) {
         margin-top: 3em;
       }
@@ -167,14 +185,14 @@ export default {
         width: 350px;
       }
       span {
+        font-size: 20px;
         color: $primary;
         align-self: center;
-        font-size: 20px;
       }
     }
   }
 
-  .why {
+  .hire-me {
     min-height: 100vh;
     display: flex;
     @media only screen and (min-width: 1366px) {
@@ -182,9 +200,10 @@ export default {
     }
     .content {
       align-self: center;
+      padding: 30px;
       @media only screen and (min-width: 1366px) {
         text-align: center;
-        width: 70vw;
+        width: 750px;
       }
       p {
         margin-bottom: 30px;

@@ -70,8 +70,6 @@
         </div>
         <div class="content">
           <h2>Work</h2>
-          <!-- <a>The Caf</a>
-          <a>Sandy Pages Books</a> -->
           <router-link
             :to="{ name: 'work', params: { id: work.route } }"
             tag="a"
@@ -144,6 +142,9 @@ export default {
       display: flex;
       justify-content: space-between;
     }
+    @media only screen and (min-width: 1920px) {
+      width: 1300px;
+    }
   }
   .content {
     margin: 0 0 50px 0;
@@ -188,6 +189,10 @@ export default {
     height: 80px;
     display: flex;
     justify-content: center;
+    @media only screen and (min-width: 1920px) {
+      width: 110px;
+      height: 110px;
+    }
     svg {
       align-self: center;
       circle {
@@ -218,6 +223,10 @@ export default {
     height: 80px;
     display: flex;
     justify-content: center;
+    @media only screen and (min-width: 1920px) {
+      width: 110px;
+      height: 110px;
+    }
     .burger {
       width: 35px;
       align-self: center;
