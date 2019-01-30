@@ -1,23 +1,46 @@
 <template>
-  <div class="works">
+  <div class="featured">
 
     <div class="items">
 
       <router-link
-        :to="{ name: 'work', params: { id: work.route } }"
+        :to="{ name: 'selected', params: { id: work.route } }"
         tag="a"
         class="item"
         v-for="(work, index) in works"
         :key="index"
-        v-on:click="selectedWork(index)"
+        @click.native="selectedWork(index)"
       >
+        <div class="image-container">
+          <img
+            :src="work.workImage"
+            :alt="work.title"
+          />
+        </div>
+
         <div class="content">
-          <h2 class="title">{{work.title}}</h2>
+          <h2>{{work.title}}</h2>
+          <p>{{work.meta}}</p>
         </div>
       </router-link>
 
-    </div>
+      <a
+        href="https://github.com/trevorwheeler"
+        class="item"
+      >
+        <div class="image-container">
+          <img
+            src="../assets/github.jpg"
+            alt="My github repositories"
+          />
+        </div>
+        <div class="content">
+          <h2 class="title">Github</h2>
+          <p>Repositories</p>
+        </div>
+      </a>
 
+    </div>
 
   </div>
 
@@ -33,6 +56,9 @@ export default {
   computed: {
     works() {
       return this.$store.state.works;
+    },
+    loading() {
+      return this.$store.state.loading;
     }
   },
   methods: {
@@ -44,46 +70,56 @@ export default {
 </script>
 
 <style lang="scss">
-.works {
+.featured {
   min-height: 100vh;
-
-  background-color: $primary;
+  padding: 120px 10vw 60px;
+  @media only screen and (min-width: 1366px) {
+    padding: 150px 0vw 120px;
+    width: 1005px;
+    margin: 0 auto;
+  }
   display: flex;
   justify-content: center;
   .items {
     width: 100%;
     .item {
-      height: 50vh;
       display: flex;
-      background-color: $primary;
-      transition: 0.3s linear;
       justify-content: center;
-      &:nth-of-type(odd) {
-        background-color: $secondary;
+      background-color: rgba(244, 244, 244, 0.9);
+      height: 100%;
+      height: 50vh;
+      margin: 0 0 3em 0;
+      position: relative;
+      transition: 0.2s linear;
+      p {
+        color: $secondary;
       }
-      &:nth-of-type(odd) .content h2 {
+      &:hover {
+        background-color: rgba(41, 123, 147, 0.9);
+        transition: 0.2s linear;
         color: $primary;
-      }
-      &:nth-of-type(odd) .content p {
-        color: $primary;
+        p {
+          color: $primary;
+          transition: 0.2s linear;
+        }
       }
 
+      .image-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
       .content {
         align-self: center;
         text-align: center;
-        .title {
-          text-transform: uppercase;
-          font-size: 30px;
-          align-self: center;
-          line-height: 1em;
-          font-weight: 600;
-          transition: 0.3s linear;
-          color: $secondary;
-        }
-
-        p {
-          font-size: 20px;
-        }
+        position: relative;
       }
     }
   }

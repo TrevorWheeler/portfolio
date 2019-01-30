@@ -2,7 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Featured from "./views/Featured.vue";
-// import Work from "./views/Work.vue";
+import Selected from "./views/Selected.vue";
 
 Vue.use(Router);
 
@@ -12,30 +12,28 @@ export default new Router({
   linkExactActiveClass: "active",
   routes: [
     {
-      path: "/:id",
-      name: "work",
-      // component: Work,
-      props: true,
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Work.vue")
+      path: "/",
+      component: Home,
+      name: "home"
     },
+
     {
-      path: "/works",
+      path: "/featured",
       name: "featured",
       component: Featured
     },
     {
-      path: "/",
-      component: Home,
-      name: "home"
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      // component: () =>
-      //   import(/* webpackChunkName: "about" */ "./views/Home.vue")
+      path: "/:id",
+      name: "selected",
+      component: Selected,
+      props: true
     }
-  ]
+  ],
+  scrollBehavior() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 });
+      }, 500);
+    });
+  }
 });
