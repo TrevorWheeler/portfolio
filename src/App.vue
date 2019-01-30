@@ -30,14 +30,12 @@ export default {
 * {
   box-sizing: border-box;
 }
-
 body {
-  font-family: "Karla", sans-serif;
+  font-family: "Sarabun", sans-serif;
   color: $secondary;
   font-size: 10px;
   background-color: $primary;
 }
-
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -48,8 +46,9 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 55px 0 0 0;
+  font-family: "Sarabun", sans-serif;
+  color: $secondary;
 }
-
 h2,
 h3 {
   font-size: 2.4em;
@@ -58,36 +57,32 @@ h3 {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-
 h3 {
   margin: 0 0 30px 0;
 }
-
 p {
   font-size: 2em;
   line-height: 1.8em;
   margin: 0;
   color: $text;
 }
-
 a {
   text-decoration: none;
   color: $secondary;
 }
-
 .divider {
   width: 65px;
   height: 0.3em;
   margin: 30px 0;
   background-color: $divider;
 }
-
 .buttons {
   justify-content: space-between;
-  cursor: pointer;
 }
 button:disabled {
   opacity: 0.2;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
 }
 button:focus {
   outline: 0;
@@ -106,7 +101,6 @@ button:focus {
     transition: 0.2s linear;
     cursor: pointer;
     &:hover {
-      //  font-weight:700;
       transition: 0.2s linear;
       box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.67);
     }
@@ -122,7 +116,6 @@ button:focus {
     }
   }
 }
-
 // Route Navigation Transition
 .main-enter-active {
   transition: all 0.4s ease;

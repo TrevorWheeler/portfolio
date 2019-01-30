@@ -1,8 +1,6 @@
 <template>
   <div class="featured">
-
     <div class="items">
-
       <router-link
         :to="{ name: 'selected', params: { id: work.route } }"
         tag="a"
@@ -17,16 +15,15 @@
             :alt="work.title"
           />
         </div>
-
         <div class="content">
           <h2>{{work.title}}</h2>
           <p>{{work.meta}}</p>
         </div>
       </router-link>
-
       <a
         href="https://github.com/trevorwheeler"
         class="item"
+        target="_blank"
       >
         <div class="image-container">
           <img
@@ -39,11 +36,8 @@
           <p>Repositories</p>
         </div>
       </a>
-
     </div>
-
   </div>
-
 </template>
 
 <script>
@@ -95,7 +89,7 @@ export default {
         color: $secondary;
       }
       &:hover {
-        background-color: rgba(41, 123, 147, 0.9);
+        background-color: rgba(41, 77, 147, 0.85);
         transition: 0.2s linear;
         color: $primary;
         p {
@@ -103,7 +97,6 @@ export default {
           transition: 0.2s linear;
         }
       }
-
       .image-container {
         width: 100%;
         height: 100%;

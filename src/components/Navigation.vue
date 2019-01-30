@@ -4,7 +4,7 @@
       to="/"
       routerLinkActiveOptions="{ exact: true }"
     >
-     <div v-on:click="loadingfunc()">
+     <div>
       <h1 class="name">Trevor Wheeler</h1>
      </div>
     </router-link>
@@ -12,26 +12,16 @@
       to="/featured"
       routerLinkActiveOptions="{ exact: true }"
     >
-    <div v-on:click="loadingfunc()">
+    <div>
       <h1 class="name">Work</h1>
     </div>
     </router-link>
-
   </header>
 </template>
 
 <script>
 export default {
-  name: "Navigation",
-  methods: {
-    //find what work was selected and commit mutation in store
-    selectedWork(index) {
-      this.$store.commit("selected", index);
-    },
-    loadingfunc() {
-      this.$store.commit("loading");
-    }
-  }
+  name: "Navigation"
 };
 </script>
 <style scoped lang="scss">
@@ -42,7 +32,7 @@ header {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0 10vw 0.5em;
+  padding: 0 10vw 1em;
   background-color: $primary;
   opacity: 0.8;
   @media only screen and (max-width: 320px) {
@@ -51,7 +41,7 @@ header {
   @media only screen and (min-width: 1366px) {
     width: 1008px;
     left: 50%;
-    padding: 0 0 0.5em 0;
+    padding: 0 0 1em 0;
     transform: translateX(-50%);
   }
   h1 {

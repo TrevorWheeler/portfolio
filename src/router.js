@@ -3,7 +3,6 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Featured from "./views/Featured.vue";
 import Selected from "./views/Selected.vue";
-
 Vue.use(Router);
 
 export default new Router({

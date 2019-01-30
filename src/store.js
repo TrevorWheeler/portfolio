@@ -3,7 +3,6 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
-    changePage: false,
     works: [
       {
         title: "The Caf",
@@ -18,6 +17,7 @@ export default new Vuex.Store({
       },
       {
         title: "Sandy Pages Books",
+        website: "https://sandypagesbooks.com.au",
         meta: "E-commerce",
         description:
           "Sandy Pages Books is a book lovers haven featuring a wide variety of fiction and non-fiction titles with a special focus on childrens’ literature. A select range of locally crafted and exclusive gifts and puzzles are also on offer. Sandy Pages Books came to me with the needs to upgrade their existing website with a more modern approach. An E-commerce solution was needed as Sandy Pages books partnered with local schools to provide an outlet for students to buy books during the schools book fest week.",
@@ -31,12 +31,6 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
-    loaded(state) {
-      state.loading = false;
-    },
-    loading(state) {
-      state.loading = true;
-    },
     selected(state, payload) {
       state.works[0].active = false;
       state.works[1].active = false;

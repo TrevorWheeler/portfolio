@@ -5,7 +5,6 @@
       class="container"
       v-for="(active, index) in activeWork"
       :key="index"
-      v-bind:class="{ changing: changePage}"
     >
       <h3>{{active.title}}</h3>
       <div class="links">
@@ -46,7 +45,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -57,17 +55,12 @@ export default {
     works() {
       return this.$store.state.works;
     },
-    changePage() {
-      return this.$store.state.changePage;
-    },
-
     //filter object where value for active = true
     activeWork: function() {
       return this.works.filter(function(a) {
         return a.active;
       });
     },
-
     //find current index of works array
     currentIndex: function() {
       return this.works.findIndex(item => item.active === true);
@@ -76,27 +69,23 @@ export default {
   methods: {
     prev() {
       this.$store.commit("thecaf");
-
       this.$router.push({ name: "selected", params: { id: "thecaf" } });
     },
     next() {
       this.$store.commit("sandypages");
-
       this.$router.push({
         name: "selected",
         params: { id: "sandypagesbooks" }
       });
     },
-
     checkRoute() {
-      if (this.$route.path === "/thecaf") {
+      if (this.$route.path === "/featured/thecaf") {
         this.$store.commit("thecaf");
-      } else if (this.$route.path === "/sandypagesbooks") {
+      } else if (this.$route.path === "/featured/sandypagesbooks") {
         this.$store.commit("sandyPagesBooks");
       }
     }
   },
-
   mounted() {
     this.checkRoute();
   }
@@ -130,31 +119,6 @@ export default {
     .divider {
       margin: 60px auto;
     }
-  }
-}
-
-/// Navigation for pagination
-.changing {
-  animation: change 1s ease;
-}
-@keyframes change {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  60% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
 </style>

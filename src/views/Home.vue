@@ -49,7 +49,6 @@
 <script>
 export default {
   name: "home",
-
   computed: {
     loading() {
       return this.$store.state.loading;
@@ -77,7 +76,6 @@ export default {
     width: 1005px;
     margin: 0 auto;
   }
-
   .me {
     width: 100%;
     max-width: 405px;
