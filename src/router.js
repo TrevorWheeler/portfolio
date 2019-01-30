@@ -12,6 +12,10 @@ export default new Router({
   linkExactActiveClass: "active",
   routes: [
     {
+      path: "*",
+      redirect: "/"
+    },
+    {
       path: "/",
       component: Home,
       name: "home"
@@ -23,7 +27,7 @@ export default new Router({
       component: Featured
     },
     {
-      path: "/:id",
+      path: "/featured/:id",
       name: "selected",
       component: Selected,
       props: true
