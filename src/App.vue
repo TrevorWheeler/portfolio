@@ -74,7 +74,7 @@ a {
   width: 65px;
   height: 0.3em;
   margin: 30px 0;
-  background-color: $divider;
+  background-color: $accent;
 }
 .buttons {
   justify-content: space-between;
