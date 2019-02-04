@@ -11,7 +11,6 @@ export default new Vuex.Store({
         description:
           "The Caf in Coolum Beach is one the most popular cafes in the region, sporting second place in Trip Advisors best restraunts in the area. I was tasked to redesign their existing website to better reflect their current in house personality while giving them the abitlity to manage changing content.  UX/UI design was created through sketch along with collaboration with the client.",
         image: require("./assets/the-caf-home.jpg"),
-        workImage: require("./assets/the-caf-work.jpg"),
         route: "thecaf",
         active: false
       },
@@ -24,7 +23,6 @@ export default new Vuex.Store({
         image: require("./assets/sandy-pages-books-home.jpg"),
         imageTwo: require("./assets/sandy-pages-books-shop.jpg"),
         secondImage: true,
-        workImage: require("./assets/sandy-pages-books-work.jpg"),
         route: "sandypagesbooks",
         active: false
       }

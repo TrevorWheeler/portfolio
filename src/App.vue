@@ -7,19 +7,18 @@
     >
       <router-view :key="$route.params.id" />
     </transition>
-    <Footer />
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation.vue";
-import Footer from "./components/Footer.vue";
-
 export default {
   name: "app",
   components: {
-    Navigation,
-    Footer
+    Navigation
+  },
+  data() {
+    return {};
   },
   computed: {}
 };
@@ -30,92 +29,57 @@ export default {
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: "Sarabun", sans-serif;
   color: $secondary;
   font-size: 10px;
   background-color: $primary;
 }
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
-h1 {
-  font-size: 1.8em;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 55px 0 0 0;
-  font-family: "Sarabun", sans-serif;
-  color: $secondary;
-}
-h2,
-h3 {
-  font-size: 2.4em;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-h3 {
-  margin: 0 0 30px 0;
-}
+
 p {
-  font-size: 2em;
-  line-height: 1.8em;
-  margin: 0;
   color: $text;
 }
+
 a {
   text-decoration: none;
-  color: $secondary;
 }
-.divider {
-  width: 65px;
-  height: 0.3em;
-  margin: 30px 0;
-  background-color: $accent;
-}
-.buttons {
-  justify-content: space-between;
-}
-button:disabled {
-  opacity: 0.2;
-  cursor: not-allowed !important;
-  box-shadow: none !important;
-}
-button:focus {
-  outline: 0;
-}
-.links {
-  display: flex;
-  margin: 4em 0 0 0;
-  a,
-  button {
-    display: flex;
-    justify-content: center;
-    width: 190px;
-    height: 5em;
-    border: 0;
-    background-color: $accent;
-    transition: 0.2s linear;
-    cursor: pointer;
-    &:hover {
-      transition: 0.2s linear;
-      box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.67);
-    }
 
-    &:nth-child(1) {
-      margin: 0 2em 0 0;
-    }
+a.btn {
+  font-weight: 400;
+  height: 50px;
+  max-width: 350px;
+  display: block;
+  background-color: $secondary;
+  color: $primary;
+  display: flex;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  &:hover {
+    background-color: $accent;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translateY(-1px);
     span {
-      align-self: center;
-      font-size: 2em;
-      color: $primary;
-      transition: 0.2s linear;
+      color: $secondary;
     }
   }
+  span {
+    align-self: center;
+    font-size: 20px;
+    transition: 0.2s ease-in-out;
+  }
 }
+
 // Route Navigation Transition
 .main-enter-active {
   transition: all 0.4s ease;

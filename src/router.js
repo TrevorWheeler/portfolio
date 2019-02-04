@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import Featured from "./views/Featured.vue";
-import Selected from "./views/Selected.vue";
+// import Work from "./views/Work.vue";
+
 Vue.use(Router);
 
 export default new Router({
@@ -19,17 +19,12 @@ export default new Router({
       component: Home,
       name: "home"
     },
-
     {
-      path: "/featured",
-      name: "featured",
-      component: Featured
-    },
-    {
-      path: "/featured/:id",
+      path: "/:id",
       name: "selected",
-      component: Selected,
-      props: true
+      // component: Work,
+      props: true,
+      component: () => import("./views/Work.vue")
     }
   ],
   scrollBehavior() {
