@@ -140,7 +140,6 @@ export default {
     align-self: center;
     width: 65%;
     margin-bottom: 10%;
-    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 1));
     @media only screen and (min-width: 700px) {
       display: flex;
       justify-content: space-between;
@@ -176,10 +175,7 @@ export default {
 .overlayActive {
   transform: translateY(0);
   height: 110%;
-
   transition: all 0.4s ease-in-out;
-  // -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  // clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .navigation {
   z-index: 2;
