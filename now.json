@@ -1,6 +1,7 @@
 {
     "version": 2,
     "name": "portfolio",
+    "alias": ["trev.work"],
     "builds": [
         { "src": "package.json", "use": "@now/static-build" }
     ],
