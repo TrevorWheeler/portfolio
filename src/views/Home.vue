@@ -37,7 +37,8 @@
         </a>
         <a
           class="btn"
-          href="#"
+          href="mailto:sendtrevmail@gmail.com"
+            target="_blank"
         ><span>Contact</span>
         </a>
       </div>
