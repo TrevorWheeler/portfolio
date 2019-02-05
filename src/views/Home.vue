@@ -38,7 +38,7 @@
         <a
           class="btn"
           href="mailto:sendtrevmail@gmail.com"
-            target="_blank"
+          target="_blank"
         ><span>Contact</span>
         </a>
       </div>
@@ -155,7 +155,7 @@ export default {
     }
     p {
       font-size: 18px;
-      line-height: 1.4em;
+      line-height: 1.6em;
       @media only screen and (min-width: 768px) {
         font-size: 20px;
         margin: 30px 0 0 0;
@@ -186,9 +186,12 @@ export default {
         }
       }
       .btn {
-        margin: 0 auto;
         &:nth-of-type(even) {
           margin-top: 3em;
+        }
+        @media only screen and (min-width: 768px) {
+          margin: 0 auto;
+          margin-bottom: 40px;
         }
       }
     }

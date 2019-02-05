@@ -8,19 +8,20 @@
         class="brand"
       >
         <div class="logo">
+
           <svg
             v-bind:class="{ logoToggle: menuActive }"
             v-on:click="menuActive = false"
-            viewBox="0 0 68 62"
+            viewBox="0 0 68 63"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M18.1467 21.7837H5C2.23858 21.7837 0 24.0223 0 26.7837V49.0858L0.000299047 61.9997L13.109 61.9784C15.8647 61.9739 18.0973 59.7406 18.1009 56.9849L18.1467 21.7837Z" />
-            <path d="M24.5101 26.792C24.5101 24.0274 26.7536 21.7875 29.5182 21.792L37.6649 21.8052C40.4232 21.8097 42.6568 24.047 42.6568 26.8052V61.9997H24.5101V26.792Z" />
-            <path d="M42.6568 21.7838L29.502 21.8052C26.7437 21.8097 24.5101 24.047 24.5101 26.8052V61.9997H42.6568V41.8918V21.7838Z" />
             <path d="M0 5C0 2.23858 2.23858 0 5 0H67.1664V11.1282C67.1664 13.8897 64.9278 16.1282 62.1664 16.1282H0V5Z" />
-            <path d="M48.5664 26.7081C48.5664 23.9436 50.8098 21.7038 53.5743 21.7082L67.1663 21.7297V57C67.1663 59.7614 64.9277 62 62.1663 62H48.5664V26.7081Z" />
+            <path d="M42.6467 21.8L29.4919 21.8214C26.7336 21.8259 24.5 24.0631 24.5 26.8214L24.5 62.0159H37.6467C40.4081 62.0159 42.6467 59.7773 42.6467 57.0159V41.9079V21.8Z" />
+            <path d="M48.5665 26.708C48.5665 23.9435 50.8099 21.7036 53.5744 21.708L67.1664 21.7296V56.9999C67.1664 59.7613 64.9278 61.9999 62.1664 61.9999H48.5665V26.708Z" />
           </svg>
+
         </div>
       </router-link>
       <a
@@ -184,7 +185,10 @@ export default {
     height: 90px;
     display: flex;
     justify-content: center;
-
+    @media only screen and (min-width: 1366px) {
+      width: 100px;
+      height: 100px;
+    }
     @media only screen and (min-width: 1920px) {
       width: 140px;
       height: 140px;
@@ -192,6 +196,14 @@ export default {
     svg {
       width: 50px;
       align-self: center;
+      fill: $accent;
+      transition: 0.2 ease;
+      transition: all 0.2s linear;
+      transition-delay: 0.3s;
+      @media only screen and (min-width: 1366px) {
+        fill: $secondary;
+        width: 67px;
+      }
       &:hover {
         filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.23));
         path {
@@ -206,12 +218,6 @@ export default {
           fill: $accent;
         }
       }
-      path {
-        fill: $accent;
-        transition: 0.2 ease;
-        transition: all 0.2s linear;
-        transition-delay: 0.3s;
-      }
     }
     .logoToggle {
       path {
@@ -225,22 +231,29 @@ export default {
     height: 90px;
     display: flex;
     justify-content: center;
+    @media only screen and (min-width: 1366px) {
+      width: 100px;
+      height: 100px;
+    }
     @media only screen and (min-width: 1920px) {
       width: 140px;
       height: 140px;
     }
     .burger {
       width: 35px;
+      @media only screen and (min-width: 1366px) {
+        width: 50px;
+      }
       align-self: center;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
       transition: 0.2s linear;
       &:hover {
         .bar {
-          @media only screen and (min-width: 1366px) {
-            background-color: $accent-secondary;
-            transition: 0.2s linear;
-          }
+          transition: all 0.3s linear;
+        }
+        .third {
+          width: 100%;
         }
       }
       .bar {
@@ -251,6 +264,10 @@ export default {
         margin-bottom: 5px;
         transition: all 0.3s linear;
         transition-delay: 0.3s;
+        @media only screen and (min-width: 1366px) {
+          margin-bottom: 10px;
+          height: 6px;
+        }
       }
       .third {
         width: 70%;
@@ -269,6 +286,9 @@ export default {
         }
         &:nth-child(2) {
           transform: rotate(-45deg) translateY(-6px) translateX(7px);
+          @media only screen and (min-width: 1366px) {
+            transform: rotate(-45deg) translateY(-10px) translateX(12px);
+          }
         }
         &:nth-child(3) {
           opacity: 0;
