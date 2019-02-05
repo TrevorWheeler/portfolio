@@ -4,7 +4,7 @@
       <div class="left">
         <div class="content">
           <h1>I build websites with the client in mind</h1>
-          <p>I completed my Diploma of Interactive Digital Media at the Southbank Institute of technology and loved all that i did. I have knowledge in design, animation, video editing and web development; where my passion resides. After completing my studies i have continued the pursuit of advancing my knowledge in all aspects of interactive media. Exploring solutions to bring my client online is what i do. </p>
+          <p>I completed my Diploma of Interactive Digital Media at the Southbank Institute of technology and loved all that I did. I have knowledge in design, animation, video editing and web development; where my passion resides. After completing my studies I have continued the pursuit of advancing my knowledge in all aspects of interactive media. Exploring solutions to bring my client online is what I do.</p>
         </div>
       </div>
       <div class="right">
@@ -29,7 +29,7 @@
     <section class="hire-me">
       <div class="content">
         <h1>Available for hire</h1>
-        <p>I am currently searching for a junior position in a the web development industry. I dream of a strong team who can mentor me into becoming a senior developer. If your company is looking for someone like me please checkout my github account and get in touch.</p>
+        <p>I am currently searching for a junior position in the web development industry. I dream of a strong team who can mentor me into becoming a senior developer. If your company is looking for someone like me please check out my Github account and get in touch.</p>
         <a
           class="btn"
           href="https://github.com/trevorwheeler"
