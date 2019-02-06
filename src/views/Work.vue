@@ -115,10 +115,16 @@ export default {
 .work-page {
   padding: 40px 10vw;
   @media only screen and (min-width: 1366px) {
-    padding: 40px 20vw;
+    padding: 40px 15vw;
   }
   @media only screen and (min-width: 2000px) {
     padding: 40px 25vw;
+  }
+  a.btn {
+    background-color: $accent;
+    &:hover {
+      background-color: $accent-third;
+    }
   }
   .active {
     opacity: 0.3;
@@ -127,8 +133,11 @@ export default {
   img {
     width: 100%;
     display: block;
-    margin: 6em 0;
+    margin: 3em 0;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    @media only screen and (min-width: 768px) {
+      margin: 6em 0;
+    }
   }
   .first-work {
     padding: 100px 0 0px;
@@ -156,7 +165,7 @@ export default {
       a {
         cursor: pointer;
         &:nth-of-type(even) {
-          margin-top: 3em;
+          margin-top: 1.4em;
         }
       }
 
@@ -165,7 +174,7 @@ export default {
         justify-content: space-between;
         a {
           width: 200px;
-          margin: 0;
+          margin: 0 !important;
           cursor: pointer;
         }
       }
@@ -177,39 +186,6 @@ export default {
       }
     }
   }
-
-  // .btn {
-  //   display: block;
-  //   height: 50px;
-  //   background-color: $secondary;
-  //   display: flex;
-  //   justify-content: center;
-  //   margin: 0 auto;
-  //   &:hover {
-  //    background-color: $accent;
-  //     span {
-  //       color: $secondary;
-  //     }
-  //   }
-
-  //   &:nth-of-type(even) {
-  //     margin-top: 3em;
-  //   }
-  //   @media only screen and (min-width: 768px) {
-  //     &:nth-of-type(even) {
-  //       margin: 0em;
-  //     }
-  //   }
-  //   @media only screen and (min-width: 1366px) {
-  //     width: 350px;
-  //   }
-  //   span {
-  //     font-size: 20px;
-  //     color: $primary;
-  //     align-self: center;
-  //     font-weight:400;
-  //   }
-  // }
 }
 
 .website-link {

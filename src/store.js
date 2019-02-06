@@ -3,6 +3,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
+    menuActive: false,
     works: [
       {
         title: "The Caf",
@@ -41,6 +42,12 @@ export default new Vuex.Store({
     sandyPagesBooks(state) {
       state.works[0].active = false;
       state.works[1].active = true;
+    },
+    menuState(state) {
+      state.menuActive = !state.menuActive;
+    },
+    menuStateFalse(state) {
+      state.menuActive = false;
     }
   }
 });

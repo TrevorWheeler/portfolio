@@ -45,30 +45,54 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin: 0;
+  @media only screen and (min-width: 375px) {
+    font-size: 4.8em;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 48px;
+  }
+  // @media only screen and (min-width: 1366px) {
+  //   font-size: 48px;
+  // }
+}
+
 p {
-  color: $text;
+  color: $text-dark;
+  line-height: 1.6em;
+  font-size: 1.8em;
+  margin: 30px 0;
+  //  @media only screen and (min-width: 768px) {
+  //       font-size: 24px;
+  //     }
 }
 
 a {
   text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
 }
 
 a.btn {
   font-weight: 400;
-  height: 50px;
-  max-width: 350px;
-  display: block;
-  background-color: $secondary;
+  height: 56px;
+  max-width: 250px;
+  background-color: $accent-secondary;
   color: $primary;
   display: flex;
+  cursor: pointer;
   justify-content: center;
   transition: 0.2s ease-in-out;
-  border-radius: 3px;
+  border-radius: 28px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
   &:hover {
-    background-color: $accent;
+    background-color: $accent-third;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-    transform: translateY(-1px);
+
     span {
       color: $secondary;
     }
