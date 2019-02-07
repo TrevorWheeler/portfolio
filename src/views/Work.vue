@@ -1,8 +1,6 @@
 
 <template>
-
   <div class="work-page">
-
     <div
       class="content"
       v-for="(active, index) in activeWork"
@@ -113,18 +111,12 @@ export default {
 
 <style lang="scss">
 .work-page {
-  padding: 40px 10vw;
+  padding: 40px 4vw;
   @media only screen and (min-width: 1366px) {
     padding: 40px 15vw;
   }
   @media only screen and (min-width: 2000px) {
     padding: 40px 25vw;
-  }
-  a.btn {
-    background-color: $accent;
-    &:hover {
-      background-color: $accent-third;
-    }
   }
   .active {
     opacity: 0.3;
@@ -173,7 +165,7 @@ export default {
         display: flex;
         justify-content: space-between;
         a {
-          width: 200px;
+          width: 250px;
           margin: 0 !important;
           cursor: pointer;
         }

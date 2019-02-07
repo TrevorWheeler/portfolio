@@ -87,11 +87,12 @@ a.btn {
   justify-content: center;
   transition: 0.2s ease-in-out;
   border-radius: 28px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0px 4px 4px rgba(9, 19, 30, 0.3);
 
   &:hover {
     background-color: $accent-third;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);
 
     span {
       color: $secondary;
