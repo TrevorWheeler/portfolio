@@ -20,7 +20,7 @@ export default new Vuex.Store({
         website: "https://sandypagesbooks.com.au",
         meta: "E-commerce",
         description:
-          "Sandy Pages Books is a book lovers haven featuring a wide variety of fiction and non-fiction titles with a special focus on children's literature. A select range of locally crafted and exclusive gifts and puzzles are also on offer. Sandy Pages Books came to me with the needs to upgrade their existing website with a more modern approach. An E-commerce solution was needed as Sandy Pages books partnered with local schools to provide an outlet for students to buy books during the schools book fest week.",
+          "Sandy Pages Books is a book lovers haven featuring a wide variety of fiction and non-fiction titles with a special focus on children's literature. A select range of locally crafted and exclusive gifts and puzzles are also on offer. Sandy Pages Books came to me with the need to upgrade their existing website with a more modern approach. An E-commerce solution was required as Sandy Pages books partnered with local schools to provide an outlet for students to purchase books during the schools book fest week.",
         image: require("./assets/sandy-pages-books-home.jpg"),
         imageTwo: require("./assets/sandy-pages-books-shop.jpg"),
         secondImage: true,

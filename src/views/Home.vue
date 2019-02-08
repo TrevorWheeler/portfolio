@@ -4,7 +4,7 @@
       <div class="left about">
         <div class="content">
           <h1>I build websites with the client in mind</h1>
-          <p>I completed my Diploma of Interactive Digital Media at the Southbank Institute of technology and loved all that I did. I have knowledge in design, animation, video editing and web development; where my passion resides. After completing my studies I have continued the pursuit of advancing my knowledge in all aspects of interactive media. Exploring solutions to bring my client online is what I do. Find some of my featuredd works in the menu.</p>
+          <p>I completed my Diploma of Interactive Digital Media at the Southbank Institute of technology and loved all that I did. I have knowledge in design, animation, video editing and web development; where my passion resides. After completing my studies I have continued the pursuit of advancing my knowledge in all aspects of interactive media. Exploring solutions to bring my client online is what I do. Find some of my featured works in the menu.</p>
           <a
             class="btn"
             v-on:click="$store.commit('menuState')"

@@ -55,9 +55,6 @@ h1 {
   @media only screen and (min-width: 768px) {
     font-size: 48px;
   }
-  // @media only screen and (min-width: 1366px) {
-  //   font-size: 48px;
-  // }
 }
 
 p {
@@ -65,9 +62,6 @@ p {
   line-height: 1.6em;
   font-size: 1.8em;
   margin: 30px 0;
-  //  @media only screen and (min-width: 768px) {
-  //       font-size: 24px;
-  //     }
 }
 
 a {
@@ -88,8 +82,6 @@ a.btn {
   transition: 0.2s ease-in-out;
   border-radius: 28px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  // box-shadow: 0px 4px 4px rgba(9, 19, 30, 0.3);
-
   &:hover {
     background-color: $accent-third;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);

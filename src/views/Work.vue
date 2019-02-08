@@ -185,6 +185,8 @@ export default {
   max-width: 350px;
 }
 
+//
+
 .divider {
   margin: 60px auto;
   width: 100%;

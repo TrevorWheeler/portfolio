@@ -1,7 +1,6 @@
 <template>
   <header>
     <div class="navigation">
-
       <router-link
         to="/"
         tag="div"
