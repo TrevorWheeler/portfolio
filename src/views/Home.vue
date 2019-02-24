@@ -39,7 +39,7 @@
             data-aos-duration="1000"
           >
             <a class="hero--link hero--link--resume">
-              <span>Resume</span>
+              <span>Github</span>
             </a>
           </div>
         </div>
@@ -75,6 +75,21 @@
       >
         <h3>Commercial Work</h3>
       </div>
+
+      <div
+        class="commercial--work--container"
+        v-for="(work, index) in commercial"
+        :key="index"
+      >
+
+        <h1>{{work.title}}</h1>
+        <p
+          v-for="tag in work.tag"
+          :key="tag.name"
+        > {{tag.name}}</p>
+
+      </div>
+
     </section>
 
   </div>
@@ -91,8 +106,13 @@ export default {
   },
   components: {},
   computed: {
-    menuActive() {
-      return this.$store.state.menuActive;
+    commercial() {
+      return this.$store.state.commercial;
+    },
+    commercialTags() {
+      return Array.from(
+        Array(Math.ceil(this.articles.length / this.itemsPerRow)).keys()
+      );
     }
   },
   methods: {},
@@ -210,7 +230,7 @@ export default {
 
     .arrow--down--container {
       display: none;
-      width: 100vw;
+      width: 100%;
       position: absolute;
       bottom: 50px;
       left: 0;
