@@ -7,11 +7,20 @@ export default new Vuex.Store({
     commercial: [
       {
         title: "The Caf",
-        image: require("./assets/the-caf-home.jpg"),
+        image: require("./assets/thecaf.png"),
         description:
           "The Caf in Coolum Beach is one the most popular cafes in the region, sporting second place in Trip Advisors best restaurants in the area. I was tasked to redesign their existing website to better reflect their current in house personality while giving them the ability to manage content.  UX/UI design was created through sketch along with collaboration with the client.",
         url: "http://thecafcoolum.com",
-        tag: [{ name: "wordpress" }, { name: "HTML" }]
+        tag: [
+          { name: "Content Management" },
+          { name: "Wordpress" },
+          { name: "Theme customization" },
+          { name: "HTML" },
+          { name: "CSS" },
+          { name: "Bootstrap" },
+
+          { name: "cPanel" }
+        ]
       },
       {
         title: "Sandy Pages Books",

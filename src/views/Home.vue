@@ -68,25 +68,39 @@
       </div>
     </section>
     <section class="projects">
-      <div
-        data-aos="fade-up"
-        data-aos-duration="500"
-        class="project-category-container"
-      >
+      <div class="project-category-container">
         <h3>Commercial Work</h3>
       </div>
 
-      <div
-        class="commercial--work--container"
-        v-for="(work, index) in commercial"
-        :key="index"
-      >
+      <div class="work--container work--container--commercial">
 
-        <h1>{{work.title}}</h1>
-        <p
-          v-for="tag in work.tag"
-          :key="tag.name"
-        > {{tag.name}}</p>
+        <div
+          class="work--item"
+          v-for="(work, index) in commercial"
+          :key="index"
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
+          <div class="border--breaker">
+            <div class="border-breaker-content">
+              <span>. . .</span>
+            </div>
+          </div>
+          <h4 class="work--title">{{work.title}}</h4>
+          <img
+            class="work--img"
+            :src="work.image"
+          >
+
+          <P class="work--description">{{work.description}}</p>
+          <div class="work--tag--container">
+            <div
+              class="work--tag"
+              v-for="tag in work.tag"
+              :key="tag.name"
+            > <span>{{tag.name}}</span></div>
+          </div>
+        </div>
 
       </div>
 
@@ -100,19 +114,12 @@
 export default {
   name: "home",
   data() {
-    return {
-      windowHeight: null
-    };
+    return {};
   },
   components: {},
   computed: {
     commercial() {
       return this.$store.state.commercial;
-    },
-    commercialTags() {
-      return Array.from(
-        Array(Math.ceil(this.articles.length / this.itemsPerRow)).keys()
-      );
     }
   },
   methods: {},
@@ -129,10 +136,11 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 2em 2em;
+    padding: 0 2em 0;
     transition: 0.1s;
     @media only screen and (min-width: 768px) {
       padding: 0 4em 4em;
+      height: 100vh;
     }
     .name--container {
       width: 100vw;
@@ -161,17 +169,17 @@ export default {
     .summary {
       font-size: 3.6em;
       animation-delay: 0.1s;
-      font-weight: 300;
+      font-weight: 400;
       align-self: center;
       text-align: center;
       color: $primary;
       margin: 1em 0 1em 0;
       @media only screen and (min-width: 768px) {
-        font-size: 5.5em;
+        font-size: 5.7em;
       }
       span {
         color: $accent;
-        font-weight: 400;
+        font-weight: 600;
       }
     }
 
@@ -213,7 +221,7 @@ export default {
     }
     .hero--link--resume {
       transition: 1s ease-out;
-      margin-bottom: 55px;
+      margin-bottom: 40px;
       background-color: transparent;
       border: 2px solid $primary;
       span {
@@ -265,16 +273,76 @@ export default {
   .projects {
     background-color: $primary;
     height: 1000px;
-    padding: 20px 0;
+    padding: 20px 4vw;
     .project-category-container {
       display: flex;
       justify-content: center;
+      margin: 0 0 30px 0;
       h3 {
         padding: 0 0 0.2em 0;
         font-weight: 400;
         font-size: 2.4em;
         display: inline-block;
         border-bottom: 4px solid $accent;
+      }
+    }
+    .work--container {
+      display: flex;
+      flex-direction: column;
+
+      .work--item {
+        width: 100%;
+        margin: 0 0 40px 0;
+        border: 2px solid $secondary;
+        position: relative;
+        padding: 0 0 2em 0;
+
+        .border--breaker {
+          position: absolute;
+          height: 20px;
+          width: 65px;
+          background-color: $primary;
+          transform: translateX(-50%);
+          top: -15px;
+          left: 50%;
+          display: flex;
+          justify-content: center;
+          span {
+            font-size: 2.4em;
+            font-weight: 600;
+            align-self: center;
+            line-height: 1rem;
+          }
+        }
+        .work--title {
+          font-size: 2em;
+          font-weight: 600;
+          text-transform: uppercase;
+          text-align: center;
+          color: black;
+        }
+        .work--img {
+          width: 100%;
+        }
+
+        .work--description {
+          margin: 1.4em 0;
+          padding: 0 4vw;
+          font-size: 1.6em;
+        }
+
+        .work--tag--container {
+          padding: 0 4vw;
+          .work--tag {
+            border: 1px solid $accent;
+            display: inline-flex;
+            margin: 0 1em 1em 0;
+            span {
+              font-size: 14px;
+              padding: 0.5em;
+            }
+          }
+        }
       }
     }
   }

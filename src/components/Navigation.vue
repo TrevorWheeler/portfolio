@@ -80,15 +80,30 @@
 
     </header>
     <header class="menu--desktop">
-      <h1 class="name" data-aos="fade"  
-        data-aos-duration="1000" >Trevor Wheeler</h1>
+      <h1
+        class="name"
+        data-aos="fade"
+        data-aos-duration="1000"
+      >Trevor Wheeler</h1>
       <div class="links">
-        <a href="#" data-aos="fade"  data-aos-delay="200"
-        data-aos-duration="1000" > Github </a>
-        <a href="#" data-aos="fade"  data-aos-delay="300"
-        data-aos-duration="1000">  Contact </a>
-        <a href="#" data-aos="fade"  data-aos-delay="400"
-        data-aos-duration="1000"> LinkedIn </a>
+        <a
+          href="#"
+          data-aos="fade"
+          data-aos-delay="200"
+          data-aos-duration="1000"
+        > Github </a>
+        <a
+          href="#"
+          data-aos="fade"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+        > Contact </a>
+        <a
+          href="#"
+          data-aos="fade"
+          data-aos-delay="400"
+          data-aos-duration="1000"
+        > LinkedIn </a>
       </div>
     </header>
   </div>
@@ -139,11 +154,14 @@ export default {
 
 .menu--desktop {
   background-color: $secondary;
-  padding: 0 4em;
-  width: 100vw;
+  padding: 3vw;
+  width: 100%;
   height: 70px;
   justify-content: space-between;
   display: none;
+  position: absolute;
+  top: 0;
+  z-index: 2;
   @media only screen and (min-width: 768px) {
     display: flex;
   }
@@ -153,19 +171,20 @@ export default {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
-    margin: 26px 0;
+    margin: 0;
   }
   .links {
     align-self: center;
     a {
       color: $primary;
       font-weight: 600;
+      letter-spacing: 1px;
       font-size: 1.8em;
       &:hover {
         color: $accent;
       }
       &:nth-child(2) {
-        margin: 0 2em;
+        margin: 0 1.4em;
       }
     }
   }

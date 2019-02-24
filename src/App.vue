@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-      <!-- <transition
+    <!-- <transition
       name="main"
    
       appear
     > -->
     <Navigation />
-      <!-- </transition>
+    <!-- </transition>
     <transition
       name="main"
       mode="out-in"
       appear
     > -->
-      <router-view />
+    <router-view />
     <!-- </transition> -->
   </div>
 </template>
@@ -99,15 +99,19 @@ a {
   text-decoration: none;
 }
 
-// Route Navigation Transition
-.main-enter-active {
-  transition: all 1s ease;
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+  background-color: #f5f5f5;
 }
-.main-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
 }
-.main-enter,
-.main-leave-to {
-  // opacity: 0;
+
+body::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $accent;
 }
 </style>
