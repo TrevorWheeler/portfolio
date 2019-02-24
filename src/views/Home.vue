@@ -1,60 +1,79 @@
 <template>
-  <div class="home">
-    <section class="first mobile-reverse ">
-      <div class="left about">
-        <div class="content">
-          <h1>I build websites with the client in mind</h1>
-          <p>I completed my Diploma of Interactive Digital Media at the Southbank Institute of technology and loved all that I did. I have knowledge in design, animation, video editing and web development; where my passion resides. After completing my studies I have continued the pursuit of advancing my knowledge in all aspects of interactive media. Exploring solutions to bring my client online is what I do. Find some of my featured works in the menu.</p>
-          <a
-            class="btn"
-            v-on:click="$store.commit('menuState')"
+  <div class="website">
+    <section
+      class="hero"
+      id="yes"
+    >
+      <div class="name--container">
+        <h1
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="name"
+        > Trevor Wheeler </h1>
+      </div>
+      <div class="container">
+        <h2
+          class="summary"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+        > Junior <span>Developer</span> - Problem Solver and Fast Learner </h2>
+        <div class="hero--links--container">
+          <div
+            class="hero--link--container"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
           >
-            <span>Open Menu</span>
-          </a>
+            <a
+              class="hero--link hero--link--projects"
+              v-scroll-to="'.projects'"
+            >
+              <span>Explore Projects</span>
+            </a>
+          </div>
+          <div
+            class="hero--link--container"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-duration="1000"
+          >
+            <a class="hero--link hero--link--resume">
+              <span>Resume</span>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="right">
-        <div class="image me">
-        </div>
+
+      <div
+        class="arrow--down--container"
+        v-scroll-to="'.projects'"
+      >
+        <svg
+          class="arrow--down"
+          data-aos="fade"
+          data-aos-delay="1000"
+          data-aos-duration="1000"
+          width="16"
+          height="28"
+          viewBox="0 0 16 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.29289 27.7071C7.68342 28.0976 8.31658 28.0976 8.70711 27.7071L15.0711 21.3431C15.4616 20.9526 15.4616 20.3195 15.0711 19.9289C14.6805 19.5384 14.0474 19.5384 13.6569 19.9289L8 25.5858L2.34315 19.9289C1.95262 19.5384 1.31946 19.5384 0.928933 19.9289C0.538409 20.3195 0.538409 20.9526 0.928933 21.3431L7.29289 27.7071ZM7 4.37114e-08L7 27L9 27L9 -4.37114e-08L7 4.37114e-08Z"
+            fill="#FCFCFC"
+          />
+        </svg>
       </div>
     </section>
-
-    <section class="second">
-      <div class="left">
-        <div class="image laptop">
-        </div>
-      </div>
-      <div class="right experience">
-        <div class="content">
-          <h1>Experience in the industry</h1>
-          <p>I have several years of experience in HTML, CSS & Javascript for the front-end and Node.js, express & MongoDB for the back-end. I love to keep up to date with the latest technologies and the thrill of solving a problem is what keeps me coming back for more. I have recently worked freelance with some amazing small businesses to help bring their product online.</p>
-          <a
-            class="btn github-link"
-            href="https://github.com/trevorwheeler"
-          >
-            <span>Github</span>
-          </a>
-        </div>
-      </div>
-
-    </section>
-    <section class="third">
-      <div class="content">
-        <h1>Currently Available for Hire</h1>
-        <p>I am currently searching for a junior position in the web development industry. I dream of a strong team who can mentor me into becoming a senior developer. If your company is looking for someone like me please check out my Github account and get in touch.</p>
-        <div class="links-container">
-          <a
-            class="btn"
-            href="https://github.com/trevorwheeler"
-          ><span>Github</span>
-          </a>
-          <a
-            class="btn"
-            href="mailto:sendtrevmail@gmail.com"
-            target="_blank"
-          ><span>Contact</span>
-          </a>
-        </div>
+    <section class="projects">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="500"
+        class="project-category-container"
+      >
+        <h3>Commercial Work</h3>
       </div>
     </section>
 
@@ -66,7 +85,9 @@
 export default {
   name: "home",
   data() {
-    return {};
+    return {
+      windowHeight: null
+    };
   },
   components: {},
   computed: {
@@ -74,181 +95,166 @@ export default {
       return this.$store.state.menuActive;
     }
   },
-  methods: {}
+  methods: {},
+  mounted() {}
 };
 </script>
 
 <style lang="scss">
-.home {
-  padding-top: 50vh;
-  @media only screen and (min-width: 1366px) {
-    padding-top: 0;
-  }
-  .about,
-  .experience,
-  .third {
-    display: flex;
-    .content {
-      margin: 5em 4vw;
-      align-self: center;
-    }
-  }
-  .first .right {
-    position: fixed;
-    width: 100vw;
-    height: 50vh;
-    top: 0;
-    z-index: -1;
-    @media only screen and (min-width: 1366px) {
-      position: inherit;
-      width: inherit;
-      height: inherit;
-      z-index: inherit;
-    }
-  }
-  .about {
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: $primary;
-    @media only screen and (min-height: 768px) {
-      min-height: 50vh;
-    }
-    @media only screen and (min-width: 1366px) {
-      min-height: 100vh;
-      width: 50vw;
-    }
-  }
-
-  .first,
-  .second {
+.website {
+  .hero {
+    height: calc(100vh - 70px);
+    background-color: $secondary;
+    position: relative;
     display: flex;
     flex-direction: column;
-    @media only screen and (min-width: 1366px) {
-      flex-direction: row;
-      min-height: 100vh;
-    }
-  }
-  .first .right {
-    overflow: hidden;
-  }
-  .second .left {
-    overflow: hidden;
-  }
-
-  .mobile-reverse {
-    flex-direction: column-reverse;
-    @media only screen and (min-width: 1366px) {
-      flex-direction: row;
-    }
-  }
-
-  .second {
-    background-color: $secondary;
-    color: $primary;
-    .right {
-      display: flex;
-      .content {
-        align-self: center;
-        p {
-          color: $text-light;
-        }
-      }
-    }
-    .left {
-      display: none;
-      @media only screen and (min-width: 1366px) {
-        display: block;
-      }
-    }
-    .experience {
-      display: flex;
-      min-height: 100vh;
-      justify-content: center;
-      @media only screen and (min-height: 768px) {
-        min-height: 50vh;
-      }
-      @media only screen and (min-height: 768px) {
-        height: initial;
-      }
-      @media only screen and (min-height: 1024px) {
-        height: 50vh;
-      }
-      @media only screen and (min-width: 1366px) {
-        height: 100vh;
-        width: 50vw;
-      }
-    }
-  }
-
-  .image {
-    height: 50vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    @media only screen and (min-width: 1366px) {
-      width: 50vw;
-      height: 100vh;
-    }
-  }
-
-  .me {
-    background-image: url("../assets/me.jpg");
-    background-position: 46% 50%;
-  }
-  .laptop {
-    background-image: url("../assets/laptop.jpg");
-  }
-  .content {
-    @media only screen and (min-width: 768px) {
-      width: 662px;
-      padding: 0;
-    }
-    p {
-      margin-bottom: 2em;
-    }
-  }
-
-  .third {
-    min-height: 100vh;
-    display: flex;
     justify-content: center;
-    background-color: $primary;
+    padding: 0 2em 2em;
+    transition: 0.1s;
     @media only screen and (min-width: 768px) {
-      min-height: initial;
+      padding: 0 4em 4em;
     }
-    @media only screen and (min-height: 1024px) {
-      min-height: 50vh;
-    }
-    @media only screen and (min-width: 1366px) {
+    .name--container {
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      right: 0;
       text-align: center;
-      height: 100vh;
-    }
-    @media only screen and (min-width: 1366px) {
-      .content {
-        width: 600px;
+      @media only screen and (min-width: 768px) {
+        display: none;
       }
     }
-    .content {
+
+    .container {
+      max-width: 854px;
+      margin: 0 auto;
+    }
+
+    .name {
+      color: $primary;
+      font-size: 1.8em;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin: 26px 0;
+    }
+    .summary {
+      font-size: 3.6em;
+      animation-delay: 0.1s;
+      font-weight: 300;
       align-self: center;
-      .links-container {
-        @media only screen and (min-width: 1366px) {
-          display: flex;
-          justify-content: space-between;
-          margin: 4em 0 0 0;
-        }
-        .btn {
-          &:nth-of-type(even) {
-            margin-top: 1em;
-            @media only screen and (min-width: 1366px) {
-              margin: 0 auto;
-            }
-          }
-          @media only screen and (min-width: 1366px) {
-            margin: 0 auto;
-            width: 250px;
-          }
-        }
+      text-align: center;
+      color: $primary;
+      margin: 1em 0 1em 0;
+      @media only screen and (min-width: 768px) {
+        font-size: 5.5em;
+      }
+      span {
+        color: $accent;
+        font-weight: 400;
+      }
+    }
+
+    .hero--links--container {
+      @media only screen and (min-width: 768px) {
+        display: flex;
+        width: 484px;
+        margin: 0 auto;
+      }
+    }
+
+    .hero--link {
+      width: 220px;
+      height: 62px;
+      color: $secondary;
+      display: flex;
+      cursor: pointer;
+      justify-content: center;
+      margin: 3em auto;
+      transition: 0.3s linear !important;
+      @media only screen and (min-width: 768px) {
+        margin: 1em;
+      }
+
+      span {
+        align-self: center;
+        font-size: 18px;
+      }
+    }
+    .hero--link--projects {
+      background-color: $accent;
+      &:hover {
+        box-shadow: 0px 0px 0px 3px $accent inset,
+          0px 0px 0px 6px $secondary inset;
+      }
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+    .hero--link--resume {
+      transition: 1s ease-out;
+      margin-bottom: 55px;
+      background-color: transparent;
+      border: 2px solid $primary;
+      span {
+        color: $primary;
+      }
+      &:hover {
+        box-shadow: 0px 0px 0px 3px $secondary inset,
+          0px 0px 0px 6px $accent inset;
+      }
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+
+    .arrow--down--container {
+      display: none;
+      width: 100vw;
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      @media only screen and (min-width: 768px) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .arrow--down {
+      display: block;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+      animation-delay: 2s;
+    }
+    @keyframes bounce {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: (translateY(0));
+      }
+      40% {
+        transform: (translateY(-30px));
+      }
+      60% {
+        transform: (translateY(-15px));
+      }
+    }
+  }
+
+  .projects {
+    background-color: $primary;
+    height: 1000px;
+    padding: 20px 0;
+    .project-category-container {
+      display: flex;
+      justify-content: center;
+      h3 {
+        padding: 0 0 0.2em 0;
+        font-weight: 400;
+        font-size: 2.4em;
+        display: inline-block;
+        border-bottom: 4px solid $accent;
       }
     }
   }

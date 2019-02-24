@@ -1,12 +1,19 @@
 <template>
   <div id="app">
+      <!-- <transition
+      name="main"
+   
+      appear
+    > -->
     <Navigation />
+      <!-- </transition>
     <transition
       name="main"
       mode="out-in"
-    >
-      <router-view :key="$route.params.id" />
-    </transition>
+      appear
+    > -->
+      <router-view />
+    <!-- </transition> -->
   </div>
 </template>
 
@@ -26,15 +33,51 @@ export default {
 
 <style lang="scss">
 @import "./normalize.css";
+@import "./animate.css";
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Sarabun", sans-serif;
+  font-family: "natrixSans", Helvetica, Arial, sans-serif;
   color: $secondary;
   font-size: 10px;
   background-color: $primary;
+  @font-face {
+    font-family: "natrixSans";
+    src: url("./assets/font/NatrixSans-Bold.woff2") format("woff2"),
+      url("./assets/font/NatrixSans-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "natrixSans";
+    src: url("./assets/font/NatrixSans-Medium.woff2") format("woff2"),
+      url("./assets/font/NatrixSans-Medium.woff") format("woff");
+    font-weight: medium;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "natrixSans";
+    src: url("./assets/font/NatrixSans-Medium.woff2") format("woff2"),
+      url("./assets/font/NatrixSans-Medium.woff") format("woff");
+    font-weight: medium;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "natrixSans";
+    src: url("./assets/font/NatrixSans-Regular.woff2") format("woff2"),
+      url("./assets/font/NatrixSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "natrixSans";
+    src: url("./assets/font/NatrixSans-Light.woff2") format("woff2"),
+      url("./assets/font/NatrixSans-Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 }
 
 #app {
@@ -43,18 +86,6 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-}
-
-h1 {
-  font-size: 40px;
-  text-transform: uppercase;
-  margin: 0;
-  @media only screen and (min-width: 375px) {
-    font-size: 4.8em;
-  }
-  @media only screen and (min-width: 768px) {
-    font-size: 48px;
-  }
 }
 
 p {
@@ -66,47 +97,17 @@ p {
 
 a {
   text-decoration: none;
-  font-size: 2em;
-  text-transform: uppercase;
-}
-
-a.btn {
-  font-weight: 400;
-  height: 56px;
-  max-width: 250px;
-  background-color: $accent-secondary;
-  color: $primary;
-  display: flex;
-  cursor: pointer;
-  justify-content: center;
-  transition: 0.2s ease-in-out;
-  border-radius: 28px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  &:hover {
-    background-color: $accent-third;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);
-
-    span {
-      color: $secondary;
-    }
-  }
-  span {
-    align-self: center;
-    font-size: 20px;
-    transition: 0.2s ease-in-out;
-  }
 }
 
 // Route Navigation Transition
 .main-enter-active {
-  transition: all 0.4s ease;
+  transition: all 1s ease;
 }
 .main-leave-active {
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .main-enter,
 .main-leave-to {
-  transform: translateY(100px);
-  opacity: 0;
+  // opacity: 0;
 }
 </style>
