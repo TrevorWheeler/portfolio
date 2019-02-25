@@ -1,9 +1,6 @@
 <template>
   <div class="website">
-    <section
-      class="hero"
-      id="yes"
-    >
+    <section class="hero">
       <div class="name--container">
         <h1
           data-aos="fade-up"
@@ -76,7 +73,7 @@
 
         <div
           class="work--item"
-          v-for="(work, index) in commercial"
+          v-for="(work, index) in works[0].commercial"
           :key="index"
           data-aos="fade-up"
           data-aos-duration="500"
@@ -91,17 +88,169 @@
             class="work--img"
             :src="work.image"
           >
-
-          <P class="work--description">{{work.description}}</p>
-          <div class="work--tag--container">
-            <div
-              class="work--tag"
-              v-for="tag in work.tag"
-              :key="tag.name"
-            > <span>{{tag.name}}</span></div>
+          <div class="work--height--fix">
+            <P class="work--description">{{work.description}}</p>
+            <div class="work--bottom">
+              <div class="work--tag--container">
+                <div
+                  class="work--tag"
+                  v-for="tag in work.tag"
+                  :key="tag.name"
+                > <span>{{tag.name}}</span></div>
+              </div>
+              <div class="work--links--container">
+                <a
+                  href="#"
+                  class="work--link work--link--live"
+                >Live Site
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" /></svg></a>
+                <a
+                  href="#"
+                  class="work--link work--link--github"
+                >View Repo</a>
+              </div>
+            </div>
           </div>
         </div>
 
+      </div>
+
+      <div class="project-category-container">
+        <h3>Full Stack Apps</h3>
+      </div>
+
+      <div class="work--container work--container--commercial">
+
+        <div
+          class="work--item"
+          v-for="(work, index) in works[1].fullStack"
+          :key="index"
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
+          <div class="border--breaker">
+            <div class="border-breaker-content">
+              <span>. . .</span>
+            </div>
+          </div>
+          <h4 class="work--title">{{work.title}}</h4>
+          <img
+            class="work--img"
+            :src="work.image"
+          >
+          <div class="work--height--fix">
+            <P class="work--description">{{work.description}}</p>
+            <div class="work--bottom">
+              <div class="work--tag--container">
+                <div
+                  class="work--tag"
+                  v-for="tag in work.tag"
+                  :key="tag.name"
+                > <span>{{tag.name}}</span></div>
+              </div>
+              <div class="work--links--container">
+                <a
+                  href="#"
+                  class="work--link work--link--live"
+                >Live Site
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" /></svg></a>
+                <a
+                  href="#"
+                  class="work--link work--link--github"
+                >View Repo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="project-category-container">
+        <h3>Front End Apps</h3>
+      </div>
+
+      <div class="work--container work--container--commercial">
+
+        <div
+          class="work--item"
+          v-for="(work, index) in works[2].frontEnd"
+          :key="index"
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
+          <div class="border--breaker">
+            <div class="border-breaker-content">
+              <span>. . .</span>
+            </div>
+          </div>
+          <h4 class="work--title">{{work.title}}</h4>
+          <img
+            class="work--img"
+            :src="work.image"
+          >
+          <div class="work--height--fix">
+            <P class="work--description">{{work.description}}</p>
+            <div class="work--bottom">
+              <div class="work--tag--container">
+                <div
+                  class="work--tag"
+                  v-for="tag in work.tag"
+                  :key="tag.name"
+                > <span>{{tag.name}}</span></div>
+              </div>
+              <div class="work--links--container">
+                <a
+                  href="#"
+                  class="work--link work--link--live"
+                >Live Site
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" /></svg></a>
+                <a
+                  href="#"
+                  class="work--link work--link--github"
+                >View Repo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="hero footer">
+      <div class="container">
+        <h2 class="footer--summary summary"> <span>Thanks</span> for taking the time to check out my portfolio. </h2>
+        <p class="footer--build"> Built with Vue, Vuex, Node.js, Express, MongoDb and Axios</p>
+        <div class="hero--links--container footer--link--container">
+          <div class="hero--link--container">
+            <a class="hero--link hero--link--projects">
+              <span>Source Code</span>
+            </a>
+          </div>
+
+        </div>
       </div>
 
     </section>
@@ -118,8 +267,8 @@ export default {
   },
   components: {},
   computed: {
-    commercial() {
-      return this.$store.state.commercial;
+    works() {
+      return this.$store.state.works;
     }
   },
   methods: {},
@@ -132,12 +281,12 @@ export default {
   .hero {
     height: calc(100vh - 70px);
     background-color: $secondary;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 2em 0;
     transition: 0.1s;
+
     @media only screen and (min-width: 768px) {
       padding: 0 4em 4em;
       height: 100vh;
@@ -156,6 +305,9 @@ export default {
     .container {
       max-width: 854px;
       margin: 0 auto;
+      @media only screen and (max-height: 450px) {
+        display: flex;
+      }
     }
 
     .name {
@@ -169,7 +321,7 @@ export default {
     .summary {
       font-size: 3.6em;
       animation-delay: 0.1s;
-      font-weight: 400;
+      font-weight: 200;
       align-self: center;
       text-align: center;
       color: $primary;
@@ -177,9 +329,13 @@ export default {
       @media only screen and (min-width: 768px) {
         font-size: 5.7em;
       }
+      @media only screen and (max-height: 450px) {
+        padding: 0 2em 0 0;
+        text-align: left;
+      }
       span {
         color: $accent;
-        font-weight: 600;
+        font-weight: 400;
       }
     }
 
@@ -194,6 +350,7 @@ export default {
     .hero--link {
       width: 220px;
       height: 62px;
+      border-radius: 3px;
       color: $secondary;
       display: flex;
       cursor: pointer;
@@ -207,6 +364,9 @@ export default {
       span {
         align-self: center;
         font-size: 18px;
+        font-weight: 600;
+
+        letter-spacing: 1px;
       }
     }
     .hero--link--projects {
@@ -271,13 +431,19 @@ export default {
   }
 
   .projects {
+    padding: 2em 1em;
     background-color: $primary;
-    height: 1000px;
-    padding: 20px 4vw;
+    // @media only screen and (min-width: 1366px) {
+    //   margin: 0 auto;
+    //   width: 1340px;
+    // }
     .project-category-container {
       display: flex;
       justify-content: center;
       margin: 0 0 30px 0;
+      @media only screen and (min-width: 1024px) {
+        margin: 30px 0;
+      }
       h3 {
         padding: 0 0 0.2em 0;
         font-weight: 400;
@@ -289,13 +455,41 @@ export default {
     .work--container {
       display: flex;
       flex-direction: column;
-
+      @media only screen and (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      @media only screen and (min-width: 1024px) {
+        margin: 0 0 5em;
+      }
+      @media only screen and (min-width: 1280px) {
+        max-width: 1255px;
+        margin: 0 auto;
+      }
       .work--item {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+          0 6px 6px rgba(0, 0, 0, 0.23);
         width: 100%;
         margin: 0 0 40px 0;
-        border: 2px solid $secondary;
+        border: 1px solid $grey;
         position: relative;
-        padding: 0 0 2em 0;
+        padding: 0 0 1em 0;
+        border-radius: 2px;
+        @media only screen and (min-width: 768px) {
+          width: calc(50% - 0.5em);
+          margin: 0 0 4em;
+          &:nth-child(odd) {
+            margin-right: 0.5em;
+          }
+          &:nth-child(even) {
+            margin-left: 0.5em;
+          }
+        }
+        @media only screen and (min-width: 1280px) {
+          margin: 0 1em;
+          width: 397px;
+        }
 
         .border--breaker {
           position: absolute;
@@ -325,25 +519,88 @@ export default {
           width: 100%;
         }
 
+        .work--height--fix {
+          @media only screen and (min-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            height: 355px;
+            justify-content: space-between;
+          }
+        }
         .work--description {
           margin: 1.4em 0;
-          padding: 0 4vw;
+          padding: 0 1em;
           font-size: 1.6em;
+          @media only screen and (min-width: 768px) {
+            padding: 0 15px;
+          }
         }
 
         .work--tag--container {
           padding: 0 4vw;
+          @media only screen and (min-width: 768px) {
+            padding: 0 15px;
+          }
+          @media only screen and (min-width: 1366px) {
+            padding: 0 2rem;
+          }
           .work--tag {
             border: 1px solid $accent;
             display: inline-flex;
             margin: 0 1em 1em 0;
+            border-radius: 3px;
             span {
-              font-size: 14px;
+              font-size: 12px;
               padding: 0.5em;
+              font-weight: 600;
+            }
+          }
+        }
+        .work--links--container {
+          display: flex;
+          justify-content: space-between;
+          padding: 2em 4vw 1em;
+          @media only screen and (min-width: 768px) {
+            padding: 2em 15px 1em;
+          }
+          @media only screen and (min-width: 1366px) {
+            padding: 2em 2rem 1em;
+          }
+          .work--link {
+            color: $secondary;
+            text-decoration: none;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            font-weight: 600;
+            svg {
+              position: relative;
+              top: 3px;
+              width: 19px;
+              fill: #000000;
             }
           }
         }
       }
+    }
+  }
+
+  .footer {
+    height: 100%;
+    margin-bottom: 70px;
+    padding-top: 50px;
+    @media only screen and (min-width: 768px) {
+      margin-bottom: 0;
+      padding-top: 50px;
+    }
+    .footer--build {
+      color: $primary;
+      font-weight: 200;
+      text-align: center;
+      padding: 1em;
+    }
+    .footer--link--container {
+      justify-content: center;
+      padding-bottom: 4em;
     }
   }
 }

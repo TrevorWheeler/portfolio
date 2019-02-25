@@ -42,7 +42,7 @@ body {
   font-family: "natrixSans", Helvetica, Arial, sans-serif;
   color: $secondary;
   font-size: 10px;
-  background-color: $primary;
+
   @font-face {
     font-family: "natrixSans";
     src: url("./assets/font/NatrixSans-Bold.woff2") format("woff2"),
@@ -75,7 +75,7 @@ body {
     font-family: "natrixSans";
     src: url("./assets/font/NatrixSans-Light.woff2") format("woff2"),
       url("./assets/font/NatrixSans-Light.woff") format("woff");
-    font-weight: normal;
+    font-weight: lighter;
     font-style: normal;
   }
 }
