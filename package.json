@@ -35,10 +35,7 @@
 		"env": {
 			"node": true
 		},
-		"extends": [
-			"plugin:vue/essential",
-			"@vue/prettier"
-		],
+		"extends": [ "plugin:vue/essential", "@vue/prettier" ],
 		"rules": {},
 		"parserOptions": {
 			"parser": "babel-eslint"
@@ -49,22 +46,5 @@
 			"autoprefixer": {}
 		}
 	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions",
-		"not ie <= 8"
-	],
-	"gitHooks": {
-		"pre-commit": "lint-staged"
-	},
-	"lint-staged": {
-		"*.js": [
-			"vue-cli-service lint",
-			"git add"
-		],
-		"*.vue": [
-			"vue-cli-service lint",
-			"git add"
-		]
-	}
+	"browserslist": [ "> 1%", "last 2 versions", "not ie <= 8" ]
 }
