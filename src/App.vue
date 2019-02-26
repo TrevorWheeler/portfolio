@@ -47,35 +47,28 @@ body {
     font-family: "natrixSans";
     src: url("./assets/font/NatrixSans-Bold.woff2") format("woff2"),
       url("./assets/font/NatrixSans-Bold.woff") format("woff");
-    font-weight: bold;
+    font-weight: 600;
     font-style: normal;
   }
   @font-face {
     font-family: "natrixSans";
     src: url("./assets/font/NatrixSans-Medium.woff2") format("woff2"),
       url("./assets/font/NatrixSans-Medium.woff") format("woff");
-    font-weight: medium;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "natrixSans";
-    src: url("./assets/font/NatrixSans-Medium.woff2") format("woff2"),
-      url("./assets/font/NatrixSans-Medium.woff") format("woff");
-    font-weight: medium;
+    font-weight: 500;
     font-style: normal;
   }
   @font-face {
     font-family: "natrixSans";
     src: url("./assets/font/NatrixSans-Regular.woff2") format("woff2"),
       url("./assets/font/NatrixSans-Regular.woff") format("woff");
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "natrixSans";
     src: url("./assets/font/NatrixSans-Light.woff2") format("woff2"),
       url("./assets/font/NatrixSans-Light.woff") format("woff");
-    font-weight: lighter;
+    font-weight: 300;
     font-style: normal;
   }
 }

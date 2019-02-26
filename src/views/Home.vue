@@ -269,10 +269,28 @@ export default {
   computed: {
     works() {
       return this.$store.state.works;
+    },
+    projects() {
+      return this.$store.state.projects;
     }
   },
   methods: {},
-  mounted() {}
+  mounted() {
+    // this.$store.commit("setLoading", true);
+    // axios
+    //   .get(url + "/projects")
+    //   .then(response => {
+    //     const data = response.data;
+    //     this.$store.commit("setProjects", data);
+
+    //     this.$store.commit("setLoading", false);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //     this.$store.commit("setLoading", false);
+    //   });
+    this.$store.dispatch("loadProjects");
+  }
 };
 </script>
 
