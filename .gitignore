@@ -2,6 +2,10 @@
 node_modules
 /dist
 /src/assets/font
+.env
+.env.example
+.env.local
+.env.staging
 
 # local env files
 .env.local
