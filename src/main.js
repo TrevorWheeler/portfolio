@@ -6,7 +6,6 @@ var VueScrollTo = require("vue-scrollto");
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import axios from 'axios';
-
 Vue.config.productionTip = false;
 // Vue.use(axios);
 
@@ -30,6 +29,7 @@ new Vue({
   created() {
     AOS.init();
   },
+
   router,
   store,
   render: h => h(App)

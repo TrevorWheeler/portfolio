@@ -9,5 +9,6 @@ module.exports = {
         data: `@import "@/variables.scss";`
       }
     }
-  }
+  },
+  runtimeCompiler: true
 };

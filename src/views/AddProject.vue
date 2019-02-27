@@ -1,52 +1,63 @@
 <template>
   <div class="add-project-page">
-    <input
+    <!-- <input
       type="file"
       class="form-control"
       v-on:change="upload($event.target.files)"
       accept="image/*"
-    />
+    /> -->
+    <div class="container">
+      <h2>Upload file</h2>
+      <vue-base64-file-upload 
+        class="v1"
+        accept="image/png,image/jpeg"
+        image-class="v1-image"
+        input-class="v1-image"
+        :max-size="customImageMaxSize"
+        @size-exceeded="onSizeExceeded"
+
+        @load="onLoad" />
+    </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+import VueBase64FileUpload from 'vue-base64-file-upload';
 export default {
   name: "add-project",
+  components: {
+    VueBase64FileUpload
+  },
   data() {
     return {
-      cloudinary: {
-        uploadPreset: "",
-        apiKey: "",
-        cloudName: ""
+      project: {
+        name: "",
+        description: "",
+        image: "",
+        link: "",
+        repo: "",
+        commercial: false,
+        fullStack: false,
+        frontEnd: false,
+        BackEnd: false
+
       },
 
-      thumbs: []
+     customImageMaxSize: 3 // megabytes
     };
   },
   computed: {
-    clUrl: function() {
-      return `https://api.cloudinary.com/v1_1/${
-        this.cloudinary.cloudName
-      }/upload`;
-    }
+
   },
   methods: {
-    upload: function(file) {
-      const formData = new FormData();
-      formData.append("file", file[0]);
-      formData.append("upload_preset", this.cloudinary.uploadPreset);
-      formData.append("tags", "gs-vue,gs-vue-uploaded");
-      // For debug purpose only
-      // Inspects the content of formData
-      for (var pair of formData.entries()) {
-        console.log(pair[0] + ", " + pair[1]);
-      }
-      axios.post(this.clUrl, formData).then(res => {
-        this.thumbs.unshift({
-          url: res.data.secure_url
-        });
-      });
+
+
+    onLoad(dataUri) {
+      this.projects.image64 = dataUri
+    },
+        onSizeExceeded(size) {
+      alert(`Image ${size}Mb size exceeds limits of ${this.customImageMaxSize}Mb!`);
     }
   }
 };
@@ -54,7 +65,7 @@ export default {
 
 <style lang="scss">
 .add-project-page {
-  padding: 500px;
+  padding: 200px 100px;
 }
 </style>
 
