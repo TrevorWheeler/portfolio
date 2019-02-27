@@ -1,29 +1,35 @@
 <template>
   <div class="add-project-page">
-    <!-- <input
-      type="file"
-      class="form-control"
-      v-on:change="upload($event.target.files)"
-      accept="image/*"
-    /> -->
+    <h2>Name</h2>
+    <input
+      type="text"
+      v-model="name"
+      placeholder="name"
+    />
+    <input
+      type="text"
+      v-model="description"
+      placeholder="description"
+    />
     <div class="container">
       <h2>Upload file</h2>
-      <vue-base64-file-upload 
+      <vue-base64-file-upload
         class="v1"
         accept="image/png,image/jpeg"
         image-class="v1-image"
         input-class="v1-image"
         :max-size="customImageMaxSize"
         @size-exceeded="onSizeExceeded"
-
-        @load="onLoad" />
+        @load="onLoad"
+      />
     </div>
+    <div @click="create"> SUBMIT </div>
   </div>
 </template>
 
 <script>
 // import axios from "axios";
-import VueBase64FileUpload from 'vue-base64-file-upload';
+import VueBase64FileUpload from "vue-base64-file-upload";
 export default {
   name: "add-project",
   components: {
@@ -31,33 +37,36 @@ export default {
   },
   data() {
     return {
-      project: {
-        name: "",
-        description: "",
-        image: "",
-        link: "",
-        repo: "",
-        commercial: false,
-        fullStack: false,
-        frontEnd: false,
-        BackEnd: false
+      name: "",
+      description: "",
+      image: "",
+      link: "",
+      repo: "",
+      commercial: false,
+      fullStack: false,
+      frontEnd: false,
+      BackEnd: false,
 
-      },
-
-     customImageMaxSize: 3 // megabytes
+      customImageMaxSize: 3 // megabytes
     };
   },
-  computed: {
-
-  },
+  computed: {},
   methods: {
-
-
-    onLoad(dataUri) {
-      this.projects.image64 = dataUri
+    create() {
+      const data = {
+        name: this.name,
+        description: this.description,
+        image: this.image
+      };
+      this.$store.dispatch("createProject", data);
     },
-        onSizeExceeded(size) {
-      alert(`Image ${size}Mb size exceeds limits of ${this.customImageMaxSize}Mb!`);
+    onLoad(dataUri) {
+      this.image = dataUri;
+    },
+    onSizeExceeded(size) {
+      alert(
+        `Image ${size}Mb size exceeds limits of ${this.customImageMaxSize}Mb!`
+      );
     }
   }
 };

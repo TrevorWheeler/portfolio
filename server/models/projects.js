@@ -3,113 +3,22 @@ const User = require('./user');
 
 const projectsSchema = new mongoose.Schema(
 	{
-		commercial: [
-			{
-				name: {
-					type: String
-				},
-				description: {
-					type: String
-				},
-				image: {
-					type: String
-				},
-				link: {
-					type: String
-				},
-				repo: {
-					type: String
-				}
-			}
-		],
-		fullStack: [
-			{
-				name: {
-					type: String
-				},
-				description: {
-					type: String
-				},
-				image: {
-					type: String
-				},
-				link: {
-					type: String
-				},
-				repo: {
-					type: String
-				}
-			}
-		],
-		frontEnd: [
-			{
-				name: {
-					type: String
-				},
-				description: {
-					type: String
-				},
-				image: {
-					type: String
-				},
-				link: {
-					type: String
-				},
-				repo: {
-					type: String
-				}
-			}
-		],
-		backEnd: [
-			{
-				name: {
-					type: String
-				},
-				description: {
-					type: String
-				},
-				image: {
-					type: String
-				},
-				link: {
-					type: String
-				},
-				repo: {
-					type: String
-				}
-			}
-		],
-		tags: [
-			{
-				one: {
-					type: String
-				},
-				two: {
-					type: String
-				},
-				three: {
-					type: String
-				},
-				four: {
-					type: String
-				},
-				five: {
-					type: String
-				},
-				six: {
-					type: String
-				},
-				seven: {
-					type: String
-				},
-				eight: {
-					type: String
-				},
-				nine: {
-					type: String
-				}
-			}
-		],
+		name: {
+			type: String
+		},
+		description: {
+			type: String
+		},
+		image: {
+			type: String
+		},
+		link: {
+			type: String
+		},
+		repo: {
+			type: String
+		},
+
 		user: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User'

@@ -1,11 +1,27 @@
 const db = require('../models');
+const cloudinary = require('cloudinary').v2;
+require('dotenv').load();
+cloudinary.config({
+	cloud_name: process.env.CLOUD_NAME,
+	api_key: process.env.API_KEY,
+	api_secret: process.env.API_SECRET
+});
 
 exports.createProject = async function(req, res, next) {
 	try {
+		let imageURL;
+		await cloudinary.uploader.upload(req.body.image, { tags: 'portfolio_images' }, function(err, image) {
+			console.log();
+			if (err) {
+				console.warn(err);
+			}
+			imageURL = image.url;
+		});
 		let project = await db.Projects.create({
 			id: req.body.id,
 			name: req.body.name,
 			description: req.body.description,
+			image: imageURL,
 			user: req.params.id
 		});
 		let foundUser = await db.User.findById(req.params.id);
