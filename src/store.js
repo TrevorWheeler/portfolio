@@ -195,10 +195,12 @@ export default new Vuex.Store({
 
 		createProject({ commit }, payload) {
 			console.log(localStorage.token);
+			console.log(payload.tags);
 			const project = {
 				name: payload.name,
 				description: payload.description,
-				image: payload.image
+				image: payload.image,
+				tags: payload.tags
 			};
 
 			axios

@@ -18,6 +18,7 @@ const projectsSchema = new mongoose.Schema(
 		repo: {
 			type: String
 		},
+		tags: [ { type: String } ],
 
 		user: {
 			type: mongoose.Schema.Types.ObjectId,

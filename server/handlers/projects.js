@@ -10,18 +10,26 @@ cloudinary.config({
 exports.createProject = async function(req, res, next) {
 	try {
 		let imageURL;
-		await cloudinary.uploader.upload(req.body.image, { tags: 'portfolio_images' }, function(err, image) {
+		let upload = await cloudinary.uploader.upload(req.body.image, { tags: 'portfolio_images' }, function(
+			err,
+			image
+		) {
 			console.log();
 			if (err) {
 				console.warn(err);
 			}
+			console.log('* ' + image.url);
 			imageURL = image.url;
 		});
+		console.log(imageURL);
+		console.log(imageURL);
+
 		let project = await db.Projects.create({
 			id: req.body.id,
 			name: req.body.name,
 			description: req.body.description,
 			image: imageURL,
+			tags: req.body.tags,
 			user: req.params.id
 		});
 		let foundUser = await db.User.findById(req.params.id);

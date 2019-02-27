@@ -23,6 +23,23 @@
         @load="onLoad"
       />
     </div>
+    <br>
+
+    <input
+      v-model="holder"
+      placeholder="enter tag"
+    >
+    <button @click="addtag">
+      Add Tag
+    </button>
+    <p> current tags </p>
+    <p
+      v-for="(tag, index) in tags"
+      :key="index"
+    > {{tag}} </p>
+    <br>
+    <br>
+    <br>
     <div @click="create"> SUBMIT </div>
   </div>
 </template>
@@ -46,17 +63,24 @@ export default {
       fullStack: false,
       frontEnd: false,
       BackEnd: false,
+      tags: [],
+      holder: "",
 
       customImageMaxSize: 3 // megabytes
     };
   },
   computed: {},
   methods: {
+    addtag: function() {
+      this.tags.push(this.holder);
+      this.holder = [];
+    },
     create() {
       const data = {
         name: this.name,
         description: this.description,
-        image: this.image
+        image: this.image,
+        tags: this.tags
       };
       this.$store.dispatch("createProject", data);
     },
