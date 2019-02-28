@@ -245,7 +245,7 @@
         <p class="footer--build"> Built with Vue, Vuex, Node.js, Express, MongoDb and Axios</p>
         <div class="hero--links--container footer--link--container">
           <div class="hero--link--container">
-            <a class="hero--link hero--link--projects">
+            <a class="link footer--link hero--link hero--link--projects">
               <span>Source Code</span>
             </a>
           </div>
@@ -449,12 +449,8 @@ export default {
   }
 
   .projects {
-    padding: 2em 1em;
+    padding: 2em 1em 3em;
     background-color: $primary;
-    // @media only screen and (min-width: 1366px) {
-    //   margin: 0 auto;
-    //   width: 1340px;
-    // }
     .project-category-container {
       display: flex;
       justify-content: center;
@@ -610,15 +606,21 @@ export default {
       margin-bottom: 0;
       padding-top: 50px;
     }
+    .footer--summary {
+      margin:0 0 30px 0;
+    }
     .footer--build {
       color: $primary;
       font-weight: 200;
       text-align: center;
-      padding: 1em;
+      padding: 0 1em;
     }
     .footer--link--container {
       justify-content: center;
-      padding-bottom: 4em;
+      padding-bottom: 3em;
+         @media only screen and (min-width: 768px) {
+           padding-bottom: 5em;
+      }
     }
   }
 }

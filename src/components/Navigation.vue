@@ -80,11 +80,13 @@
 
     </header>
     <header class="menu--desktop">
-      <h1
+      <router-link
+      tag="h1"
         class="name"
         data-aos="fade"
+        to="/"
         data-aos-duration="1000"
-      >Trevor Wheeler</h1>
+      >Trevor Wheeler</router-link>
       <div class="links">
         <a
           href="#"
@@ -152,9 +154,11 @@ export default {
   }
 }
 
+
+
 .menu--desktop {
   background-color: $secondary;
-  padding: 3vw;
+  padding: 0 3vw;
   width: 100%;
   height: 70px;
   justify-content: space-between;
@@ -170,8 +174,11 @@ export default {
     font-size: 1.8em;
     text-transform: uppercase;
     font-weight: 600;
+    line-height:1rem;
     letter-spacing: 1px;
     margin: 0;
+    align-self:center;
+    cursor:pointer;
   }
   .links {
     align-self: center;
