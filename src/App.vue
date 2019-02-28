@@ -1,19 +1,7 @@
 <template>
   <div id="app">
-    <!-- <transition
-      name="main"
-   
-      appear
-    > -->
     <Navigation />
-    <!-- </transition>
-    <transition
-      name="main"
-      mode="out-in"
-      appear
-    > -->
     <router-view />
-    <!-- </transition> -->
   </div>
 </template>
 
@@ -91,6 +79,8 @@ p {
 a {
   text-decoration: none;
 }
+
+
 
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);

@@ -23,19 +23,19 @@
             data-aos-delay="200"
           >
             <a
-              class="hero--link hero--link--projects"
+              class="link hero--link hero--link--projects"
               v-scroll-to="'.projects'"
             >
               <span>Explore Projects</span>
             </a>
           </div>
           <div
-            class="hero--link--container"
+            class="link hero--link--container"
             data-aos="fade-up"
             data-aos-delay="300"
             data-aos-duration="1000"
           >
-            <a class="hero--link hero--link--resume">
+            <a class="link hero--link hero--link--resume">
               <span>Github</span>
             </a>
           </div>
@@ -343,7 +343,7 @@ export default {
       align-self: center;
       text-align: center;
       color: $primary;
-      margin: 1em 0 1em 0;
+      margin: 0 0 30px 0;
       @media only screen and (min-width: 768px) {
         font-size: 5.7em;
       }
@@ -373,7 +373,7 @@ export default {
       display: flex;
       cursor: pointer;
       justify-content: center;
-      margin: 3em auto;
+      margin: 0 auto;
       transition: 0.3s linear !important;
       @media only screen and (min-width: 768px) {
         margin: 1em;
@@ -389,6 +389,7 @@ export default {
     }
     .hero--link--projects {
       background-color: $accent;
+      margin-bottom:30px;
       &:hover {
         box-shadow: 0px 0px 0px 3px $accent inset,
           0px 0px 0px 6px $secondary inset;
@@ -399,7 +400,7 @@ export default {
     }
     .hero--link--resume {
       transition: 1s ease-out;
-      margin-bottom: 40px;
+   
       background-color: transparent;
       border: 2px solid $primary;
       span {
@@ -622,6 +623,28 @@ export default {
            padding-bottom: 5em;
       }
     }
+  }
+
+  .link {
+     width: 220px;
+      height: 62px;
+      border-radius: 3px;
+      color: $secondary;
+      display: flex;
+      cursor: pointer;
+      justify-content: center;
+      margin: 0 auto;
+      transition: 0.3s linear !important;
+      @media only screen and (min-width: 768px) {
+        margin: 1em;
+      }
+
+      span {
+        align-self: center;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
   }
 }
 </style>
