@@ -16,6 +16,7 @@ export default new Vuex.Store({
 		error: null,
 		projects: [],
 
+		// Dev Seed
 		works: [
 			{
 				commercial: [
