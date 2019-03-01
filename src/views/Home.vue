@@ -3,11 +3,11 @@
   <div class="website">
 
     <section class="hero">
-      <div class="name--container">
+      <div class="hero--name--container">
         <h1
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="name"
+          class="hero--name"
         > Trevor Wheeler </h1>
       </div>
       <div class="hero--content--container">
@@ -334,19 +334,6 @@ export default {
   },
   methods: {},
   mounted() {
-    // this.$store.commit("setLoading", true);
-    // axios
-    //   .get(url + "/projects")
-    //   .then(response => {
-    //     const data = response.data;
-    //     this.$store.commit("setProjects", data);
-
-    //     this.$store.commit("setLoading", false);
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //     this.$store.commit("setLoading", false);
-    //   });
     this.$store.dispatch("loadProjects");
   }
 };
@@ -362,12 +349,12 @@ export default {
     justify-content: center;
     padding: 0 2em 0;
     transition: 0.1s;
-
     @media only screen and (min-width: 768px) {
       padding: 0 4em 4em;
       height: 100vh;
     }
-    .name--container {
+
+    .hero--name--container {
       width: 100vw;
       position: absolute;
       top: 0;
@@ -375,6 +362,14 @@ export default {
       text-align: center;
       @media only screen and (min-width: 768px) {
         display: none;
+      }
+      .hero--name {
+        color: $primary;
+        font-size: 1.8em;
+        // text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin: 26px 0;
       }
     }
 
@@ -387,14 +382,6 @@ export default {
       }
     }
 
-    .name {
-      color: $primary;
-      font-size: 1.8em;
-      // text-transform: uppercase;
-      font-weight: 400;
-      letter-spacing: 1px;
-      margin: 26px 0;
-    }
     .summary {
       font-size: 3.6em;
       animation-delay: 0.1s;
@@ -434,9 +421,9 @@ export default {
         transform: scale(0.9);
       }
     }
+    
     .hero--link--resume {
       transition: 1s ease-out;
-
       background-color: transparent;
       border: 1px solid $primary;
       span {
