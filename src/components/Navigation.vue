@@ -1,5 +1,8 @@
 <template>
-  <div class="menu">
+  <div
+    class="menu"
+    v-if="['home'].indexOf($route.name) > -1"
+  >
     <header class="menu--mobile">
       <svg
         data-aos="zoom-in"
@@ -81,7 +84,7 @@
     </header>
     <header class="menu--desktop">
       <router-link
-      tag="h1"
+        tag="h1"
         class="name"
         data-aos="fade"
         to="/"
@@ -154,8 +157,6 @@ export default {
   }
 }
 
-
-
 .menu--desktop {
   background-color: $secondary;
   padding: 0 3vw;
@@ -174,11 +175,11 @@ export default {
     font-size: 1.8em;
     text-transform: uppercase;
     font-weight: 600;
-    line-height:1rem;
+    line-height: 1rem;
     letter-spacing: 1px;
     margin: 0;
-    align-self:center;
-    cursor:pointer;
+    align-self: center;
+    cursor: pointer;
   }
   .links {
     align-self: center;

@@ -1,5 +1,7 @@
 <template>
+
   <div class="website">
+
     <section class="hero">
       <div class="name--container">
         <h1
@@ -8,7 +10,7 @@
           class="name"
         > Trevor Wheeler </h1>
       </div>
-      <div class="container">
+      <div class="hero--content--container">
         <h2
           class="summary"
           data-aos="fade-up"
@@ -30,13 +32,13 @@
             </a>
           </div>
           <div
-            class="link hero--link--container"
+            class="hero--link--container"
             data-aos="fade-up"
             data-aos-delay="300"
             data-aos-duration="1000"
           >
             <a class="link hero--link hero--link--resume">
-              <span>Github</span>
+              <span>Resume</span>
             </a>
           </div>
         </div>
@@ -124,7 +126,7 @@
       </div>
 
       <div class="project-category-container">
-        <h3>Full Stack Apps</h3>
+        <h3>Full Stack Work</h3>
       </div>
 
       <div class="work--container work--container--commercial">
@@ -180,12 +182,68 @@
         </div>
 
       </div>
+
       <div class="project-category-container">
-        <h3>Front End Apps</h3>
+        <h3>Front End Work</h3>
       </div>
 
       <div class="work--container work--container--commercial">
+        <div
+          class="work--item"
+          v-for="(work, index) in works[2].frontEnd"
+          :key="index"
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
+          <div class="border--breaker">
+            <div class="border-breaker-content">
+              <span>. . .</span>
+            </div>
+          </div>
+          <h4 class="work--title">{{work.title}}</h4>
+          <img
+            class="work--img"
+            :src="work.image"
+          >
+          <div class="work--height--fix">
+            <P class="work--description">{{work.description}}</p>
+            <div class="work--bottom">
+              <div class="work--tag--container">
+                <div
+                  class="work--tag"
+                  v-for="tag in work.tag"
+                  :key="tag.name"
+                > <span>{{tag.name}}</span></div>
+              </div>
+              <div class="work--links--container">
+                <a
+                  href="#"
+                  class="work--link work--link--live"
+                >Live Site
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" /></svg></a>
+                <a
+                  href="#"
+                  class="work--link work--link--github"
+                >View Repo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="project-category-container">
+        <h3>Back End Work</h3>
+      </div>
+
+      <div class="work--container work--container--commercial">
         <div
           class="work--item"
           v-for="(work, index) in works[2].frontEnd"
@@ -320,9 +378,10 @@ export default {
       }
     }
 
-    .container {
+    .hero--content--container {
       max-width: 854px;
-      margin: 0 auto;
+      margin: 3.5em 0 0 0;
+      align-self: center;
       @media only screen and (max-height: 450px) {
         display: flex;
       }
@@ -331,15 +390,15 @@ export default {
     .name {
       color: $primary;
       font-size: 1.8em;
-      text-transform: uppercase;
-      font-weight: 600;
+      // text-transform: uppercase;
+      font-weight: 400;
       letter-spacing: 1px;
       margin: 26px 0;
     }
     .summary {
       font-size: 3.6em;
       animation-delay: 0.1s;
-      font-weight: 200;
+      font-weight: 300;
       align-self: center;
       text-align: center;
       color: $primary;
@@ -353,7 +412,7 @@ export default {
       }
       span {
         color: $accent;
-        font-weight: 400;
+        font-weight: 500;
       }
     }
 
@@ -365,31 +424,8 @@ export default {
       }
     }
 
-    .hero--link {
-      width: 220px;
-      height: 62px;
-      border-radius: 3px;
-      color: $secondary;
-      display: flex;
-      cursor: pointer;
-      justify-content: center;
-      margin: 0 auto;
-      transition: 0.3s linear !important;
-      @media only screen and (min-width: 768px) {
-        margin: 1em;
-      }
-
-      span {
-        align-self: center;
-        font-size: 18px;
-        font-weight: 600;
-
-        letter-spacing: 1px;
-      }
-    }
     .hero--link--projects {
-      background-color: $accent;
-      margin-bottom:30px;
+      margin-bottom: 30px;
       &:hover {
         box-shadow: 0px 0px 0px 3px $accent inset,
           0px 0px 0px 6px $secondary inset;
@@ -400,9 +436,9 @@ export default {
     }
     .hero--link--resume {
       transition: 1s ease-out;
-   
+
       background-color: transparent;
-      border: 2px solid $primary;
+      border: 1px solid $primary;
       span {
         color: $primary;
       }
@@ -450,21 +486,22 @@ export default {
   }
 
   .projects {
-    padding: 2em 1em 3em;
+    padding: 7em 1em 3em;
     background-color: $primary;
     .project-category-container {
       display: flex;
       justify-content: center;
-      margin: 0 0 30px 0;
+      margin: 0 0 7em 0;
       @media only screen and (min-width: 1024px) {
         margin: 30px 0;
       }
       h3 {
         padding: 0 0 0.2em 0;
-        font-weight: 400;
+        margin: 0;
+        font-weight: 600;
         font-size: 2.4em;
         display: inline-block;
-        border-bottom: 4px solid $accent;
+        // border-bottom: 3px solid $secondary;
       }
     }
     .work--container {
@@ -486,7 +523,7 @@ export default {
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
           0 6px 6px rgba(0, 0, 0, 0.23);
         width: 100%;
-        margin: 0 0 40px 0;
+        margin: 0 0 7em 0;
         border: 1px solid $grey;
         position: relative;
         padding: 0 0 1em 0;
@@ -608,7 +645,7 @@ export default {
       padding-top: 50px;
     }
     .footer--summary {
-      margin:0 0 30px 0;
+      margin: 0 0 30px 0;
     }
     .footer--build {
       color: $primary;
@@ -619,32 +656,10 @@ export default {
     .footer--link--container {
       justify-content: center;
       padding-bottom: 3em;
-         @media only screen and (min-width: 768px) {
-           padding-bottom: 5em;
+      @media only screen and (min-width: 768px) {
+        padding-bottom: 5em;
       }
     }
-  }
-
-  .link {
-     width: 220px;
-      height: 62px;
-      border-radius: 3px;
-      color: $secondary;
-      display: flex;
-      cursor: pointer;
-      justify-content: center;
-      margin: 0 auto;
-      transition: 0.3s linear !important;
-      @media only screen and (min-width: 768px) {
-        margin: 1em;
-      }
-
-      span {
-        align-self: center;
-        font-size: 18px;
-        font-weight: 600;
-        letter-spacing: 1px;
-      }
   }
 }
 </style>

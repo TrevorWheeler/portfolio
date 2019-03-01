@@ -1,20 +1,21 @@
 <template>
   <div class="login-page">
-        <div class="project-category-container">
-            <h3>Please Login</h3>
-      </div>
     <form>
-      <label>Username:</label>
       <input
         type="text"
         v-model="username"
+        placeholder="Username"
       />
-            <label>Password:</label>
+
       <input
         type="password"
         v-model="password"
+        placeholder="Password"
       />
-      <a class="form--login--button" v-on:click="login"><span>Login</span></a>
+      <a
+        class="form--login--button"
+        v-on:click="login"
+      ><span>GO</span></a>
     </form>
   </div>
 </template>
@@ -73,52 +74,53 @@ export default {
 
 <style lang="scss">
 .login-page {
- height:100vh;
-display:flex;
-flex-direction: column;
-justify-content:center;
-.project-category-container {
-      display: flex;
-      justify-content: center;
-      // margin: 0 0 20px 0;
- 
-   
-      h3 {
-        padding: 0 0 0.2em 0;
-        font-weight: 400;
-        font-size: 2.4em;
-        display: inline-block;
-        border-bottom: 4px solid $accent;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $secondary;
+
+  form {
+    align-self: center;
+    h1 {
+      color: $primary;
+    }
+    label {
+      color: $primary;
+      font-size: 14px;
+
+      display: block;
+    }
+    ::placeholder {
+      align-self: center;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: 54;
+      color: $secondary;
+    }
+    input {
+      text-align: center;
+      height: 62px;
+      display: block;
+      border: 1px solid $accent;
+      background-color: $accent;
+      border-radius: 3px;
+      width: 200px;
+
+      &:nth-child(2) {
+        margin: 1em 0;
       }
     }
-form {
-  align-self:center;
-  background-color:$secondary;
-  padding:5em;
-  label {
-    color:$primary;
-    font-size:14px;
-    
-    display:block;
-  }
-  input {
-    height:30px;
-      display:block;
-      border:1px solid $accent;
-      border-radius:3px;
-width:200px;
-    margin:0.5em 0 1em 0;
-
-  }
-  .form--login--button {
+    .form--login--button {
       border-radius: 3px;
-      background-color:$accent;
+      background-color: $accent;
       color: $secondary;
       display: flex;
-      width:100px;
-      float:right;
-      height:30px;
-      margin:1em 0 0 0;
+      width: 66px;
+      float: right;
+      height: 62px;
+      // margin: 1em 0 0 0;
       cursor: pointer;
       justify-content: center;
       transition: 0.3s linear !important;
@@ -130,10 +132,9 @@ width:200px;
         align-self: center;
         font-size: 18px;
         font-weight: 600;
-   
-        letter-spacing: 1px;
+        padding: 0 1em;
       }
     }
-}
+  }
 }
 </style>
