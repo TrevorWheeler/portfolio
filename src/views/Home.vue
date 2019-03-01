@@ -45,9 +45,19 @@
         class="arrow--down--container"
         v-scroll-to="'.projects'"
       >
-       <svg  class="arrow--down" width="46" height="26" viewBox="0 0 46 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M21.3644 25.3029C22.2844 26.2324 23.7667 26.2324 24.6356 25.3029L45.2333 4.49255C46.2556 3.45978 46.2556 1.80735 45.2333 0.774578C44.2111 -0.258193 42.5756 -0.258193 41.5533 0.774578L24.6356 17.8669C23.7156 18.7964 22.2333 18.7964 21.3644 17.8669L4.44667 0.826217C3.42445 -0.206554 1.78889 -0.206554 0.766667 0.826217C-0.255556 1.85899 -0.255556 3.51142 0.766667 4.54419L21.3644 25.3029Z" fill="#06D6A0"/>
-</svg>
+        <svg
+          class="arrow--down"
+          width="46"
+          height="26"
+          viewBox="0 0 46 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21.3644 25.3029C22.2844 26.2324 23.7667 26.2324 24.6356 25.3029L45.2333 4.49255C46.2556 3.45978 46.2556 1.80735 45.2333 0.774578C44.2111 -0.258193 42.5756 -0.258193 41.5533 0.774578L24.6356 17.8669C23.7156 18.7964 22.2333 18.7964 21.3644 17.8669L4.44667 0.826217C3.42445 -0.206554 1.78889 -0.206554 0.766667 0.826217C-0.255556 1.85899 -0.255556 3.51142 0.766667 4.54419L21.3644 25.3029Z"
+            fill="#06D6A0"
+          />
+        </svg>
 
       </div>
     </section>
@@ -467,8 +477,8 @@ export default {
 
     .hero--link--projects {
       margin-bottom: 30px;
-            @media only screen and (min-width: 768px) {
-      margin-bottom:0;
+      @media only screen and (min-width: 768px) {
+        margin-bottom: 0;
       }
       &:hover {
         box-shadow: 0px 0px 0px 3px $accent inset,
@@ -557,16 +567,17 @@ export default {
         justify-content: center;
       }
       @media only screen and (min-width: 1280px) {
-        max-width: 1255px;
+        width: 1255px;
+        justify-content: space-between;
         margin: 0 auto;
       }
       .work--item {
-       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         width: 100%;
         margin: 0 0 7em 0;
         border: 1px solid $grey;
         position: relative;
-        border-radius: 2px;
+        border-radius: 10px;
         @media only screen and (min-width: 768px) {
           width: calc(50% - 0.5em);
           margin: 0 0 7em;
@@ -578,8 +589,14 @@ export default {
           }
         }
         @media only screen and (min-width: 1280px) {
-          margin: 0 1em 7em;
+          margin: 0 0 7em;
           width: 397px;
+          &:nth-child(odd) {
+            margin-right: 0;
+          }
+          &:nth-child(even) {
+            margin-left: 0;
+          }
         }
 
         .border--breaker {
@@ -629,9 +646,6 @@ export default {
 
         .work--tag--container {
           padding: 0 15px;
-          @media only screen and (min-width: 1366px) {
-            padding: 0 2rem;
-          }
           .work--tag {
             border: 1px solid $accent;
             display: inline-flex;
@@ -647,9 +661,9 @@ export default {
         .work--links--container {
           display: flex;
           justify-content: space-between;
-          padding: 2em 15px 1em;
+          padding: 2em 15px;
           @media only screen and (min-width: 1366px) {
-            padding: 2em 2rem 1em;
+            padding: 2em 15px;
           }
           .work--link {
             color: $secondary;
@@ -657,9 +671,12 @@ export default {
             font-size: 1.8em;
             text-transform: uppercase;
             font-weight: 600;
+            position: relative;
+            display: inline-block;
             svg {
-              position: relative;
-              top: 3px;
+              position: absolute;
+              right: -23px;
+              top: -1px;
               width: 19px;
               fill: #000000;
             }
@@ -688,7 +705,7 @@ export default {
     }
     .footer--build {
       color: $primary;
-      font-weight: 500;
+      font-weight: 300;
       text-align: center;
       padding: 0 1em;
       margin: 0 0 30px 0;

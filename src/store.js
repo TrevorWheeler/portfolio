@@ -122,7 +122,7 @@ export default new Vuex.Store({
 						]
 					},
 					{
-						title: 'The Caf (remade)',
+						title: 'Float Out',
 						image: require('./assets/sandypagesbooks.png'),
 						url: 'https://sandypagesbooks.com.au',
 						description:
@@ -138,7 +138,7 @@ export default new Vuex.Store({
 						]
 					},
 					{
-						title: 'Portfolio',
+						title: 'Guess the colour',
 						image: require('./assets/portfolio.png'),
 						url: 'https://sandypagesbooks.com.au',
 						description:
