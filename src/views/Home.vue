@@ -1,7 +1,5 @@
 <template>
-
   <div class="website">
-
     <section class="hero">
       <div class="hero--name--container">
         <h1
@@ -12,7 +10,7 @@
       </div>
       <div class="hero--content--container">
         <h2
-          class="summary"
+          class="summary hero--summary"
           data-aos="fade-up"
           data-aos-delay="100"
           data-aos-duration="1000"
@@ -43,27 +41,14 @@
           </div>
         </div>
       </div>
-
       <div
         class="arrow--down--container"
         v-scroll-to="'.projects'"
       >
-        <svg
-          class="arrow--down"
-          data-aos="fade"
-          data-aos-delay="1000"
-          data-aos-duration="1000"
-          width="16"
-          height="28"
-          viewBox="0 0 16 28"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M7.29289 27.7071C7.68342 28.0976 8.31658 28.0976 8.70711 27.7071L15.0711 21.3431C15.4616 20.9526 15.4616 20.3195 15.0711 19.9289C14.6805 19.5384 14.0474 19.5384 13.6569 19.9289L8 25.5858L2.34315 19.9289C1.95262 19.5384 1.31946 19.5384 0.928933 19.9289C0.538409 20.3195 0.538409 20.9526 0.928933 21.3431L7.29289 27.7071ZM7 4.37114e-08L7 27L9 27L9 -4.37114e-08L7 4.37114e-08Z"
-            fill="#FCFCFC"
-          />
-        </svg>
+       <svg  class="arrow--down" width="46" height="26" viewBox="0 0 46 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.3644 25.3029C22.2844 26.2324 23.7667 26.2324 24.6356 25.3029L45.2333 4.49255C46.2556 3.45978 46.2556 1.80735 45.2333 0.774578C44.2111 -0.258193 42.5756 -0.258193 41.5533 0.774578L24.6356 17.8669C23.7156 18.7964 22.2333 18.7964 21.3644 17.8669L4.44667 0.826217C3.42445 -0.206554 1.78889 -0.206554 0.766667 0.826217C-0.255556 1.85899 -0.255556 3.51142 0.766667 4.54419L21.3644 25.3029Z" fill="#06D6A0"/>
+</svg>
+
       </div>
     </section>
     <section class="projects">
@@ -72,7 +57,6 @@
       </div>
 
       <div class="work--container work--container--commercial">
-
         <div
           class="work--item"
           v-for="(work, index) in works[0].commercial"
@@ -127,8 +111,7 @@
         <h3>Full Stack Work</h3>
       </div>
 
-      <div class="work--container work--container--commercial">
-
+      <div class="work--container">
         <div
           class="work--item"
           v-for="(work, index) in works[1].fullStack"
@@ -176,14 +159,11 @@
             </div>
           </div>
         </div>
-
       </div>
-
       <div class="project-category-container">
         <h3>Front End Work</h3>
       </div>
-
-      <div class="work--container work--container--commercial">
+      <div class="work--container">
         <div
           class="work--item"
           v-for="(work, index) in works[2].frontEnd"
@@ -232,12 +212,10 @@
           </div>
         </div>
       </div>
-
       <div class="project-category-container">
         <h3>Back End Work</h3>
       </div>
-
-      <div class="work--container work--container--commercial">
+      <div class="work--container">
         <div
           class="work--item"
           v-for="(work, index) in works[2].frontEnd"
@@ -286,9 +264,7 @@
           </div>
         </div>
       </div>
-
     </section>
-
     <section class="hero footer">
       <div class="container">
         <h2 class="footer--summary summary"> <span>Thanks</span> for taking the time to check out my portfolio. </h2>
@@ -299,11 +275,8 @@
               <span>Source Code</span>
             </a>
           </div>
-
         </div>
-
         <div class="footer--links--container">
-
           <svg
             data-aos="zoom-in"
             data-aos-delay="400"
@@ -426,7 +399,6 @@ export default {
       padding: 0 4em 0;
     }
     @media only screen and (min-width: 768px) {
-      padding: 0 4em 4em;
       height: 100vh;
     }
 
@@ -455,9 +427,8 @@ export default {
 
     .hero--content--container {
       max-width: 854px;
-      margin: 3.5em 0 0 0;
       align-self: center;
-      padding: 0 0 40px 0;
+      padding: 40px 0;
       @media only screen and (max-height: 450px) {
         display: flex;
       }
@@ -496,6 +467,9 @@ export default {
 
     .hero--link--projects {
       margin-bottom: 30px;
+            @media only screen and (min-width: 768px) {
+      margin-bottom:0;
+      }
       &:hover {
         box-shadow: 0px 0px 0px 3px $accent inset,
           0px 0px 0px 6px $secondary inset;
@@ -556,7 +530,7 @@ export default {
   }
 
   .projects {
-    padding: 7em 1em 0;
+    padding: 7em 1.5em 0;
     background-color: $primary;
     @media only screen and (max-height: 450px) {
       padding: 7em 4em 0;
@@ -587,8 +561,7 @@ export default {
         margin: 0 auto;
       }
       .work--item {
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
-          0 6px 6px rgba(0, 0, 0, 0.23);
+       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         width: 100%;
         margin: 0 0 7em 0;
         border: 1px solid $grey;
@@ -652,9 +625,6 @@ export default {
           margin: 1.4em 0;
           padding: 0 15px;
           font-size: 1.6em;
-          // @media only screen and (min-width: 768px) {
-          //   padding: 0 15px;
-          // }
         }
 
         .work--tag--container {

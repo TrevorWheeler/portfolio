@@ -170,6 +170,9 @@ export default {
   @media only screen and (min-width: 768px) {
     display: flex;
   }
+    @media only screen and (min-width: 1024px) {
+    height:100px;
+  }
   .name {
     color: $primary;
     font-size: 1.8em;

@@ -110,7 +110,7 @@ a {
   margin: 0 auto;
   transition: 0.3s linear !important;
   @media only screen and (min-width: 768px) {
-    margin: 1em;
+    margin: 0 1em;
   }
 
   span {
