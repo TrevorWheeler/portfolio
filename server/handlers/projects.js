@@ -29,9 +29,16 @@ exports.createProject = async function(req, res, next) {
 			name: req.body.name,
 			description: req.body.description,
 			image: imageURL,
+			commerical: req.body.commercial,
+			fullStack: req.body.fullStack,
+			frontEnd: req.body.frontEnd,
+			backEnd: req.body.backEnd,
+			link: req.body.link,
+			repo: req.body.repo,
 			tags: req.body.tags,
 			user: req.params.id
 		});
+
 		let foundUser = await db.User.findById(req.params.id);
 		foundUser.projects.push(project.id);
 		await foundUser.save();

@@ -57,12 +57,14 @@ export default {
         this.loginFailed();
         return;
       }
+      console.log(req.data);
+
       this.$store.commit("setUser", req.data.username);
       this.$store.commit("setToken", req.data.token);
-      localStorage.token = req.data.token;
+      this.$store.commit("setUserId", req.data.id);
       console.log(req.data);
       this.error = false;
-      this.$router.push(this.$route.query.push || "/dashboard");
+      this.$router.push("/dashboard");
     },
     loginFailed() {
       this.error = "Login failed!";

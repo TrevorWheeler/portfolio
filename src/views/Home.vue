@@ -69,7 +69,7 @@
       <div class="work--container work--container--commercial">
         <div
           class="work--item"
-          v-for="(work, index) in works[0].commercial"
+          v-for="(project, index) in commercial"
           :key="index"
           data-aos="fade-up"
           data-aos-duration="500"
@@ -77,24 +77,24 @@
           <div class="border--breaker">
             <span>. . .</span>
           </div>
-          <h4 class="work--title">{{work.title}}</h4>
+          <h4 class="work--title">{{project.name}}</h4>
           <img
             class="work--img"
-            :src="work.image"
+            :src="project.image"
           >
           <div class="work--height--fix">
-            <P class="work--description">{{work.description}}</p>
+            <P class="work--description">{{project.description}}</p>
             <div class="work--bottom">
               <div class="work--tag--container">
                 <div
                   class="work--tag"
-                  v-for="tag in work.tag"
-                  :key="tag.name"
-                > <span>{{tag.name}}</span></div>
+                  v-for="(tag, index) in project.tags"
+                  :key="index"
+                > <span>{{tag}}</span></div>
               </div>
               <div class="work--links--container">
                 <a
-                  href="#"
+                  :href="project.link"
                   class="work--link work--link--live"
                 >Live Site
                   <svg
@@ -121,159 +121,14 @@
         <h3>Full Stack Work</h3>
       </div>
 
-      <div class="work--container">
-        <div
-          class="work--item"
-          v-for="(work, index) in works[1].fullStack"
-          :key="index"
-          data-aos="fade-up"
-          data-aos-duration="500"
-        >
-          <div class="border--breaker">
-            <span>. . .</span>
-          </div>
-          <h4 class="work--title">{{work.title}}</h4>
-          <img
-            class="work--img"
-            :src="work.image"
-          >
-          <div class="work--height--fix">
-            <P class="work--description">{{work.description}}</p>
-            <div class="work--bottom">
-              <div class="work--tag--container">
-                <div
-                  class="work--tag"
-                  v-for="tag in work.tag"
-                  :key="tag.name"
-                > <span>{{tag.name}}</span></div>
-              </div>
-              <div class="work--links--container">
-                <a
-                  href="#"
-                  class="work--link work--link--live"
-                >Live Site
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M0 0h24v24H0z"
-                      fill="none"
-                    />
-                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" /></svg></a>
-                <a
-                  href="#"
-                  class="work--link work--link--github"
-                >View Repo</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="project-category-container">
         <h3>Front End Work</h3>
       </div>
-      <div class="work--container">
-        <div
-          class="work--item"
-          v-for="(work, index) in works[2].frontEnd"
-          :key="index"
-          data-aos="fade-up"
-          data-aos-duration="500"
-        >
-          <div class="border--breaker">
-            <span>. . .</span>
-          </div>
-          <h4 class="work--title">{{work.title}}</h4>
-          <img
-            class="work--img"
-            :src="work.image"
-          >
-          <div class="work--height--fix">
-            <P class="work--description">{{work.description}}</p>
-            <div class="work--bottom">
-              <div class="work--tag--container">
-                <div
-                  class="work--tag"
-                  v-for="tag in work.tag"
-                  :key="tag.name"
-                > <span>{{tag.name}}</span></div>
-              </div>
-              <div class="work--links--container">
-                <a
-                  href="#"
-                  class="work--link work--link--live"
-                >Live Site
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M0 0h24v24H0z"
-                      fill="none"
-                    />
-                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" /></svg></a>
-                <a
-                  href="#"
-                  class="work--link work--link--github"
-                >View Repo</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div class="project-category-container">
         <h3>Back End Work</h3>
       </div>
-      <div class="work--container">
-        <div
-          class="work--item"
-          v-for="(work, index) in works[2].frontEnd"
-          :key="index"
-          data-aos="fade-up"
-          data-aos-duration="500"
-        >
-          <div class="border--breaker">
-            <span>. . .</span>
-          </div>
-          <h4 class="work--title">{{work.title}}</h4>
-          <img
-            class="work--img"
-            :src="work.image"
-          >
-          <div class="work--height--fix">
-            <P class="work--description">{{work.description}}</p>
-            <div class="work--bottom">
-              <div class="work--tag--container">
-                <div
-                  class="work--tag"
-                  v-for="tag in work.tag"
-                  :key="tag.name"
-                > <span>{{tag.name}}</span></div>
-              </div>
-              <div class="work--links--container">
-                <a
-                  href="#"
-                  class="work--link work--link--live"
-                >Live Site
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M0 0h24v24H0z"
-                      fill="none"
-                    />
-                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" /></svg></a>
-                <a
-                  href="#"
-                  class="work--link work--link--github"
-                >View Repo</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </section>
     <section class="hero footer">
       <div class="container">
@@ -386,6 +241,10 @@ export default {
     },
     projects() {
       return this.$store.state.projects;
+    },
+
+    commercial() {
+      return this.projects.filter(filtered => (filtered.commercial = true));
     }
   },
   methods: {},
@@ -577,7 +436,7 @@ export default {
         margin: 0 0 7em 0;
         border: 1px solid $grey;
         position: relative;
-        border-radius: 10px;
+        border-radius: 7px;
         @media only screen and (min-width: 768px) {
           width: calc(50% - 0.5em);
           margin: 0 0 7em;

@@ -3,11 +3,10 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Login from './views/Login.vue';
 import Dashboard from './views/Dashboard.vue';
-
+import Edit from './views/Edit.vue';
 Vue.use(Router);
 const router = new Router({
 	mode: 'history',
-	base: process.env.BASE_URL,
 	linkExactActiveClass: 'active',
 	routes: [
 		{
@@ -28,6 +27,15 @@ const router = new Router({
 			path: '/dashboard',
 			component: Dashboard,
 			name: 'dashboard',
+			meta: {
+				requiresAuth: true
+			}
+		},
+		{
+			path: 'dashboard/:id/edit/',
+			name: 'edit',
+			component: Edit,
+			props: true,
 			meta: {
 				requiresAuth: true
 			}

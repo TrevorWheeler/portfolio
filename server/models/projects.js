@@ -18,6 +18,18 @@ const projectsSchema = new mongoose.Schema(
 		repo: {
 			type: String
 		},
+		commerical: {
+			type: Boolean
+		},
+		fullStack: {
+			type: Boolean
+		},
+		frontEnd: {
+			type: Boolean
+		},
+		backEnd: {
+			type: Boolean
+		},
 		tags: [ { type: String } ],
 
 		user: {

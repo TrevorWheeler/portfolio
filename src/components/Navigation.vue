@@ -109,6 +109,15 @@
           data-aos-delay="400"
           data-aos-duration="1000"
         > LinkedIn </a>
+        <router-link
+          style="margin-left:1.4em;"
+          :to="{name:'dashboard'}"
+          v-if="this.$store.state.token !== null"
+          href="#"
+          data-aos="fade"
+          data-aos-delay="500"
+          data-aos-duration="1000"
+        > Dashboard </router-link>
       </div>
     </header>
   </div>
