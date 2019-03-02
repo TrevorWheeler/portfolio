@@ -14,7 +14,7 @@
           data-aos="fade-up"
           data-aos-delay="100"
           data-aos-duration="1000"
-        > Junior <span>Developer</span> - Problem Solver and Fast Learner </h2>
+        > Web <span>Developer</span> - Problem Solver and Eager Learner </h2>
         <div class="hero--links--container">
           <div
             class="hero--link--container"
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div
-        class="arrow--down--container"
+        class="chevron--down--container"
         v-scroll-to="'.projects'"
       >
         <svg
@@ -63,7 +63,7 @@
     </section>
     <section class="projects">
       <div class="project-category-container">
-        <h3>Commercial Work</h3>
+        <h3>Commercial Projects</h3>
       </div>
 
       <div class="work--container work--container--commercial">
@@ -74,59 +74,59 @@
           data-aos="fade-up"
           data-aos-duration="500"
         >
-          <div class="border--breaker">
-            <span>. . .</span>
-          </div>
-          <h4 class="work--title">{{project.name}}</h4>
-          <img
-            class="work--img"
-            :src="project.image"
-          >
-          <div class="work--height--fix">
+          <div class="work--top">
+            <h4 class="work--name">{{project.name}}</h4>
+            <img
+              class="work--img"
+              :src="project.image"
+            >
+
             <P class="work--description">{{project.description}}</p>
-            <div class="work--bottom">
-              <div class="work--tag--container">
-                <div
-                  class="work--tag"
-                  v-for="(tag, index) in project.tags"
-                  :key="index"
-                > <span>{{tag}}</span></div>
-              </div>
-              <div class="work--links--container">
-                <a
-                  :href="project.link"
-                  class="work--link work--link--live"
-                >Live Site
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M0 0h24v24H0z"
-                      fill="none"
-                    />
-                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" /></svg></a>
-                <a
-                  href="#"
-                  class="work--link work--link--github"
-                >View Repo</a>
-              </div>
+          </div>
+
+          <div class="work--bottom">
+            <div class="work--tag--container">
+              <div
+                class="work--tag"
+                v-for="(tag, index) in project.tags"
+                :key="index"
+              > <span>{{tag}}</span></div>
+            </div>
+            <div class="work--links--container">
+              <a
+                :href="project.link"
+                class="work--link work--link--live"
+              >Live Site
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" /></svg></a>
+              <a
+                href="#"
+                class="work--link work--link--github"
+              >View Repo</a>
             </div>
           </div>
+
         </div>
 
       </div>
 
       <div class="project-category-container">
-        <h3>Full Stack Work</h3>
+        <h3>Full Stack Projects</h3>
       </div>
 
       <div class="project-category-container">
-        <h3>Front End Work</h3>
+        <h3>Front End Projects</h3>
       </div>
 
       <div class="project-category-container">
-        <h3>Back End Work</h3>
+        <h3>Back End Projects</h3>
       </div>
 
     </section>
@@ -277,6 +277,7 @@ export default {
       top: 0;
       right: 0;
       text-align: center;
+
       @media only screen and (max-height: 450px) {
         text-align: left;
         padding: 0 4em 0;
@@ -289,7 +290,7 @@ export default {
         font-size: 1.8em;
         text-transform: uppercase;
         font-weight: 500;
-        letter-spacing: 1px;
+
         margin: 26px 0;
       }
     }
@@ -297,7 +298,7 @@ export default {
     .hero--content--container {
       max-width: 854px;
       align-self: center;
-      padding: 40px 0;
+      padding: 45px 0 50px;
       @media only screen and (max-height: 450px) {
         display: flex;
       }
@@ -310,7 +311,8 @@ export default {
       align-self: center;
       text-align: center;
       color: $primary;
-      margin: 0 0 30px 0;
+      margin: 0 0 70px 0;
+      letter-spacing: 1px;
       @media only screen and (min-width: 768px) {
         font-size: 5.7em;
       }
@@ -335,36 +337,24 @@ export default {
     }
 
     .hero--link--projects {
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       @media only screen and (min-width: 768px) {
         margin-bottom: 0;
-      }
-      &:hover {
-        box-shadow: 0px 0px 0px 3px $accent inset,
-          0px 0px 0px 6px $secondary inset;
-      }
-      &:active {
-        transform: scale(0.9);
       }
     }
 
     .hero--link--resume {
       transition: 1s ease-out;
-      background-color: transparent;
+      background: none;
+      color: $text-light;
       border: 1px solid $primary;
-      span {
-        color: $primary;
-      }
       &:hover {
-        box-shadow: 0px 0px 0px 3px $secondary inset,
+        box-shadow: 0px 0px 0px 4px $secondary inset,
           0px 0px 0px 6px $accent inset;
-      }
-      &:active {
-        transform: scale(0.9);
       }
     }
 
-    .arrow--down--container {
+    .chevron--down--container {
       display: none;
       width: 100%;
       position: absolute;
@@ -375,7 +365,7 @@ export default {
         justify-content: center;
       }
     }
-    .arrow--down {
+    .chevron--down {
       display: block;
       cursor: pointer;
       animation: bounce 2s infinite;
@@ -413,6 +403,7 @@ export default {
         margin: 0;
         font-weight: 600;
         font-size: 2.4em;
+        color: $text-dark;
         display: inline-block;
         border-bottom: 2px solid $secondary;
       }
@@ -431,12 +422,15 @@ export default {
         margin: 0 auto;
       }
       .work--item {
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.24);
         width: 100%;
         margin: 0 0 7em 0;
-        border: 1px solid $grey;
+        display: flex;
+        flex-direction: column;
+        background-color: $primary;
         position: relative;
-        border-radius: 7px;
+        justify-content: space-between;
+        border-radius: 3px;
         @media only screen and (min-width: 768px) {
           width: calc(50% - 0.5em);
           margin: 0 0 7em;
@@ -458,32 +452,16 @@ export default {
           }
         }
 
-        .border--breaker {
-          position: absolute;
-          width: 65px;
-          background-color: $primary;
-          transform: translateX(-50%);
-          top: -13px;
-          left: 50%;
-          display: flex;
-          justify-content: center;
-
-          span {
-            display: block;
-
-            font-size: 2.4em;
-            font-weight: 600;
-            line-height: 1rem;
-
-            color: $grey;
-          }
-        }
-        .work--title {
+        .work--name {
           font-size: 2em;
           font-weight: 600;
           text-transform: uppercase;
           text-align: center;
-          color: black;
+          background-color: $secondary;
+          margin: 0;
+          padding: 28px 0;
+          line-height: 1rem;
+          color: $text-light;
         }
         .work--img {
           width: 100%;
@@ -493,41 +471,46 @@ export default {
           @media only screen and (min-width: 768px) {
             display: flex;
             flex-direction: column;
-            height: 355px;
+
             justify-content: space-between;
           }
         }
         .work--description {
           margin: 1.4em 0;
-          padding: 0 15px;
-          font-size: 1.6em;
+          padding: 0 20px;
+
+          font-size: 1.8em;
+          font-weight: 400;
         }
 
         .work--tag--container {
-          padding: 0 15px;
+          padding: 0 20px 25px;
+
           .work--tag {
-            border: 1px solid $accent;
+            border: 2px solid $accent;
             display: inline-flex;
             margin: 0 1em 1em 0;
-            border-radius: 3px;
+            border-radius: 2px;
             span {
-              font-size: 12px;
-              padding: 0.5em;
-              font-weight: 600;
+              font-size: 14px;
+              padding: 0.3em 0.5em;
+              font-weight: 500;
+              line-height: 1rem;
             }
           }
         }
         .work--links--container {
           display: flex;
           justify-content: space-between;
-          padding: 2em 15px;
+          padding: 2em 20px;
+          background-color: $secondary;
           @media only screen and (min-width: 1366px) {
             padding: 2em 15px;
           }
           .work--link {
-            color: $secondary;
+            color: $accent;
             text-decoration: none;
-            font-size: 1.8em;
+            font-size: 1.7em;
             text-transform: uppercase;
             font-weight: 600;
             position: relative;
@@ -535,9 +518,9 @@ export default {
             svg {
               position: absolute;
               right: -23px;
-              top: -1px;
-              width: 19px;
-              fill: #000000;
+              top: -0.08em;
+              width: 18px;
+              fill: $accent;
             }
           }
         }

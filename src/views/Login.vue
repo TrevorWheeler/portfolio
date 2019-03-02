@@ -1,21 +1,29 @@
 <template>
   <div class="login-page">
-    <form>
-      <input
-        type="text"
-        v-model="username"
-        placeholder="Username"
-      />
+    <form @submit.prevent="login()">
+      <fieldset>
+        <input
+          type="text"
+          v-model="username"
+          placeholder="username"
+          onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'username'"
+        />
 
-      <input
-        type="password"
-        v-model="password"
-        placeholder="Password"
-      />
-      <a
-        class="form--login--button"
-        v-on:click="login"
-      ><span>GO</span></a>
+        <input
+          type="password"
+          v-model="password"
+          placeholder="password"
+          onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'password'"
+        />
+        <button
+          class="form--submit--button"
+          type="submit"
+          v-on:click='event = true'
+        >
+          GO</button>
+      </fieldset>
     </form>
   </div>
 </template>
@@ -109,32 +117,11 @@ export default {
       background-color: $accent;
       border-radius: 3px;
       width: 200px;
+      font-size: 1.6em;
+      font-weight: bold;
 
       &:nth-child(2) {
         margin: 1em 0;
-      }
-    }
-    .form--login--button {
-      border-radius: 3px;
-      background-color: $accent;
-      color: $secondary;
-      display: flex;
-      width: 66px;
-      float: right;
-      height: 62px;
-      // margin: 1em 0 0 0;
-      cursor: pointer;
-      justify-content: center;
-      transition: 0.3s linear !important;
-      // @media only screen and (min-width: 768px) {
-      //   // margin: 1em;
-      // }
-
-      span {
-        align-self: center;
-        font-size: 18px;
-        font-weight: 600;
-        padding: 0 1em;
       }
     }
   }

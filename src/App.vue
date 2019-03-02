@@ -75,8 +75,9 @@ body::-webkit-scrollbar-thumb {
 
 body {
   font-family: "natrixSans", Helvetica, Arial, sans-serif;
-  color: $secondary;
+
   font-size: 10px;
+  background-color: $secondary;
 }
 
 #app {
@@ -101,23 +102,58 @@ a {
 .link {
   width: 220px;
   height: 62px;
-  border-radius: 3px;
-  color: $secondary;
+  border-radius: 2px;
+  color: $text-dark;
   display: flex;
-  background-color: $accent;
+
+  background: linear-gradient(180deg, #02c995 0%, #23a785 100%), #06d6a0;
   cursor: pointer;
   justify-content: center;
   margin: 0 auto;
   transition: 0.3s linear !important;
+  &:hover {
+    box-shadow: 0px 0px 0px 4px $accent inset, 0px 0px 0px 6px $secondary inset;
+    // transform: scale(0.95);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
   @media only screen and (min-width: 768px) {
     margin: 0 1em;
   }
 
   span {
     align-self: center;
-    font-size: 16px;
-    font-weight: 500;
-    // letter-spacing: 1px;
+    font-size: 1.8em;
+    font-weight: 600;
+    transition: 0.3s linear !important;
+  }
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+.form--submit--button {
+  border-radius: 3px;
+  background-color: $accent;
+  color: $secondary;
+  display: flex;
+  border: 0;
+  // width: 66px;
+  padding: 0 1.1em;
+  float: right;
+  height: 62px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  justify-content: center;
+  transition: 0.3s linear !important;
+  &:hover {
+    box-shadow: 0px 0px 0px 3px $accent inset, 0px 0px 0px 6px $secondary inset;
+  }
+  &:active {
+    transform: scale(0.9);
   }
 }
 </style>

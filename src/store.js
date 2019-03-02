@@ -38,6 +38,17 @@ export default new Vuex.Store({
 		},
 		setUser(state, username) {
 			state.username = username;
+		},
+		updateProject(state, payload) {
+			const item = state.projects.find((item) => {
+				return item.id === payload.id;
+			});
+			if (payload.name) {
+				item.name = payload.name;
+			}
+			if (payload.description) {
+				item.description = payload.description;
+			}
 		}
 	},
 
@@ -105,6 +116,9 @@ export default new Vuex.Store({
 			if (payload.name) {
 				updateObj.name = payload.name;
 			}
+			if (payload.description) {
+				updateObj.description = payload.description;
+			}
 
 			axios
 				.put('http://localhost:8081/api/users/' + this.state.id + '/projects/' + payload.id, payload, {
@@ -114,6 +128,7 @@ export default new Vuex.Store({
 					}
 				})
 				.then(() => {
+					commit('updateProject', payload);
 					commit('setLoading', false);
 				})
 				.catch((error) => {
