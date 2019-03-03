@@ -40,15 +40,39 @@ export default new Vuex.Store({
 			state.username = username;
 		},
 		updateProject(state, payload) {
-			const item = state.projects.find((item) => {
-				return item.id === payload.id;
+			const project = state.projects.find((project) => {
+				return project.id === project.id;
 			});
 			if (payload.name) {
-				item.name = payload.name;
+				project.name = payload.name;
 			}
 			if (payload.description) {
-				item.description = payload.description;
+				project.description = payload.description;
 			}
+			if (payload.link) {
+				project.link = payload.link;
+			}
+			if (payload.repo) {
+				project.repo = payload.repo;
+			}
+			if (payload.commercial) {
+				project.commercial = payload.commercial;
+			}
+			if (payload.fullStack) {
+				project.fullStack = payload.fullStack;
+			}
+			if (payload.frontEnd) {
+				project.frontEnd = payload.frontEnd;
+			}
+			if (payload.backEnd) {
+				project.backEnd = payload.backEnd;
+			}
+			if (payload.tags) {
+				project.tags = payload.tags;
+			}
+		},
+		createProject(state, payload) {
+			state.projects.push(payload);
 		}
 	},
 
@@ -69,7 +93,12 @@ export default new Vuex.Store({
 							image: data[key].image,
 							tags: data[key].tags,
 							link: data[key].link,
-							repo: data[key].repo
+							repo: data[key].repo,
+							tags: data[key].tags,
+							commercial: data[key].commercial,
+							fullStack: data[key].fullStack,
+							frontEnd: data[key].frontEnd,
+							backEnd: data[key].backEnd
 						});
 					}
 					commit('setProjects', projects);
@@ -94,7 +123,7 @@ export default new Vuex.Store({
 				url: payload.url,
 				tags: payload.tags
 			};
-
+			let key;
 			axios
 				.post(url + '/users/' + this.state.id + '/projects', project, {
 					headers: {
@@ -103,7 +132,11 @@ export default new Vuex.Store({
 					}
 				})
 				.then((response) => {
-					console.log(response);
+					const key = response.data._id;
+					commit('createProject', {
+						...project,
+						id: key
+					});
 				})
 				.catch(function(error) {
 					console.log(error);
@@ -119,6 +152,27 @@ export default new Vuex.Store({
 			if (payload.description) {
 				updateObj.description = payload.description;
 			}
+			if (payload.link) {
+				updateObj.link = payload.link;
+			}
+			if (payload.repo) {
+				updateObj.repo = payload.repo;
+			}
+			if (payload.commercial) {
+				updateObj.commercial = payload.commercial;
+			}
+			if (payload.fullStack) {
+				updateObj.fullStack = payload.fullStack;
+			}
+			if (payload.frontEnd) {
+				updateObj.frontEnd = payload.frontEnd;
+			}
+			if (payload.backEnd) {
+				updateObj.backEnd = payload.backEnd;
+			}
+			if (payload.tags) {
+				updateObj.tags = payload.tags;
+			}
 
 			axios
 				.put('http://localhost:8081/api/users/' + this.state.id + '/projects/' + payload.id, payload, {
@@ -128,8 +182,8 @@ export default new Vuex.Store({
 					}
 				})
 				.then(() => {
-					commit('updateProject', payload);
 					commit('setLoading', false);
+					commit('updateProject', payload);
 				})
 				.catch((error) => {
 					console.log(error);
@@ -137,7 +191,6 @@ export default new Vuex.Store({
 				});
 		},
 		deleteProject: function({ dispatch }, payload) {
-			console.log(payload);
 			axios
 				.delete('http://localhost:8081/api/users/' + this.state.id + '/projects/' + payload, {
 					headers: {
@@ -152,12 +205,18 @@ export default new Vuex.Store({
 		}
 	},
 	getters: {
+		loadProjects(state) {
+			return state.projects;
+		},
 		loadProject(state) {
 			return (itemId) => {
-				return state.projects.filter((item) => {
+				return state.projects.find((item) => {
 					return item.id === itemId;
 				});
 			};
+		},
+		loading(state) {
+			return state.loading;
 		}
 	}
 });

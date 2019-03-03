@@ -10,26 +10,25 @@ cloudinary.config({
 exports.createProject = async function(req, res, next) {
 	try {
 		let imageURL;
-		let upload = await cloudinary.uploader.upload(req.body.image, { tags: 'portfolio_images' }, function(
-			err,
-			image
-		) {
-			console.log();
-			if (err) {
-				console.warn(err);
-			}
-			console.log('* ' + image.url);
-			imageURL = image.url;
-		});
-		console.log(imageURL);
-		console.log(imageURL);
+		let upload = await cloudinary.uploader
+			.upload(req.body.image, { tags: 'portfolio_images', public_id: req.body.name })
+			.then(function(image) {
+				imageURL = image.url;
+			})
+			.catch(function(err) {
+				console.log();
+				console.log('** File Upload (Promise)');
+				if (err) {
+					console.warn(err);
+				}
+			});
 
 		let project = await db.Projects.create({
 			id: req.body.id,
 			name: req.body.name,
 			description: req.body.description,
-			image: imageURL,
-			commerical: req.body.commercial,
+			image: imageURL || '',
+			commercial: req.body.commercial,
 			fullStack: req.body.fullStack,
 			frontEnd: req.body.frontEnd,
 			backEnd: req.body.backEnd,
@@ -62,6 +61,16 @@ exports.getProject = async function(req, res, next) {
 
 exports.deleteProject = async function(req, res, next) {
 	try {
+		// cloudinary.uploader.destory(req.body.name, function(error, result) {
+		// 	console.log(result, error);
+		// });
+		let foundName = await db.Projects.findById(req.params.project_id);
+		console.log('###########################################################');
+		console.log(foundName.name);
+		console.log('###########################################################');
+		let deleteCloud = await cloudinary.uploader.destroy(foundName.name, function(error, result) {
+			console.log(result, error);
+		});
 		let foundProject = await db.Projects.findByIdAndDelete(req.params.project_id);
 		return res.status(200).json(foundProject);
 	} catch (err) {
@@ -71,11 +80,31 @@ exports.deleteProject = async function(req, res, next) {
 
 exports.updateProject = async function(req, res, next) {
 	try {
-		console.log(req.body);
+		let imageURL;
+		let upload = await cloudinary.uploader
+			.upload(req.body.image, { tags: 'portfolio_images', public_id: req.body.name, overwrite: true })
+			.then(function(image) {
+				imageURL = image.url;
+			})
+			.catch(function(err) {
+				console.log();
+				console.log('** File Upload (Promise)');
+				if (err) {
+					console.warn(err);
+				}
+			});
 		let foundProject = await db.Projects.findByIdAndUpdate(req.params.project_id, {
 			$set: {
 				name: req.body.name,
 				description: req.body.description,
+				image: imageURL,
+				link: req.body.link,
+				repo: req.body.repo,
+				tags: req.body.tags,
+				commercial: req.body.commercial,
+				fullStack: req.body.fullStack,
+				frontEnd: req.body.frontEnd,
+				backEnd: req.body.backEnd,
 				user: req.params.id
 			}
 		});

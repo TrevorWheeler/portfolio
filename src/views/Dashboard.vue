@@ -96,7 +96,7 @@
             >
             <a
               class="add--tag--btn"
-              v-on:click="addtag"
+              v-on:click="addTag"
             >
 
               <svg
@@ -212,7 +212,7 @@ export default {
     }
   },
   methods: {
-    addtag: function() {
+    addTag: function() {
       this.tags.push(this.holder);
       this.holder = [];
     },
@@ -258,6 +258,10 @@ export default {
   padding: 2em;
   max-width: 650px;
   margin: 0 auto;
+  .v1-image {
+    width: 100%;
+    display: block;
+  }
   .project-category-container {
     display: flex;
     justify-content: center;

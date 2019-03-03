@@ -75,6 +75,7 @@
           data-aos-duration="500"
         >
           <div class="work--top">
+
             <h4 class="work--name">{{project.name}}</h4>
             <img
               class="work--img"
@@ -119,6 +120,57 @@
 
       <div class="project-category-container">
         <h3>Full Stack Projects</h3>
+      </div>
+      <div class="work--container">
+        <div
+          class="work--item"
+          v-for="(project, index) in fullStack"
+          :key="index"
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
+          <div class="work--top">
+
+            <h4 class="work--name">{{project.name}}</h4>
+            <img
+              class="work--img"
+              :src="project.image"
+            >
+
+            <P class="work--description">{{project.description}}</p>
+          </div>
+
+          <div class="work--bottom">
+            <div class="work--tag--container">
+              <div
+                class="work--tag"
+                v-for="(tag, index) in project.tags"
+                :key="index"
+              > <span>{{tag}}</span></div>
+            </div>
+            <div class="work--links--container">
+              <a
+                :href="project.link"
+                class="work--link work--link--live"
+              >Live Site
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" /></svg></a>
+              <a
+                href="#"
+                class="work--link work--link--github"
+              >View Repo</a>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
       <div class="project-category-container">
@@ -236,15 +288,18 @@ export default {
   },
   components: {},
   computed: {
-    works() {
-      return this.$store.state.works;
-    },
+    // projects() {
+    //   return this.$store.state.projects;
+    // },
     projects() {
-      return this.$store.state.projects;
+      return this.$store.getters.loadProjects;
     },
 
     commercial() {
-      return this.projects.filter(filtered => (filtered.commercial = true));
+      return this.projects.filter(filtered => filtered.commercial == true);
+    },
+    fullStack() {
+      return this.projects.filter(filtered => filtered.fullStack == true);
     }
   },
   methods: {},
@@ -459,8 +514,7 @@ export default {
           text-align: center;
           background-color: $secondary;
           margin: 0;
-          padding: 28px 0;
-          line-height: 1rem;
+          line-height: 72px;
           color: $text-light;
         }
         .work--img {

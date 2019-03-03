@@ -18,7 +18,7 @@ const projectsSchema = new mongoose.Schema(
 		repo: {
 			type: String
 		},
-		commerical: {
+		commercial: {
 			type: Boolean
 		},
 		fullStack: {

@@ -1,89 +1,56 @@
 <template>
-  <div class="edit-page">
-    <h1> EDIT PAGE </h1>
-    <div
-      v-for="project in project"
-      :key="project.name"
-    >
+  <div class="edit--page">
 
-      <label class="label">Name</label>
-
-      <input
-        class="input"
-        v-model="name"
-        type="text"
-        :placeholder="name"
-      >
-
-      <label class="label">Name</label>
-
-      <input
-        class="input"
-        v-model="description"
-        type="text"
-        :placeholder="description"
-      >
-
-    </div>
-    <button
-      class="button is-link"
-      type="submit"
-      v-on:click='onSave'
-    >Submit</button>
-
-    <section class="form--container">
+    <div class="edit--page--container">
       <div class="project-category-container">
-        <h3>Add New Project</h3>
+        <h3>Edit {{project.name}}</h3>
       </div>
-      <!-- <form @submit.prevent="create()">
+
+      <form @submit.prevent="onSave()">
         <fieldset>
           <input
             type="text"
-            v-model="name"
+            v-model="project.name"
             placeholder="name"
-            onfocus="this.placeholder = ''"
-            onblur="this.placeholder = 'name'"
-          />
+          >
+
           <input
             type="text"
-            v-model="description"
+            v-model="project.description"
             placeholder="description"
-            onfocus="this.placeholder = ''"
-            onblur="this.placeholder = 'description'"
           />
+          <div class="container">
 
-          <vue-base64-file-upload
-            class="v1"
-            accept="image/png,image/jpeg"
-            image-class="v1-image"
-            input-class="v1-image"
-            placeholder="image"
-            :max-size="customImageMaxSize"
-            @size-exceeded="onSizeExceeded"
-            @load="onLoad"
-          />
-
+            <vue-base64-file-upload
+              class="v1"
+              accept="image/png,image/jpeg"
+              image-class="v1-image"
+              input-class="v1-image"
+              :placeholder="project.image"
+              :max-size="customImageMaxSize"
+              @size-exceeded="onSizeExceeded"
+              @load="onLoad"
+            />
+          </div>
           <input
             type="text"
-            v-model="link"
+            v-model="project.link"
             placeholder="link"
-            onfocus="this.placeholder = ''"
-            onblur="this.placeholder = 'link'"
           />
+
           <input
             type="text"
-            v-model="repo"
+            v-model="project.repo"
             placeholder="repo"
-            onfocus="this.placeholder = ''"
-            onblur="this.placeholder = 'repo'"
           />
+
           <div class="form--checkbox--container">
 
             <label>Commercial</label>
             <input
               type="checkbox"
               class="checkbox"
-              v-model="commercial"
+              v-model="project.commercial"
             >
           </div>
           <div class="form--checkbox--container">
@@ -91,7 +58,7 @@
             <input
               type="checkbox"
               class="checkbox"
-              v-model="fullStack"
+              v-model="project.fullStack"
             >
 
           </div>
@@ -101,7 +68,7 @@
             <input
               type="checkbox"
               class="checkbox"
-              v-model="frontEnd"
+              v-model="project.frontEnd"
             >
 
           </div>
@@ -110,7 +77,7 @@
             <input
               type="checkbox"
               class="checkbox"
-              v-model="backEnd"
+              v-model="project.backEnd"
             >
 
           </div>
@@ -118,14 +85,14 @@
           <div class="form--tag--container">
             <input
               v-model="holder"
-              placeholder="tag"
+              placeholder="add tag"
               class="form--tag--input"
               onfocus="this.placeholder = ''"
               onblur="this.placeholder = 'tag'"
             >
             <a
               class="add--tag--btn"
-              v-on:click="addtag"
+              v-on:click="addTag"
             >
 
               <svg
@@ -146,9 +113,11 @@
           </div>
           <div
             class="tag"
-            v-for="(tag, index) in tags"
+            v-for="(tag, index) in project.tags"
             :key="index"
+            v-on:click="removeTag(index)"
           > <span>{{tag}}</span> </div>
+          <br>
           <br>
           <br>
           <br>
@@ -158,51 +127,82 @@
             v-on:click='event = true'
           > Submit </button>
         </fieldset>
-      </form> -->
-    </section>
+      </form>
+
+    </div>
   </div>
 </template>
 
 <script>
+import VueBase64FileUpload from "vue-base64-file-upload";
 export default {
-  name: "edit",
   props: ["id"],
-  date() {
+  components: {
+    VueBase64FileUpload
+  },
+  data() {
     return {
-      name: "",
-
-      description: "",
+      tags: [],
+      holder: "",
       image: "",
-      tags: "",
-      link: "",
-      repo: "",
-      fullStack: "",
-      frontEnd: "",
-      commercial: "",
-      backEnd: ""
+      base64: "",
+      customImageMaxSize: 3 // megabytes
     };
   },
   computed: {
     project() {
       return this.$store.getters.loadProject(this.id);
-      console.log(this.id);
     }
   },
   methods: {
     onSave() {
       this.$store.dispatch("editProject", {
-        id: this.id,
-        name: this.name,
-        description: this.description
+        id: this.project.id,
+        name: this.project.name,
+        description: this.project.description,
+        tags: this.tags,
+        image: this.base64 || this.image,
+        link: this.project.link,
+        repo: this.project.repo,
+        commercial: this.project.commercial,
+        fullStack: this.project.fullStack,
+        frontEnd: this.project.frontEnd,
+        backEnd: this.project.backEnd
       });
       this.$router.go(-1);
+    },
+    addTag() {
+      this.tags.push(this.holder);
+      this.holder = [];
+    },
+    removeTag(id) {
+      this.project.tags.splice(id);
+    },
+    onLoad(dataUri) {
+      this.base64 = dataUri;
+    },
+    onSizeExceeded(size) {
+      alert(
+        `Image ${size}Mb size exceeds limits of ${this.customImageMaxSize}Mb!`
+      );
     }
+  },
+  mounted() {
+    const image2base64 = require("image-to-base64");
+    image2base64(this.project.image)
+      .then(response => {
+        console.log(response); //iVBORw0KGgoAAAANSwCAIA...
+        this.base64 = "data:image/jpeg;base64," + response;
+      })
+      .catch(error => {
+        console.log(error); //Exepection error....
+      });
   }
 };
 </script>
 
 <style lang="scss">
-.edit-page {
+.edit--page {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -210,6 +210,33 @@ export default {
   padding: 2em;
   max-width: 650px;
   margin: 0 auto;
+  .v1-image {
+    width: 100%;
+    display: block;
+  }
+
+  .project-category-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 7em 0;
+    h3 {
+      padding: 0 0 0.2em 0;
+      margin: 0;
+      font-weight: 600;
+      font-size: 2.4em;
+      color: $text-light;
+      display: inline-block;
+      border-bottom: 2px solid $accent;
+    }
+  }
+  .tag {
+    cursor: pointer;
+    span {
+      &:hover {
+        color: red;
+      }
+    }
+  }
 }
 </style>
 

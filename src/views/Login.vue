@@ -92,6 +92,7 @@ export default {
 
   form {
     align-self: center;
+    width: 200px;
     h1 {
       color: $primary;
     }
@@ -119,10 +120,16 @@ export default {
       width: 200px;
       font-size: 1.6em;
       font-weight: bold;
-
+      margin: 0;
+      &:focus {
+        border: none;
+      }
       &:nth-child(2) {
         margin: 1em 0;
       }
+    }
+    .form--submit--button {
+      float: right;
     }
   }
 }
