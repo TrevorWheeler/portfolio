@@ -29,7 +29,6 @@ new Vue({
 	created() {
 		AOS.init();
 	},
-
 	router,
 	store,
 	render: (h) => h(App)

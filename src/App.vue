@@ -21,7 +21,6 @@ export default {
 
 <style lang="scss">
 @import "./normalize.css";
-@import "./animate.css";
 * {
   box-sizing: border-box;
 }
@@ -59,7 +58,6 @@ export default {
 }
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-
   background-color: #f5f5f5;
 }
 
@@ -75,7 +73,6 @@ body::-webkit-scrollbar-thumb {
 
 body {
   font-family: "natrixSans", Helvetica, Arial, sans-serif;
-
   font-size: 10px;
   background-color: $secondary;
 }
