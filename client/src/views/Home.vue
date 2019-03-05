@@ -80,6 +80,7 @@
             <img
               class="project--img"
               :src="project.image"
+              :alt="project.name"
             >
 
             <P class="project--description">{{project.description}}</p>
@@ -137,6 +138,7 @@
             <img
               class="project--img"
               :src="project.image"
+              :alt="project.name"
             >
 
             <P class="project--description">{{project.description}}</p>
@@ -194,6 +196,7 @@
             <img
               class="project--img"
               :src="project.image"
+              :alt="project.name"
             >
 
             <P class="project--description">{{project.description}}</p>
@@ -250,6 +253,7 @@
             <img
               class="project--img"
               :src="project.image"
+              :alt="project.name"
             >
 
             <P class="project--description">{{project.description}}</p>
@@ -294,7 +298,7 @@
     <section class="hero footer">
       <div class="container">
         <h2 class="footer--summary summary"> <span>Thanks</span> for taking the time to check out my portfolio. </h2>
-        <p class="footer--build"> Built with Vue, Vuex, Node.js, Express, MongoDb and Axios</p>
+        <p class="footer--build"> Built with Vue, Vuex, Node.js, Express, MongoDb and Axios.</p>
         <div class="hero--links--container footer--link--container">
           <div class="hero--link--container">
             <a class="link footer--link hero--link hero--link--projects">
@@ -303,7 +307,7 @@
           </div>
         </div>
         <div class="footer--links--container">
-
+          <p v-scroll-to="'.website'">Back to top</p>
         </div>
       </div>
 
@@ -656,10 +660,13 @@ export default {
       align-self: center;
       @media only screen and (min-width: 768px) {
         font-size: 3.6em;
+        margin: 0 0 70px 0;
       }
       @media only screen and (min-width: 1366px) {
-        max-width: 700px;
         margin: 0 auto 40px;
+      }
+      @media only screen and (min-width: 1920px) {
+        font-size: 5em;
       }
     }
     .footer--build {
@@ -671,6 +678,9 @@ export default {
 
       @media only screen and (min-width: 768px) {
         margin: 0 0 40px 0;
+        max-width: 400px;
+        margin: 0 auto 40px;
+        font-weight: 300;
       }
     }
     .footer--link--container {
@@ -686,9 +696,17 @@ export default {
       @media only screen and (min-width: 768px) {
         display: flex;
       }
-      svg {
-        margin: 0 5em 3em;
-        width: 25px;
+      p {
+        cursor: pointer;
+        margin: 0 3em 3em;
+        color: $primary;
+        font-size: 1.8em;
+        font-weight: 600;
+        transition: 0.2s linear;
+        &:hover {
+          color: $accent;
+          transition: 0.2s linear;
+        }
       }
     }
   }

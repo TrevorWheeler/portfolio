@@ -135,12 +135,11 @@
 
 <script>
 import VueBase64FileUpload from "vue-base64-file-upload";
-import image2base64 from "image-to-base64";
+
 export default {
   props: ["id"],
   components: {
-    VueBase64FileUpload,
-    image2base64
+    VueBase64FileUpload
   },
   data() {
     return {
@@ -163,7 +162,7 @@ export default {
         name: this.project.name,
         description: this.project.description,
         tags: this.project.tags,
-        image: this.base64 || this.image,
+        image: this.base64 || this.project.image,
         link: this.project.link,
         repo: this.project.repo,
         commercial: this.project.commercial,
@@ -188,15 +187,6 @@ export default {
         `Image ${size}Mb size exceeds limits of ${this.customImageMaxSize}Mb!`
       );
     }
-  },
-  mounted() {
-    image2base64(this.project.image)
-      .then(response => {
-        this.base64 = "data:image/jpeg;base64," + response;
-      })
-      .catch(error => {
-        console.log(error);
-      });
   }
 };
 </script>

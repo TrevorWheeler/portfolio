@@ -1,6 +1,8 @@
 # trevorwheeler
 
-## Project setup
+#####################################################
+
+## Client setup in ./client
 ```
 npm install
 ```
@@ -18,4 +20,7 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
+
+#####################################################
+//to be continued...
 ```
