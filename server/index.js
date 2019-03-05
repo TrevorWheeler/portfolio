@@ -12,7 +12,6 @@ const db = require('./models');
 
 app.use(cors());
 
-
 //set limit of 3mb that can be parsed
 app.use(bodyParser.json({ limit: '3mb' }));
 
@@ -33,7 +32,6 @@ app.get('/api/projects', async function(req, res, next) {
 		return next(err);
 	}
 });
-
 
 app.use(function(req, res, next) {
 	let err = new Error('Not Found');

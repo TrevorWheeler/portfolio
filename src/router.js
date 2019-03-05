@@ -18,6 +18,13 @@ const router = new Router({
 			component: Home,
 			name: 'home'
 		},
+
+		//for testing lazy loading
+		// {
+		// 	path: '/',
+		// 	name: 'home',
+		// 	component: () => import('./views/Home.vue')
+		// },
 		{
 			path: '/login',
 			component: Login,

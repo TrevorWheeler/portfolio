@@ -135,10 +135,12 @@
 
 <script>
 import VueBase64FileUpload from "vue-base64-file-upload";
+import image2base64 from "image-to-base64";
 export default {
   props: ["id"],
   components: {
-    VueBase64FileUpload
+    VueBase64FileUpload,
+    image2base64
   },
   data() {
     return {
@@ -160,7 +162,7 @@ export default {
         id: this.project.id,
         name: this.project.name,
         description: this.project.description,
-        tags: this.tags,
+        tags: this.project.tags,
         image: this.base64 || this.image,
         link: this.project.link,
         repo: this.project.repo,
@@ -172,7 +174,7 @@ export default {
       this.$router.go(-1);
     },
     addTag() {
-      this.tags.push(this.holder);
+      this.project.tags.push(this.holder);
       this.holder = [];
     },
     removeTag(id) {
@@ -188,14 +190,12 @@ export default {
     }
   },
   mounted() {
-    const image2base64 = require("image-to-base64");
     image2base64(this.project.image)
       .then(response => {
-        console.log(response); //iVBORw0KGgoAAAANSwCAIA...
         this.base64 = "data:image/jpeg;base64," + response;
       })
       .catch(error => {
-        console.log(error); //Exepection error....
+        console.log(error);
       });
   }
 };

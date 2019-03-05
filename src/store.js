@@ -120,7 +120,7 @@ export default new Vuex.Store({
 				frontEnd: payload.frontEnd,
 				backEnd: payload.backEnd,
 				link: payload.link,
-				url: payload.url,
+				repo: payload.repo,
 				tags: payload.tags
 			};
 			let key;

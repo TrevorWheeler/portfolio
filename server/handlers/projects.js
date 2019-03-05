@@ -61,13 +61,7 @@ exports.getProject = async function(req, res, next) {
 
 exports.deleteProject = async function(req, res, next) {
 	try {
-		// cloudinary.uploader.destory(req.body.name, function(error, result) {
-		// 	console.log(result, error);
-		// });
 		let foundName = await db.Projects.findById(req.params.project_id);
-		console.log('###########################################################');
-		console.log(foundName.name);
-		console.log('###########################################################');
 		let deleteCloud = await cloudinary.uploader.destroy(foundName.name, function(error, result) {
 			console.log(result, error);
 		});
