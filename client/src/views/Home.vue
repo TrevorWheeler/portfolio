@@ -35,7 +35,11 @@
             data-aos-delay="300"
             data-aos-duration="1000"
           >
-            <a class="link hero--link hero--link--contact">
+            <a
+              class="link hero--link hero--link--contact"
+              href="mailto: sendtrevmail@gmail.com"
+              target="_blank"
+            >
               <span>Contact</span>
             </a>
           </div>

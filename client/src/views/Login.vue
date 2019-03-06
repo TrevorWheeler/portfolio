@@ -30,7 +30,7 @@
 
 <script>
 import axios from "axios";
-const url = "http://localhost:8081/api";
+const url = "http://178.128.106.101:8082/api";
 export default {
   name: "login",
   data() {

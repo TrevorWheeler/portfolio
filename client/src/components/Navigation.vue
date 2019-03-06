@@ -92,13 +92,15 @@
       >Trevor Wheeler</router-link>
       <div class="links">
         <a
-          href="#"
+          href="https://github.com/trevorwheeler"
+          target="_blank"
           data-aos="fade"
           data-aos-delay="200"
           data-aos-duration="1000"
         > Github </a>
         <a
-          href="#"
+          href="mailto: sendtrevmail@gmail.com"
+          target="_blank"
           data-aos="fade"
           data-aos-delay="300"
           data-aos-duration="1000"
