@@ -58,17 +58,18 @@ export default {
 }
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #f5f5f5;
+  background-color: $secondary;
 }
 
 body::-webkit-scrollbar {
   width: 5px;
-  background-color: #f5f5f5;
+  background-color: $secondary;
 }
 
 body::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: $accent;
+  border-radius: 2px;
 }
 
 body {

@@ -94,7 +94,6 @@ export default new Vuex.Store({
 							tags: data[key].tags,
 							link: data[key].link,
 							repo: data[key].repo,
-							tags: data[key].tags,
 							commercial: data[key].commercial,
 							fullStack: data[key].fullStack,
 							frontEnd: data[key].frontEnd,
