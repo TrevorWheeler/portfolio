@@ -103,8 +103,8 @@ a {
   border-radius: 2px;
   color: $text-dark;
   display: flex;
-
-  background: linear-gradient(180deg, #02c995 0%, #23a785 100%), #06d6a0;
+background-color:$accent;
+ 
   cursor: pointer;
   justify-content: center;
   margin: 0 auto;
