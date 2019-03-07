@@ -4,7 +4,7 @@ import axios from 'axios';
 import createPersistedState from 'vuex-persistedstate';
 Vue.use(Vuex);
 // import Api from './services/Api';
-const url = 'http://localhost:8082/api';
+const url = 'http://178.128.106.101:8082/api';
 export default new Vuex.Store({
 	//plugin to persist state
 	plugins: [ createPersistedState() ],
@@ -174,7 +174,7 @@ export default new Vuex.Store({
 			}
 
 			axios
-				.put('http://localhost:8082/api/users/' + this.state.id + '/projects/' + payload.id, payload, {
+				.put('http://178.128.106.101:8082/api/users/' + this.state.id + '/projects/' + payload.id, payload, {
 					headers: {
 						'Content-Type': 'application/json',
 						Authorization: 'Bearer ' + this.state.token
@@ -191,7 +191,7 @@ export default new Vuex.Store({
 		},
 		deleteProject: function({ dispatch }, payload) {
 			axios
-				.delete('http://localhost:8082/api/users/' + this.state.id + '/projects/' + payload, {
+				.delete('http://178.128.106.101:8082/api/users/' + this.state.id + '/projects/' + payload, {
 					headers: {
 						'Content-Type': 'application/json',
 						Authorization: 'Bearer ' + this.state.token
