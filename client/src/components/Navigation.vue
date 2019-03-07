@@ -175,8 +175,10 @@ export default {
   @media only screen and (min-width: 768px) {
     display: none;
   }
-  svg {
-    align-self: center;
+
+  a {
+        align-self: center;
+        height:37px;
   }
 }
 
