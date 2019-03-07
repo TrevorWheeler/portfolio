@@ -30,7 +30,7 @@
 
 <script>
 import axios from "axios";
-const url = "http://178.128.106.101:8082/api";
+const url = "https://trevorwheeler.dev/api";
 export default {
   name: "login",
   data() {
