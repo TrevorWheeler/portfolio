@@ -5,9 +5,13 @@ import store from "./store";
 var VueScrollTo = require("vue-scrollto");
 import AOS from "aos";
 import "aos/dist/aos.css";
+import VueAnalytics from "vue-analytics";
 // import axios from 'axios';
 Vue.config.productionTip = false;
 // Vue.use(axios);
+Vue.use(VueAnalytics, {
+  id: "UA-135906549-1"
+});
 
 Vue.use(VueScrollTo);
 // VueScrollTo options
