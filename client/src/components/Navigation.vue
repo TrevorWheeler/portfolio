@@ -177,8 +177,8 @@ export default {
   }
 
   a {
-        align-self: center;
-        height:37px;
+    align-self: center;
+    height: 37px;
   }
 }
 

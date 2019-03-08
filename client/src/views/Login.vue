@@ -30,7 +30,10 @@
 
 <script>
 import axios from "axios";
+//production url
 const url = "https://trevorwheeler.dev/api";
+//development url
+// const url = 'http://localhost:8081/api';
 export default {
   name: "login",
   data() {

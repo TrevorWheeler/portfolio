@@ -103,8 +103,8 @@ a {
   border-radius: 2px;
   color: $text-dark;
   display: flex;
-background-color:$accent;
- 
+  background-color: $accent;
+
   cursor: pointer;
   justify-content: center;
   margin: 0 auto;
