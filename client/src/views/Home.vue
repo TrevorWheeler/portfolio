@@ -9,12 +9,12 @@
         > Trevor Wheeler </h1>
       </div>
       <div class="hero--content--container">
-        <h2
+        <h1
           class="summary hero--summary"
           data-aos="fade-up"
           data-aos-delay="100"
           data-aos-duration="1000"
-        > Web <span>Developer</span> - Problem Solver and Eager Learner </h2>
+        > Web <span>Developer</span> - Problem Solver and Eager Learner </h1>
         <div class="hero--links--container">
           <div
             class="hero--link--container"
