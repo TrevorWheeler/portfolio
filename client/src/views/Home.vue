@@ -45,30 +45,26 @@
           </div>
         </div>
       </div>
-      <div
-        class="chevron--down--container"
-        v-scroll-to="'.projects'"
-      >
-        <svg
-          class="chevron--down"
-          width="46"
-          height="26"
-          viewBox="0 0 46 26"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M21.3644 25.3029C22.2844 26.2324 23.7667 26.2324 24.6356 25.3029L45.2333 4.49255C46.2556 3.45978 46.2556 1.80735 45.2333 0.774578C44.2111 -0.258193 42.5756 -0.258193 41.5533 0.774578L24.6356 17.8669C23.7156 18.7964 22.2333 18.7964 21.3644 17.8669L4.44667 0.826217C3.42445 -0.206554 1.78889 -0.206554 0.766667 0.826217C-0.255556 1.85899 -0.255556 3.51142 0.766667 4.54419L21.3644 25.3029Z"
-            fill="#06D6A0"
-          />
-        </svg>
 
-      </div>
+      <svg
+        class="chevron--down"
+        width="46"
+        height="26"
+        viewBox="0 0 46 26"
+        fill="none"
+        v-scroll-to="'.projects'"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M21.3644 25.3029C22.2844 26.2324 23.7667 26.2324 24.6356 25.3029L45.2333 4.49255C46.2556 3.45978 46.2556 1.80735 45.2333 0.774578C44.2111 -0.258193 42.5756 -0.258193 41.5533 0.774578L24.6356 17.8669C23.7156 18.7964 22.2333 18.7964 21.3644 17.8669L4.44667 0.826217C3.42445 -0.206554 1.78889 -0.206554 0.766667 0.826217C-0.255556 1.85899 -0.255556 3.51142 0.766667 4.54419L21.3644 25.3029Z"
+          fill="#06D6A0"
+        />
+      </svg>
+
     </section>
     <section class="projects">
-      <div class="project-category-container">
-        <h3>Commercial Projects</h3>
-      </div>
+
+      <h3 class="projects--category">Commercial Projects</h3>
 
       <div class="projects--container">
         <div
@@ -125,9 +121,8 @@
 
       </div>
 
-      <div class="project-category-container">
-        <h3>Full Stack Projects</h3>
-      </div>
+      <h3 class="projects--category">Full Stack Projects</h3>
+
       <div class="projects--container">
         <div
           class="project--item"
@@ -161,6 +156,7 @@
                 :href="project.link"
                 target="_blank"
                 class="project--link project--link--live"
+                v-bind:class="{ active: project.link.length == 0}"
               >Live Site
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -183,9 +179,8 @@
 
       </div>
 
-      <div class="project-category-container">
-        <h3>Front End Projects</h3>
-      </div>
+      <h3 class="projects--category">Front End Projects</h3>
+
       <div class="projects--container">
         <div
           class="project--item"
@@ -240,9 +235,9 @@
         </div>
 
       </div>
-      <div class="project-category-container">
-        <h3>Back End Projects</h3>
-      </div>
+
+      <h3 class="projects--category">Back End Projects</h3>
+
       <div class="projects--container">
         <div
           class="project--item"
@@ -299,35 +294,22 @@
       </div>
 
     </section>
-    <section class="hero footer">
-      <div class="container">
-        <h2 class="footer--summary summary"> <span>Thanks</span> for taking the time to check out my portfolio. </h2>
-        <p class="footer--build"> Built with Vue, Vuex, Node.js, Express, MongoDb and Axios.</p>
-        <div class="hero--links--container footer--link--container">
-          <div class="hero--link--container">
-            <a class="link footer--link hero--link hero--link--projects">
-              <span>Source Code</span>
-            </a>
-          </div>
-        </div>
-        <div class="footer--links--container">
-          <p v-scroll-to="'.website'">Back to top</p>
-        </div>
-      </div>
 
-    </section>
-
+    <Footer />
   </div>
 
 </template>
 
 <script>
+import Footer from "@/components/Footer.vue";
 export default {
   name: "home",
   data() {
     return {};
   },
-  components: {},
+  components: {
+    Footer
+  },
   computed: {
     projects() {
       return this.$store.getters.loadProjects;
@@ -354,6 +336,10 @@ export default {
 </script>
 
 <style lang="scss">
+.active {
+  opacity: 0.3;
+  cursor: initial;
+}
 .website {
   .hero {
     height: calc(100vh - 70px);
@@ -457,22 +443,17 @@ export default {
       }
     }
 
-    .chevron--down--container {
+    .chevron--down {
       display: none;
-      width: 100%;
       position: absolute;
       bottom: 50px;
-      left: 0;
-      @media only screen and (min-width: 768px) {
-        display: flex;
-        justify-content: center;
-      }
-    }
-    .chevron--down {
-      display: block;
+      left: calc(50% - 23px);
       cursor: pointer;
       animation: bounce 2s infinite;
       animation-delay: 2s;
+      @media only screen and (min-width: 768px) {
+        display: block;
+      }
     }
     @keyframes bounce {
       0%,
@@ -504,30 +485,22 @@ export default {
       padding: 15em 1.5em 0;
     }
 
-    .project-category-container {
-      display: flex;
-      justify-content: center;
-      margin: 0 0 7em 0;
+    .projects--category {
+      font-weight: 600;
+      font-size: 2.4em;
+      color: $text-dark;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 0 70px 0;
       @media only screen and (min-width: 1366px) {
-        margin: 0 0 10em 0;
+        margin: 0 0 100px 0;
+        font-size: 2.8em;
       }
       @media only screen and (min-width: 1650px) {
-        margin: 0 0 15em 0;
-      }
-      h3 {
-        padding: 0 0 0.2em 0;
-        margin: 0;
-        font-weight: 600;
-        font-size: 2.4em;
-        color: $text-dark;
-        display: inline-block;
-        border-bottom: 2px solid $secondary;
-        @media only screen and (min-width: 1366px) {
-          font-size: 2.8em;
-          padding: 0 0 0.15em 0;
-        }
+        margin: 0 0 150px 0;
       }
     }
+
     .projects--container {
       display: flex;
       flex-direction: column;
@@ -541,6 +514,10 @@ export default {
         justify-content: space-between;
         margin: 0 auto;
       }
+      @media only screen and (min-width: 1650px) {
+        width: 1450px;
+      }
+
       .project--item {
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.24);
         width: 100%;
@@ -551,6 +528,7 @@ export default {
         position: relative;
         justify-content: space-between;
         border-radius: 3px;
+        overflow: hidden;
         @media only screen and (min-width: 768px) {
           width: calc(50% - 0.5em);
           margin: 0 0 7em;
@@ -562,7 +540,6 @@ export default {
           }
         }
         @media only screen and (min-width: 1280px) {
-          margin: 0 0 7em;
           width: 397px;
           &:nth-child(odd) {
             margin-right: 0;
@@ -576,6 +553,7 @@ export default {
         }
         @media only screen and (min-width: 1650px) {
           margin: 0 0 15em 0;
+          width: 450px;
         }
 
         .project--name {
@@ -636,80 +614,6 @@ export default {
               fill: $accent;
             }
           }
-        }
-      }
-    }
-  }
-
-  .footer {
-    height: 100%;
-    padding: 7em 15px 14em;
-
-    @media only screen and (min-width: 768px) {
-      padding: 7em 4em 0;
-    }
-    @media only screen and (max-height: 450px) {
-      padding: 7em 15px 12em;
-    }
-    @media only screen and (min-width: 1366px) {
-      padding: 10em 4em 3em;
-    }
-    @media only screen and (min-width: 1650px) {
-      padding: 15em 4em 10em;
-    }
-
-    .footer--summary {
-      margin: 0 0 40px 0;
-      text-align: center;
-      align-self: center;
-      @media only screen and (min-width: 768px) {
-        font-size: 3.6em;
-        margin: 0 0 70px 0;
-      }
-      @media only screen and (min-width: 1366px) {
-        margin: 0 auto 40px;
-      }
-      @media only screen and (min-width: 1920px) {
-        font-size: 5em;
-      }
-    }
-    .footer--build {
-      color: $primary;
-      font-weight: 400;
-      text-align: center;
-      padding: 0 1em;
-      margin: 0 0 30px 0;
-
-      @media only screen and (min-width: 768px) {
-        margin: 0 0 40px 0;
-        max-width: 400px;
-        margin: 0 auto 40px;
-        font-weight: 300;
-      }
-    }
-    .footer--link--container {
-      justify-content: center;
-      .footer--link {
-        margin: 0 auto;
-      }
-    }
-    .footer--links--container {
-      display: none;
-      margin: 7em 0 0;
-      justify-content: center;
-      @media only screen and (min-width: 768px) {
-        display: flex;
-      }
-      p {
-        cursor: pointer;
-        margin: 0 3em 3em;
-        color: $primary;
-        font-size: 1.8em;
-        font-weight: 600;
-        transition: 0.2s linear;
-        &:hover {
-          color: $accent;
-          transition: 0.2s linear;
         }
       }
     }

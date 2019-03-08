@@ -8,7 +8,7 @@
           placeholder="username"
           onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'username'"
-        />
+        >
 
         <input
           type="password"
@@ -16,13 +16,12 @@
           placeholder="password"
           onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'password'"
-        />
+        >
         <button
           class="form--submit--button"
           type="submit"
-          v-on:click='event = true'
-        >
-          GO</button>
+          v-on:click="event = true"
+        >GO</button>
       </fieldset>
     </form>
   </div>

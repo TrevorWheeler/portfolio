@@ -7,15 +7,15 @@ cloudinary.config({
 	api_secret: process.env.API_SECRET
 });
 
-exports.createProject = async function(req, res, next) {
+exports.createProject = async function (req, res, next) {
 	try {
 		let imageURL;
 		let upload = await cloudinary.uploader
 			.upload(req.body.image, { tags: 'portfolio_images', public_id: req.body.name })
-			.then(function(image) {
+			.then(function (image) {
 				imageURL = image.secure_url;
 			})
-			.catch(function(err) {
+			.catch(function (err) {
 				console.log();
 				console.log('** File Upload (Promise)');
 				if (err) {
@@ -50,7 +50,7 @@ exports.createProject = async function(req, res, next) {
 	}
 };
 
-exports.getProject = async function(req, res, next) {
+exports.getProject = async function (req, res, next) {
 	try {
 		let project = await db.Projects.find(req.params.project_id);
 		return res.status(200).json(project);
@@ -59,10 +59,10 @@ exports.getProject = async function(req, res, next) {
 	}
 };
 
-exports.deleteProject = async function(req, res, next) {
+exports.deleteProject = async function (req, res, next) {
 	try {
 		let foundName = await db.Projects.findById(req.params.project_id);
-		let deleteCloud = await cloudinary.uploader.destroy(foundName.name, function(error, result) {
+		let deleteCloud = await cloudinary.uploader.destroy(foundName.name, function (error, result) {
 			console.log(result, error);
 		});
 		let foundProject = await db.Projects.findByIdAndDelete(req.params.project_id);
@@ -72,15 +72,15 @@ exports.deleteProject = async function(req, res, next) {
 	}
 };
 
-exports.updateProject = async function(req, res, next) {
+exports.updateProject = async function (req, res, next) {
 	try {
 		let imageURL;
 		let upload = await cloudinary.uploader
 			.upload(req.body.image, { tags: 'portfolio_images', public_id: req.body.name, overwrite: true })
-			.then(function(image) {
+			.then(function (image) {
 				imageURL = image.secure_url;
 			})
-			.catch(function(err) {
+			.catch(function (err) {
 				console.log();
 				console.log('** File Upload (Promise)');
 				if (err) {

@@ -176,12 +176,16 @@ export default new Vuex.Store({
       }
 
       axios
-        .put(url + this.state.id + "/projects/" + payload.id, payload, {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + this.state.token
+        .put(
+          url + "/users/" + this.state.id + "/projects/" + payload.id,
+          payload,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + this.state.token
+            }
           }
-        })
+        )
         .then(() => {
           commit("setLoading", false);
           commit("updateProject", payload);
@@ -191,6 +195,7 @@ export default new Vuex.Store({
           commit("setLoading", false);
         });
     },
+
     deleteProject: function({ dispatch }, payload) {
       axios
         .delete(url + "/users/" + this.state.id + "/projects/" + payload, {
@@ -205,6 +210,7 @@ export default new Vuex.Store({
         });
     }
   },
+
   getters: {
     loadProjects(state) {
       return state.projects;

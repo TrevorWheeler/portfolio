@@ -319,7 +319,7 @@ form {
     }
     label {
       color: $secondary;
-      background-color: $grey;
+      background-color: $accent;
       font-size: 1.6em;
       height: 40px;
       padding: 0 0 0 0.5em;
