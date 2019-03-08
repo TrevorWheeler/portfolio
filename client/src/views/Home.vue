@@ -328,12 +328,7 @@ export default {
       return this.projects.filter(filtered => filtered.backEnd == true);
     }
   },
-  methods: {
-    //google analytics tracking of home page
-    track() {
-      this.$ga.page("/");
-    }
-  },
+  methods: {},
   mounted() {
     this.$store.dispatch("loadProjects");
   }

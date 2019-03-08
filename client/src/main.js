@@ -10,7 +10,8 @@ import VueAnalytics from "vue-analytics";
 Vue.config.productionTip = false;
 // Vue.use(axios);
 Vue.use(VueAnalytics, {
-  id: "UA-135906549-1"
+  id: "UA-135906549-1",
+  router
 });
 
 Vue.use(VueScrollTo);
