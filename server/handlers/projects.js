@@ -11,7 +11,7 @@ exports.createProject = async function (req, res, next) {
 	try {
 		let imageURL;
 		let upload = await cloudinary.uploader
-			.upload(req.body.image, { tags: 'portfolio_images', public_id: req.body.name })
+			.upload(req.body.image, { tags: 'portfolio_images', public_id: req.body.name, width: 'auto', crop: 'scale' })
 			.then(function (image) {
 				imageURL = image.secure_url;
 			})
@@ -76,7 +76,8 @@ exports.updateProject = async function (req, res, next) {
 	try {
 		let imageURL;
 		let upload = await cloudinary.uploader
-			.upload(req.body.image, { tags: 'portfolio_images', public_id: req.body.name, overwrite: true })
+			.upload(req.body.image, { tags: 'portfolio_images', public_id: req.body.name, overwrite: true,
+			width: 'auto', crop: 'scale' })
 			.then(function (image) {
 				imageURL = image.secure_url;
 			})

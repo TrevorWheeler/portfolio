@@ -1,9 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import Login from "./views/Login.vue";
-import Dashboard from "./views/Dashboard.vue";
-import Edit from "./views/Edit.vue";
+// import Login from "./views/Login.vue";
+// import Dashboard from "./views/Dashboard.vue";
+// import Edit from "./views/Edit.vue";
+const Login = r => require.ensure([], () => r(require('./views/Login.vue')), 'admin-pages')
+const Dashboard = r => require.ensure([], () => r(require('./views/Dashboard.vue')), 'admin-pages')
+const Edit = r => require.ensure([], () => r(require('./views/Edit.vue')), 'admin-pages')
 Vue.use(Router);
 const router = new Router({
   mode: "history",
@@ -27,8 +30,8 @@ const router = new Router({
     // },
     {
       path: "/login",
+      name: "login",
       component: Login,
-      name: "login"
     },
     {
       path: "/dashboard",

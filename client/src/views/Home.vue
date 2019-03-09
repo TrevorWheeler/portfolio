@@ -78,8 +78,8 @@
 
             <h4 class="project--name">{{project.name}}</h4>
             <img
-              class="project--img"
-              :src="project.image"
+              class="cld-responsive project--img"
+              :data-src="project.image"
               :alt="project.name"
             >
 
@@ -135,8 +135,8 @@
 
             <h4 class="project--name">{{project.name}}</h4>
             <img
-              class="project--img"
-              :src="project.image"
+               class="cld-responsive project--img"
+              :data-src="project.image"
               :alt="project.name"
             >
 
@@ -193,8 +193,8 @@
 
             <h4 class="project--name">{{project.name}}</h4>
             <img
-              class="project--img"
-              :src="project.image"
+                class="cld-responsive project--img"
+              :data-src="project.image"
               :alt="project.name"
             >
 
@@ -250,8 +250,8 @@
 
             <h4 class="project--name">{{project.name}}</h4>
             <img
-              class="project--img"
-              :src="project.image"
+                class="cld-responsive project--img"
+              :data-src="project.image"
               :alt="project.name"
             >
 
@@ -302,6 +302,7 @@
 
 <script>
 import Footer from "@/components/Footer.vue";
+import cloudinary from "../../node_modules/cloudinary-core/cloudinary-core-shrinkwrap.js";
 export default {
   name: "home",
   data() {
@@ -331,6 +332,8 @@ export default {
   methods: {},
   mounted() {
     this.$store.dispatch("loadProjects");
+    var cl = cloudinary.Cloudinary.new({ cloud_name: "schmidge" });
+    cl.responsive();
   }
 };
 </script>
