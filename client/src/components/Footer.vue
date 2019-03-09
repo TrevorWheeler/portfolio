@@ -3,7 +3,7 @@
     <div class="container">
       <h5 class="footer--heading"> <span>Thanks</span> for taking the time to check out my portfolio. </h5>
       <p class="footer--build"> Built with Vue, Vuex, Node.js, Express, MongoDb, JWT and Axios on Digital Ocean VPS.</p>
-      <a class="link footer--source--link" href="https://github.com/TrevorWheeler/portfolio" target="_blank">
+      <a class="link footer--source--link" href="https://github.com/TrevorWheeler/portfolio" target="_blank" rel="noreferrer">
         <span>Source Code</span>
       </a>
       <p

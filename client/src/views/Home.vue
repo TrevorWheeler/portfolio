@@ -39,6 +39,7 @@
               class="link hero--link hero--link--contact"
               href="mailto: sendtrevmail@gmail.com"
               target="_blank"
+              rel="noreferrer"
             >
               <span>Contact</span>
             </a>

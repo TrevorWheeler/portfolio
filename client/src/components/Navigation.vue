@@ -120,6 +120,7 @@
         <a
           href="https://github.com/trevorwheeler"
           target="_blank"
+          rel="noreferrer"
           data-aos="fade"
           data-aos-delay="200"
           data-aos-duration="1000"
@@ -127,6 +128,7 @@
         <a
           href="mailto: sendtrevmail@gmail.com"
           target="_blank"
+          rel="noreferrer"
           data-aos="fade"
           data-aos-delay="300"
           data-aos-duration="1000"
