@@ -7,6 +7,7 @@
       <a
         href="https://github.com/trevorwheeler"
         target="_blank"
+        rel="noreferrer"
       >
         <svg
           data-aos="zoom-in"
@@ -17,6 +18,7 @@
           height="37"
           viewBox="0 0 36 37"
           fill="none"
+             alt="Github Repo"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -28,6 +30,7 @@
       <a
         href="mailto: sendtrevmail@gmail.com"
         target="_blank"
+        rel="noreferrer"
       >
         <svg
           data-aos="zoom-in"
@@ -37,6 +40,7 @@
           height="35"
           viewBox="0 0 36 35"
           fill="none"
+             alt="contact me"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -76,6 +80,7 @@
       <a
         href="https://www.linkedin.com/in/trevor-wheeler-95a46659/"
         target="_blank"
+        rel="noreferrer"
       >
         <svg
           data-aos="zoom-in"
@@ -85,6 +90,7 @@
           height="35"
           viewBox="0 0 35 35"
           fill="none"
+          alt="linkedin"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path

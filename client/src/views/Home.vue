@@ -98,6 +98,7 @@
               <a
                 :href="project.link"
                 target="_blank"
+                rel="noreferrer"
                 class="project--link project--link--live"
               >Live Site
                 <svg
@@ -112,6 +113,7 @@
               <a
                 :href="project.repo"
                 target="_blank"
+                rel="noreferrer"
                 class="project--link project--link--github"
               >View Repo</a>
             </div>
@@ -155,6 +157,7 @@
               <a
                 :href="project.link"
                 target="_blank"
+                rel="noreferrer"
                 class="project--link project--link--live"
                 v-bind:class="{ active: project.link.length == 0}"
               >Live Site
@@ -170,6 +173,7 @@
               <a
                 :href="project.repo"
                 target="_blank"
+                rel="noreferrer"
                 class="project--link project--link--github"
               >View Repo</a>
             </div>
@@ -213,6 +217,7 @@
               <a
                 :href="project.link"
                 target="_blank"
+                rel="noreferrer"
                 class="project--link project--link--live"
               >Live Site
                 <svg
@@ -227,6 +232,7 @@
               <a
                 :href="project.repo"
                 target="_blank"
+                rel="noreferrer"
                 class="project--link project--link--github"
               >View Repo</a>
             </div>
@@ -270,6 +276,7 @@
               <a
                 :href="project.link"
                 target="_blank"
+                rel="noreferrer"
                 class="project--link project--link--live"
               >Live Site
                 <svg
@@ -284,6 +291,7 @@
               <a
                 :href="project.repo"
                 target="_blank"
+                rel="noreferrer"
                 class="project--link project--link--github"
               >View Repo</a>
             </div>
