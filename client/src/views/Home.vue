@@ -1,7 +1,7 @@
 <template>
   <div class="website">
     <section class="hero">
-      <div class="hero--name--container">
+      <div class="hero--mobile--name--container">
         <h1
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -356,7 +356,7 @@ export default {
       height: 100vh;
     }
 
-    .hero--name--container {
+    .hero--mobile--name--container {
       width: 100vw;
       position: absolute;
       top: 0;
@@ -375,7 +375,6 @@ export default {
         font-size: 1.8em;
         text-transform: uppercase;
         font-weight: 500;
-
         margin: 26px 0;
       }
     }
