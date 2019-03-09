@@ -138,7 +138,7 @@
 
             <h4 class="project--name">{{project.name}}</h4>
             <img
-               class="cld-responsive project--img"
+              class="cld-responsive project--img"
               :data-src="project.image"
               :alt="project.name"
             >
@@ -198,7 +198,7 @@
 
             <h4 class="project--name">{{project.name}}</h4>
             <img
-                class="cld-responsive project--img"
+              class="cld-responsive project--img"
               :data-src="project.image"
               :alt="project.name"
             >
@@ -257,7 +257,7 @@
 
             <h4 class="project--name">{{project.name}}</h4>
             <img
-                class="cld-responsive project--img"
+              class="cld-responsive project--img"
               :data-src="project.image"
               :alt="project.name"
             >
@@ -338,7 +338,7 @@ export default {
       return this.projects.filter(filtered => filtered.backEnd == true);
     }
   },
- 
+
   mounted() {
     this.$store.dispatch("loadProjects");
     var cl = cloudinary.Cloudinary.new({ cloud_name: "schmidge" });
@@ -579,6 +579,7 @@ export default {
         }
         .project--img {
           width: 100%;
+          height: auto;
         }
         .project--description {
           margin: 1.4em 0;
