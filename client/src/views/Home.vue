@@ -82,6 +82,7 @@
               class="cld-responsive project--img"
               :data-src="project.image"
               :alt="project.name"
+              :src="project.image"
             >
 
             <P class="project--description">{{project.description}}</p>
@@ -141,6 +142,7 @@
               class="cld-responsive project--img"
               :data-src="project.image"
               :alt="project.name"
+              :src="project.image"
             >
 
             <P class="project--description">{{project.description}}</p>
@@ -201,6 +203,7 @@
               class="cld-responsive project--img"
               :data-src="project.image"
               :alt="project.name"
+              :src="project.image"
             >
 
             <P class="project--description">{{project.description}}</p>
@@ -260,6 +263,7 @@
               class="cld-responsive project--img"
               :data-src="project.image"
               :alt="project.name"
+              :src="project.image"
             >
 
             <P class="project--description">{{project.description}}</p>
