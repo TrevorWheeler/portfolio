@@ -5,19 +5,15 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const errorHandler = require('./handlers/error');
-const PORT = 8081;
+const PORT = 8082;
 const authRoutes = require('./routes/auth');
 const menuItemRoutes = require('./routes/projects');
 const { loginRequired, ensureCorrectUser } = require('./middleware/auth');
 const db = require('./models');
-const https = require("https")
-const fs = require("fs");
+
 
 app.use(cors());
-const options = {
-	key: fs.readFileSync("/etc/letsencrypt/live/trevorwheeler.dev/fullchain.pem"),
-	cert: fs.readFileSync("/etc/letsencrypt/live/trevorwheeler.dev/privkey.pem")
-  };
+
 //set limit of 3mb that can be parsed
 app.use(bodyParser.json({ limit: '3mb' }));
 
@@ -53,7 +49,6 @@ app.listen(PORT, function() {
 	console.log(`Server is starting on port ${PORT}`);
 });
 
-https.createServer(options, app).listen(8082);
 // http post localhost:8081/api/users/5c74026a300231102ee46f40/projects "Authorization:Bearer ${token} name="worked"
 
 // http post localhost:8081/api/users/5c74026a300231102ee46f40/projects "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjNzQwMjZhMzAwMjMxMTAyZWU0NmY0MCIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE1NTExMDY2NjZ9.LzF1dlTljXITtWYRhsrIzAVTSKH9Q_EWi2WHDCgqs5Q" name="worked"
