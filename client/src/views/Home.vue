@@ -78,12 +78,19 @@
           <div class="project--top">
 
             <h4 class="project--name">{{project.name}}</h4>
-            <img
+            <!-- <img
               class="cld-responsive project--img"
               :data-src="project.image"
               :alt="project.name"
               :src="project.image"
-            >
+            > -->
+            <v-lazy-image
+              class="cld-responsive project--img"
+              :data-src="project.image"
+              :alt="project.name"
+              :src="project.image"
+              src-placeholder="https://cdn-images-1.medium.com/max/80/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+            />
 
             <P class="project--description">{{project.description}}</p>
           </div>
@@ -316,13 +323,15 @@
 <script>
 import Footer from "@/components/Footer.vue";
 import cloudinary from "../../node_modules/cloudinary-core/cloudinary-core-shrinkwrap.js";
+import VLazyImage from "v-lazy-image";
 export default {
   name: "home",
   data() {
     return {};
   },
   components: {
-    Footer
+    Footer,
+    VLazyImage
   },
   computed: {
     projects() {
@@ -355,6 +364,15 @@ export default {
 .active {
   opacity: 0.3;
   cursor: initial;
+}
+
+.v-lazy-image {
+  filter: blur(10px);
+  transition: filter 0.7s;
+}
+
+.v-lazy-image-loaded {
+  filter: blur(0);
 }
 .website {
   .hero {
