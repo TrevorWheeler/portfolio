@@ -329,7 +329,7 @@ export default {
       return this.projects.filter(filtered => filtered.backEnd == true);
     }
   },
-  methods: {},
+ 
   mounted() {
     this.$store.dispatch("loadProjects");
     var cl = cloudinary.Cloudinary.new({ cloud_name: "schmidge" });

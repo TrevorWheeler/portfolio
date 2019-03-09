@@ -11,9 +11,17 @@ exports.createProject = async function (req, res, next) {
 	try {
 		let imageURL;
 		let upload = await cloudinary.uploader
-			.upload(req.body.image, { tags: 'portfolio_images', public_id: req.body.name, width: 'auto', crop: 'scale' })
+			.upload(req.body.image, {
+				tags: 'portfolio_images',
+				public_id: req.body.name
+			})
 			.then(function (image) {
-				imageURL = image.secure_url;
+				var strToSplit = image.secure_url
+				var splitResult = strToSplit.split('upload/');
+				var stringStart = splitResult[0];
+				var stringEnd = splitResult[1];
+				var stringResult = stringStart + "upload/w_auto,c_scale/" + stringEnd
+				imageURL = stringResult;
 			})
 			.catch(function (err) {
 				console.log();
@@ -76,10 +84,20 @@ exports.updateProject = async function (req, res, next) {
 	try {
 		let imageURL;
 		let upload = await cloudinary.uploader
-			.upload(req.body.image, { tags: 'portfolio_images', public_id: req.body.name, overwrite: true,
-			width: 'auto', crop: 'scale' })
+			.upload(req.body.image, {
+				tags: 'portfolio_images',
+				public_id: req.body.name,
+				overwrite: true,
+			})
 			.then(function (image) {
-				imageURL = image.secure_url;
+				var strToSplit = image.secure_url
+				var splitResult = strToSplit.split('upload/');
+				var stringStart = splitResult[0];
+				var stringEnd = splitResult[1];
+
+				var stringResult = stringStart + "upload/w_auto,c_scale/" + stringEnd
+
+				imageURL = stringResult;
 			})
 			.catch(function (err) {
 				console.log();
