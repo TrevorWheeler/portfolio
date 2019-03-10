@@ -1,5 +1,5 @@
 <template>
-  <div class="add-project-page">
+  <div class="dashboard--page">
     <section class="form--container">
       <div class="project-category-container">
         <h3>Add New Project</h3>
@@ -250,12 +250,12 @@ export default {
 </script>
 
 <style lang="scss">
-.add-project-page {
+.dashboard--page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: $secondary;
-  padding: 2em;
+  padding: 8em 2em 10em;
   max-width: 650px;
   margin: 0 auto;
   .v1-image {
@@ -283,11 +283,12 @@ export default {
     margin: 0 0 1.5em 0;
     background-color: $primary;
     padding: 0.5em;
+    border-radius: 3px;
     p {
       align-self: center;
       color: $secondary;
       margin: 0;
-      font-weight: 500;
+      font-weight: 600;
     }
     .dashboard--projects--edit--delete--container {
       display: flex;

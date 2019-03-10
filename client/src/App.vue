@@ -101,17 +101,16 @@ a {
   width: 220px;
   height: 62px;
   border-radius: 2px;
-  color: $text-dark;
+  color: $secondary;
   display: flex;
   background-color: $accent;
-
   cursor: pointer;
   justify-content: center;
   margin: 0 auto;
-  transition: 0.3s linear !important;
+  transition: 0.3s ease-in-out;
   &:hover {
     box-shadow: 0px 0px 0px 4px $accent inset, 0px 0px 0px 6px $secondary inset;
-    // transform: scale(0.95);
+    color: $text-dark;
   }
   &:active {
     transform: scale(0.9);
@@ -123,7 +122,8 @@ a {
   span {
     align-self: center;
     font-size: 1.8em;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 0.5px;
     transition: 0.3s linear !important;
   }
 }

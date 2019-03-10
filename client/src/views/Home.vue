@@ -2,11 +2,11 @@
   <div class="website">
     <section class="hero">
       <div class="hero--mobile--name--container">
-        <h1
+        <h2
           data-aos="fade-up"
           data-aos-duration="1000"
           class="hero--name"
-        > Trevor Wheeler </h1>
+        > Trevor Wheeler </h2>
       </div>
       <div class="hero--content--container">
         <h1
@@ -459,11 +459,13 @@ export default {
     .hero--link--contact {
       transition: 1s ease-out;
       background: none;
-      color: $text-light;
+      color: $primary;
       border: 1px solid $primary;
+      transition: 0.3s ease-in-out;
       &:hover {
         box-shadow: 0px 0px 0px 4px $secondary inset,
           0px 0px 0px 6px $accent inset;
+        color: $text-light;
       }
     }
 

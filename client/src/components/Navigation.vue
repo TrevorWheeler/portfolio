@@ -1,9 +1,12 @@
 <template>
-  <div
-    class="menu"
+  <div class="menu">
+    <!-- <div class="menu"
     v-if="['home'].indexOf($route.name) > -1"
-  >
-    <header class="menu--mobile">
+  > -->
+    <header
+      class="menu--mobile"
+      v-if="['home'].indexOf($route.name) > -1"
+    >
       <a
         href="https://github.com/trevorwheeler"
         target="_blank"
@@ -21,7 +24,7 @@
           aria-labelledby="githubTitle githubDesc"
           role="img"
         >
-          <title id="githubTitle">link to Trevor Wheeler's Github account</title>
+          <title id="githubTitle">A link to a github account owned by Trevor Wheeler</title>
           <desc id="githubDesc">Github logo indicating to view Trevor Wheeler's Github account</desc>
           <path
             d="M32.1429 0.5625H3.85714C1.72768 0.5625 0 2.28418 0 4.40625V32.5938C0 34.7158 1.72768 36.4375 3.85714 36.4375H32.1429C34.2723 36.4375 36 34.7158 36 32.5938V4.40625C36 2.28418 34.2723 0.5625 32.1429 0.5625ZM22.283 31.2885C21.608 31.4086 21.3589 30.9922 21.3589 30.6479C21.3589 30.2154 21.375 28.0053 21.375 26.2195C21.375 24.9703 20.9571 24.1775 20.467 23.7611C23.4402 23.4328 26.5741 23.0244 26.5741 17.9074C26.5741 16.45 26.0518 15.7213 25.2 14.7844C25.3366 14.44 25.7946 13.0227 25.0634 11.1809C23.9464 10.8365 21.3911 12.6143 21.3911 12.6143C20.3304 12.318 19.1813 12.1658 18.0482 12.1658C16.9152 12.1658 15.7661 12.318 14.7054 12.6143C14.7054 12.6143 12.15 10.8365 11.033 11.1809C10.3018 13.0146 10.7518 14.432 10.8964 14.7844C10.0446 15.7213 9.64286 16.45 9.64286 17.9074C9.64286 23.0004 12.6402 23.4328 15.6134 23.7611C15.2277 24.1055 14.8821 24.698 14.7616 25.5469C13.9982 25.8912 12.0455 26.4838 10.8804 24.4338C10.1491 23.1686 8.83125 23.0645 8.83125 23.0645C7.52946 23.0484 8.74286 23.8813 8.74286 23.8813C9.61071 24.2816 10.2214 25.8191 10.2214 25.8191C11.0009 28.1975 14.7295 27.3967 14.7295 27.3967C14.7295 28.5098 14.7455 30.3195 14.7455 30.6479C14.7455 30.9922 14.5045 31.4086 13.8214 31.2885C8.51786 29.5188 4.80536 24.4898 4.80536 18.6121C4.80536 11.2609 10.4464 5.67949 17.8232 5.67949C25.2 5.67949 31.1786 11.2609 31.1786 18.6121C31.1866 24.4898 27.5866 29.5268 22.283 31.2885ZM14.4 26.3957C14.2473 26.4277 14.1027 26.3637 14.0866 26.2596C14.0705 26.1395 14.175 26.0354 14.3277 26.0033C14.4804 25.9873 14.625 26.0514 14.6411 26.1555C14.6652 26.2596 14.5607 26.3637 14.4 26.3957ZM13.6366 26.3236C13.6366 26.4277 13.5161 26.5158 13.3554 26.5158C13.1786 26.5318 13.058 26.4438 13.058 26.3236C13.058 26.2195 13.1786 26.1314 13.3393 26.1314C13.492 26.1154 13.6366 26.2035 13.6366 26.3236ZM12.5357 26.2355C12.5036 26.3396 12.3429 26.3877 12.2062 26.3396C12.0536 26.3076 11.9491 26.1875 11.9813 26.0834C12.0134 25.9793 12.1741 25.9313 12.3107 25.9633C12.4714 26.0113 12.5759 26.1314 12.5357 26.2355ZM11.5473 25.8031C11.475 25.8912 11.3223 25.8752 11.2018 25.7551C11.0812 25.651 11.0491 25.4988 11.1295 25.4268C11.2018 25.3387 11.3545 25.3547 11.475 25.4748C11.5795 25.5789 11.6196 25.7391 11.5473 25.8031ZM10.8161 25.0744C10.7438 25.1225 10.6071 25.0744 10.5187 24.9543C10.4304 24.8342 10.4304 24.698 10.5187 24.642C10.6071 24.5699 10.7438 24.626 10.8161 24.7461C10.9045 24.8662 10.9045 25.0104 10.8161 25.0744V25.0744ZM10.2938 24.2977C10.2214 24.3697 10.1009 24.3297 10.0125 24.2496C9.92411 24.1455 9.90804 24.0254 9.98036 23.9693C10.0527 23.8973 10.1732 23.9373 10.2616 24.0174C10.35 24.1215 10.3661 24.2416 10.2938 24.2977ZM9.75536 23.7051C9.72321 23.7771 9.61875 23.7932 9.53036 23.7371C9.42589 23.6891 9.37768 23.601 9.40982 23.5289C9.44196 23.4809 9.53036 23.4568 9.63482 23.4969C9.73929 23.5529 9.7875 23.641 9.75536 23.7051Z"
@@ -99,7 +102,7 @@
           aria-labelledby="linkedInTitle linkedInDesc"
           role="img"
         >
-          <title id="linkedInTitle">link to my LinkedIn account</title>
+          <title id="linkedInTitle">link to LinkedIn account owned by Trevor Wheeler</title>
           <desc id="linkedInDesc">The brand logo for LinkedIn</desc>
           <path
             d="M32.5 0H2.49219C1.11719 0 0 1.13281 0 2.52344V32.4766C0 33.8672 1.11719 35 2.49219 35H32.5C33.875 35 35 33.8672 35 32.4766V2.52344C35 1.13281 33.875 0 32.5 0ZM10.5781 30H5.39062V13.2969H10.5859V30H10.5781ZM7.98437 11.0156C6.32031 11.0156 4.97656 9.66406 4.97656 8.00781C4.97656 6.35156 6.32031 5 7.98437 5C9.64062 5 10.9922 6.35156 10.9922 8.00781C10.9922 9.67187 9.64844 11.0156 7.98437 11.0156V11.0156ZM30.0234 30H24.8359V21.875C24.8359 19.9375 24.7969 17.4453 22.1406 17.4453C19.4375 17.4453 19.0234 19.5547 19.0234 21.7344V30H13.8359V13.2969H18.8125V15.5781H18.8828C19.5781 14.2656 21.2734 12.8828 23.7969 12.8828C29.0469 12.8828 30.0234 16.3437 30.0234 20.8437V30V30Z"
@@ -108,7 +111,10 @@
         </svg>
       </a>
     </header>
-    <header class="menu--desktop">
+    <header
+      class="menu--desktop"
+      v-if="['home'].indexOf($route.name) > -1"
+    >
       <router-link
         tag="h1"
         class="name"
@@ -140,7 +146,6 @@
           data-aos-duration="1000"
         > LinkedIn </a>
         <router-link
-          style="margin-left:1.4em;"
           :to="{name:'dashboard'}"
           v-if="this.$store.state.token !== null"
           href="#"
@@ -150,34 +155,51 @@
         > Dashboard </router-link>
       </div>
     </header>
+    <div
+      class="home--link"
+      data-aos-duration="300"
+      data-aos="fade"
+      v-if="['dashboard'].indexOf($route.name) > -1"
+    >
+      <router-link
+        tag="span"
+        to="/"
+      >HOME</router-link>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Navigation",
-  data() {
-    return {
-      // menuActive: false
-    };
-  },
-  components: {},
-  computed: {
-    works() {
-      return this.$store.state.works;
-    },
-    menuActive() {
-      return this.$store.state.menuActive;
-    }
-  },
-  methods: {
-    selectedWork(index) {
-      this.$store.commit("selected", index);
-    }
-  }
+  name: "Navigation"
 };
 </script>
 <style scoped lang="scss">
+.home--link {
+  padding: 0 3vw;
+  height: 70px;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background-color: $secondary;
+  @media only screen and (min-width: 1024px) {
+    height: 100px;
+    background-color: transparent;
+  }
+  span {
+    font-size: 1.8em;
+    color: $primary;
+    align-self: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      color: $accent;
+      transition: 0.2s ease-in-out;
+    }
+  }
+}
 .menu--mobile {
   z-index: 2;
   position: fixed;
@@ -199,7 +221,6 @@ export default {
 }
 
 .menu--desktop {
-  background-color: $secondary;
   padding: 0 3vw;
   width: 100%;
   height: 70px;
@@ -224,19 +245,24 @@ export default {
     margin: 0;
     align-self: center;
     cursor: pointer;
+    &:hover {
+      color: $accent;
+      transition: 0.2s ease-in-out;
+    }
   }
   .links {
     align-self: center;
     a {
       color: $primary;
-      font-weight: 600;
+      font-weight: 400;
+      display: inline-block;
       letter-spacing: 1px;
-      font-size: 1.6em;
+      font-size: 1.8em;
+      margin: 0 0.7em;
+
       &:hover {
         color: $accent;
-      }
-      &:nth-child(2) {
-        margin: 0 1.4em;
+        transition: 0.2s ease-in-out;
       }
     }
   }
