@@ -22,6 +22,6 @@ npm run build
 npm run lint
 
 #####################################################
-//to be continued....
+//to be continued...
 
 ```
