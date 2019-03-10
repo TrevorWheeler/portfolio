@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-client/src/assets/font
 .env
 .env.example
 .env.local
