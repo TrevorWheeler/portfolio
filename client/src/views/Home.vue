@@ -102,6 +102,7 @@
                 target="_blank"
                 rel="noreferrer"
                 class="project--link project--link--live"
+                v-bind:class="{ active: project.link.length == 0}"
               >Live Site
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -117,6 +118,7 @@
                 target="_blank"
                 rel="noreferrer"
                 class="project--link project--link--github"
+                v-bind:class="{ active: project.repo === null}"
               >View Repo</a>
             </div>
           </div>
@@ -178,6 +180,7 @@
                 target="_blank"
                 rel="noreferrer"
                 class="project--link project--link--github"
+                v-bind:class="{ active: project.repo === null}"
               >View Repo</a>
             </div>
           </div>
@@ -223,6 +226,7 @@
                 target="_blank"
                 rel="noreferrer"
                 class="project--link project--link--live"
+                v-bind:class="{ active: project.link.length == 0}"
               >Live Site
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -238,6 +242,7 @@
                 target="_blank"
                 rel="noreferrer"
                 class="project--link project--link--github"
+                v-bind:class="{ active: project.repo === null}"
               >View Repo</a>
             </div>
           </div>
@@ -283,6 +288,7 @@
                 target="_blank"
                 rel="noreferrer"
                 class="project--link project--link--live"
+                v-bind:class="{ active: project.link.length == 0}"
               >Live Site
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -298,6 +304,7 @@
                 target="_blank"
                 rel="noreferrer"
                 class="project--link project--link--github"
+                v-bind:class="{ active: project.repo === null}"
               >View Repo</a>
             </div>
           </div>
@@ -354,17 +361,10 @@ export default {
 <style lang="scss">
 .active {
   opacity: 0.3;
-  cursor: initial;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
-// .v-lazy-image {
-//   filter: blur(10px);
-//   transition: filter 0.7s;
-// }
-
-// .v-lazy-image-loaded {
-//   filter: blur(0);
-// }
 .website {
   .hero {
     height: calc(100vh - 70px);

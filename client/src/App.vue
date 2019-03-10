@@ -25,34 +25,34 @@ export default {
   box-sizing: border-box;
 }
 @font-face {
-  font-family: "font";
-  src: url("./assets/font/font-Bold.woff2") format("eot"),
-    url("./assets/font/font-Bold.woff2") format("woff2"),
-    url("./assets/font/font-Bold.woff") format("woff");
+  font-family: "natrixSans";
+  src: url("./assets/font/NatrixSans-Bold.woff2") format("eot"),
+    url("./assets/font/NatrixSans-Bold.woff2") format("woff2"),
+    url("./assets/font/NatrixSans-Bold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "font";
-  src: url("./assets/font/font-Medium.woff2") format("eot"),
-    url("./assets/font/font-Medium.woff2") format("woff2"),
-    url("./assets/font/font-Medium.woff") format("woff");
+  font-family: "natrixSans";
+  src: url("./assets/font/NatrixSans-Medium.woff2") format("eot"),
+    url("./assets/font/NatrixSans-Medium.woff2") format("woff2"),
+    url("./assets/font/NatrixSans-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: "font";
-  src: url("./assets/font/font-Regular.woff2") format("eot"),
-    url("./assets/font/font-Regular.woff2") format("woff2"),
-    url("./assets/font/font-Regular.woff") format("woff");
+  font-family: "natrixSans";
+  src: url("./assets/font/NatrixSans-Regular.woff2") format("eot"),
+    url("./assets/font/NatrixSans-Regular.woff2") format("woff2"),
+    url("./assets/font/NatrixSans-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "natrixSans";
-  src: url("./assets/font/font-Light.woff2") format("eot"),
-    url("./assets/font/font-Light.woff2") format("woff2"),
-    url("./assets/font/font-Light.woff") format("woff");
+  src: url("./assets/font/NatrixSans-Light.woff2") format("eot"),
+    url("./assets/font/NatrixSans-Light.woff2") format("woff2"),
+    url("./assets/font/NatrixSans-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
@@ -73,7 +73,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-  font-family: "font", Helvetica, Arial, sans-serif;
+  font-family: "natrixSans", Helvetica, Arial, sans-serif;
   font-size: 10px;
   background-color: $secondary;
 }
