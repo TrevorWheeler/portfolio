@@ -323,6 +323,7 @@
 <script>
 import Footer from "@/components/Footer.vue";
 import cloudinary from "../../node_modules/cloudinary-core/cloudinary-core-shrinkwrap.js";
+
 export default {
   name: "home",
   data() {

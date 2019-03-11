@@ -9,7 +9,6 @@
           onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'username'"
         >
-
         <input
           type="password"
           v-model="password"
@@ -29,10 +28,7 @@
 
 <script>
 import axios from "axios";
-//production url
 const url = "https://trevorwheeler.dev/api";
-//development url
-// const url = 'http://localhost:8081/api';
 export default {
   name: "login",
   data() {
@@ -67,8 +63,6 @@ export default {
         this.loginFailed();
         return;
       }
-      console.log(req.data);
-
       this.$store.commit("setUser", req.data.username);
       this.$store.commit("setToken", req.data.token);
       this.$store.commit("setUserId", req.data.id);

@@ -3,10 +3,9 @@ import Vuex from "vuex";
 import axios from "axios";
 import createPersistedState from "vuex-persistedstate";
 Vue.use(Vuex);
-//production url
+
 const url = "https://trevorwheeler.dev/api";
-//development url
-// const url = 'http://localhost:8081/api';
+
 export default new Vuex.Store({
   //plugin to persist state
   plugins: [createPersistedState()],
@@ -84,7 +83,6 @@ export default new Vuex.Store({
       axios
         .get(url + "/projects")
         .then(response => {
-          console.log(response);
           const projects = [];
           const data = response.data;
           for (let key in data) {
@@ -124,7 +122,6 @@ export default new Vuex.Store({
         repo: payload.repo,
         tags: payload.tags
       };
-      //   let key;
       axios
         .post(url + "/users/" + this.state.id + "/projects", project, {
           headers: {
@@ -139,7 +136,7 @@ export default new Vuex.Store({
             id: key
           });
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
     },
@@ -196,7 +193,7 @@ export default new Vuex.Store({
         });
     },
 
-    deleteProject: function({ dispatch }, payload) {
+    deleteProject: function ({ dispatch }, payload) {
       axios
         .delete(url + "/users/" + this.state.id + "/projects/" + payload, {
           headers: {
@@ -205,7 +202,7 @@ export default new Vuex.Store({
           }
         })
         .then(() => dispatch("loadProjects", payload))
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
     }

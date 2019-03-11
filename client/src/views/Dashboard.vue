@@ -13,14 +13,22 @@
             onfocus="this.placeholder = ''"
             onblur="this.placeholder = 'name'"
           />
-          <input
-            type="text"
+          <textarea
+            rows="10"
             v-model="description"
             placeholder="description"
             onfocus="this.placeholder = ''"
             onblur="this.placeholder = 'description'"
           />
-          <div class="container">
+
+          <!-- <input
+            type="text"
+            v-model="description"
+            placeholder="description"
+            onfocus="this.placeholder = ''"
+            onblur="this.placeholder = 'description'"
+          /> -->
+ 
 
             <vue-base64-file-upload
               class="v1"
@@ -32,7 +40,7 @@
               @size-exceeded="onSizeExceeded"
               @load="onLoad"
             />
-          </div>
+       
 
           <input
             type="text"
@@ -342,6 +350,14 @@ form {
     opacity: 0.8;
     font-weight: 600;
     color: $secondary;
+  }
+  textarea {
+    width: 100%;
+    margin: 0 0 1.5em 0;
+    padding: 0.5em 0 0 0.3em;
+    font-size: 1.6em;
+    border-radius: 3px;
+    font-weight: 500;
   }
   input {
     height: 40px;

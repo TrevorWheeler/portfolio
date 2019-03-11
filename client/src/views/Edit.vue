@@ -13,15 +13,13 @@
             v-model="project.name"
             placeholder="name"
           >
-
-          <input
-            type="text"
+          <textarea
+            rows="10"
             v-model="project.description"
             placeholder="description"
           />
-          <div class="container">
 
-            <vue-base64-file-upload
+          <vue-base64-file-upload
               class="v1"
               accept="image/png,image/jpeg"
               image-class="v1-image"
@@ -31,7 +29,7 @@
               @size-exceeded="onSizeExceeded"
               @load="onLoad"
             />
-          </div>
+   
           <input
             type="text"
             v-model="project.link"
@@ -145,7 +143,6 @@ export default {
     return {
       tags: [],
       holder: "",
-      image: "",
       base64: "",
       customImageMaxSize: 3 // megabytes
     };
