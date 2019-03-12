@@ -1,27 +1,8 @@
-# trevorwheeler
+# Web Developer Portfolio
+https://trevorwheeler.dev
 
-#####################################################
+### Stack
+Node.js, Vue.js, Express.js, MongoDB
 
-## Client setup in ./client
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-
-#####################################################
-//to be continued...
-
-```
+### Deployment 
+Continuous integration, deployment & delivery with Codeship on a Digital Ocean Droplet. Served with Nginx and Let's Encrypt SSL.
