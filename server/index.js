@@ -48,7 +48,3 @@ app.use(errorHandler);
 app.listen(PORT, function() {
 	console.log(`Server is starting on port ${PORT}`);
 });
-
-// http post localhost:8081/api/users/5c74026a300231102ee46f40/projects "Authorization:Bearer ${token} name="worked"
-
-// http post localhost:8081/api/users/5c74026a300231102ee46f40/projects "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjNzQwMjZhMzAwMjMxMTAyZWU0NmY0MCIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE1NTExMDY2NjZ9.LzF1dlTljXITtWYRhsrIzAVTSKH9Q_EWi2WHDCgqs5Q" name="worked"
