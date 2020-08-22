@@ -1,5 +1,5 @@
 # Web Developer Portfolio
-https://trevorwheeler.dev
+https://trevorwheeler.dev - discontinued
 
 ### Stack
 Node.js, Vue.js, Express.js, MongoDB
