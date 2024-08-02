@@ -7,13 +7,18 @@
         rel="noreferrer">
         <span>Source Code</span>
       </a>
-      <p class="footer--scroll--top">Back to top</p>
+      <p class="footer--scroll--top" @click="scrollToTop">Back to top</p>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-
+const scrollToTop = () => {
+  const projectsElement = document.getElementById('hero');
+  if (projectsElement) {
+    projectsElement.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 </script>
 
 <style lang="scss">

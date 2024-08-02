@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero--mobile--name--container">
       <h2 data-aos="fade-up" data-aos-duration="1000" class="hero--name"> Trevor Wheeler </h2>
     </div>
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <svg class="chevron--down" width="46" height="26" viewBox="0 0 46 26" fill="none" v-scroll-to="'.projects'"
+    <svg class="chevron--down" width="46" height="26" viewBox="0 0 46 26" fill="none" @click="scrollToProjects"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M21.3644 25.3029C22.2844 26.2324 23.7667 26.2324 24.6356 25.3029L45.2333 4.49255C46.2556 3.45978 46.2556 1.80735 45.2333 0.774578C44.2111 -0.258193 42.5756 -0.258193 41.5533 0.774578L24.6356 17.8669C23.7156 18.7964 22.2333 18.7964 21.3644 17.8669L4.44667 0.826217C3.42445 -0.206554 1.78889 -0.206554 0.766667 0.826217C-0.255556 1.85899 -0.255556 3.51142 0.766667 4.54419L21.3644 25.3029Z"
@@ -33,6 +33,12 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue';
 
+const scrollToProjects = () => {
+  const projectsElement = document.getElementById('projects');
+  if (projectsElement) {
+    projectsElement.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 </script>
 
 

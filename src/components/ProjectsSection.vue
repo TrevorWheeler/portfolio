@@ -1,5 +1,5 @@
 <template>
-  <section class="projects">
+  <section class="projects" id="projects">
     <h3 class="projects--category">Commercial Projects</h3>
     <div class="projects--container">
       <div class="project--item" v-for="(project, index) in projects" :key="index" data-aos="fade-up"
@@ -40,85 +40,54 @@ interface Project {
   image: string;
   repo: string;
   link: string;
+  type: PROJECT_CATEGORY;
 }
+
+enum PROJECT_CATEGORY {
+  COMMERCIAL = 'COMMERCIAL_PROJECTS',
+  FULL_STACK = 'FULL_STACK',
+  FRONT_END = 'FRONT_END',
+  BACK_END = 'BACK_END',
+  BOT_APPLICATION = 'BOT_APPLICATION'
+}
+
 const projects: ComputedRef<Project[]> = computed(() => {
-  enum PROJECT_CATEGORY {
-    PROFESSIONAL = 'COMMERCIAL_PROJECTS',
-    HOBBY = 'HOBBY'
-  }
   return [
     {
-      name: "GoDesta 2019 - 2024",
+      name: "GoDesta",
       description: "At Godesta, I played a key role in developing and enhancing a comprehensive transport logistics system, guiding it from inception to the successful onboarding of the first client. I worked on both frontend and backend using TypeScript and Java to create a robust, scalable platform. I implemented critical features for job booking, tracking, and integrated accounting and invoicing, while managing complex third-party integrations. My role combined technical expertise and project management, delivering high-quality solutions that improved operational efficiency and client engagement.",
-      tags: ["Apache Kafka", "Git", "HTML", "CSS", "Docker Products", "Node.js", "TypeScript", "Vue.js", "MongoDB", "JavaScript", "Spring Framework", "Jasper Reports", "Java", "Redis"],
+      tags: ["Professional Project", "Apache Kafka", "HTML", "CSS", "TypeScript", "JavaScript", "Vue.js", "Java", "Spring Framework", "Node.js", "Docker Products", "MongoDB", "Redis", "Jasper Reports", "Atlassian products"],
       image: "GoDesta.png",
       repo: "",
-      link: ""
+      link: "",
+      type: PROJECT_CATEGORY.COMMERCIAL
     },
     {
       name: "The Caf",
       description: "I was tasked with updating an existing WordPress website for The Caf, a vibrant coffee shop in Coolum Beach. The goal was to create a dynamic and engaging online presence that showcased the café's events and menu. Throughout the project, I gained deeper expertise in WordPress and web design. The client was very pleased with the outcome, noting a significant improvement over their outdated previous website.",
       image: "thecaf.jpg",
-      tags: ["HTML5", "CSS3", "Bootstrap", "jQuery", "Wordpress"],
+      tags: ["Professional Project", "HTML5", "CSS3", "Bootstrap", "jQuery", "Wordpress"],
       repo: "",
-      link: ""
+      link: "",
+      type: PROJECT_CATEGORY.COMMERCIAL
     },
     {
       name: "Sandy Pages Books",
       description: "I was tasked to upgrade their existing website with a more modern approach. An E-commerce solution was required as Sandy Pages books partnered with local schools to provide an outlet for students to purchase books during the schools book fest week.",
-      tags: ["HTML5", "CSS3", "Bootstrap", "jQuery", "Wordpress", "Woo-commerce", "cPanel", "Email"],
+      tags: ["Professional Project", "HTML5", "CSS3", "Bootstrap", "jQuery", "Wordpress", "Woo-commerce", "cPanel", "Email"],
       image: "sandypagesbooks.jpg",
       repo: "",
-      link: ""
+      link: "",
+      type: PROJECT_CATEGORY.COMMERCIAL
     },
     {
       name: "North Shore Realty",
       description: "I was tasked with creating professional and cohesive email signatures for North Shore Realty, a real estate company in Coolum Beach. Utilizing HTML and CSS, I designed email signatures that were not only visually appealing but also cross-compatible with major email providers such as Outlook and Gmail. Ensuring consistency across the organization, the signatures were easily applied to their Outlook email clients. This project involved meticulous attention to detail to guarantee that the design rendered correctly across different platforms, enhancing the company's branding and communication efforts.",
-      tags: ["HTML, CSS"],
+      tags: ["Professional Project", "HTML", "CSS", "Email"],
       image: "northshorerealty.jpg",
       repo: "",
-      link: ""
-    },
-
-    {
-      name: "Busy Brisbane",
-      description: "Busy Brisbane is a personal hobby project I developed to help users find and create activities in Brisbane, QLD. The platform features full CRUD (Create, Read, Update, Delete) capabilities, allowing users to manage activities effortlessly. I designed and implemented the entire project from scratch, handling both the front-end and back-end development. This project not only showcases my ability to build user-friendly applications but also highlights my skills in web development and user experience design.",
-      image: "busybrisbane.jpg",
-      tags: [""],
-      repo: "",
-      link: ""
-    },
-    {
-      name: "Guess The Colour",
-      description: "Guess the Colour is a learning project I developed to enhance my understanding of RGB color values and improve my programming skills. The game presents users with RGB values and challenges them to guess the correct color from a set of options. This project was instrumental in reinforcing my knowledge of color theory and web development fundamentals.",
-      image: "guess-the-colour.png",
-      tags: [""],
-      repo: "",
-      link: ""
-    },
-    {
-      name: "Score Keeper",
-      description: "Score-Keeper is an application designed to help users easily keep track of scores in turn-based games. The app provides a simple and intuitive interface for recording and managing scores, ensuring that players can focus on the game without worrying about keeping accurate tallies. Developed to enhance my skills in app design and user experience, this project showcases my ability to create practical and user-friendly applications.",
-      image: "score-keeper.png",
-      tags: [""],
-      repo: "",
-      link: ""
-    },
-    {
-      name: "HTML5 Video Player",
-      description: "I developed an HTML5 video player for seamless integration into websites, utilizing pure HTML and JavaScript without relying on external libraries. This project involved creating a custom video player interface with controls such as play, pause, volume, and fullscreen functionalities. The player is lightweight and easily customizable, providing a versatile solution for embedding video content on web pages. This project demonstrates my proficiency in HTML5 and JavaScript, as well as my ability to create efficient, standalone web components.",
-      image: "html5-video-player.png",
-      tags: [""],
-      repo: "",
-      link: ""
-    },
-    {
-      name: "Filthy Bot",
-      description: "Filthy Bot is a playful yet functional Discord bot created for the 'Filthy 5' Discord server. Developed before Spotify Sessions became available, this bot allows users to queue and manage songs directly within the Discord server, enhancing the communal listening experience. The bot queries YouTube for songs and pipes the audio through to the microphone input, enabling all users to hear the music in real-time. It supports various commands for adding, skipping, and managing the playlist, providing a seamless and interactive way for users to share and enjoy music together. This project highlights my skills in bot development, API integration, and creating engaging tools for online communities.",
-      image: "filthy-bot.png",
-      tags: [""],
-      repo: "",
-      link: ""
+      link: "",
+      type: PROJECT_CATEGORY.COMMERCIAL
     },
     {
       name: "Forum Generator",
@@ -126,15 +95,74 @@ const projects: ComputedRef<Project[]> = computed(() => {
       image: "forum-generator.png",
       tags: [""],
       repo: "",
-      link: ""
+      link: "",
+      type: PROJECT_CATEGORY.FULL_STACK
     },
+    {
+      name: "Filthy Bot",
+      description: "Filthy Bot is a playful yet functional Discord bot created for the 'Filthy 5' Discord server. Developed before Spotify Sessions became available, this bot allows users to queue and manage songs directly within the Discord server, enhancing the communal listening experience. The bot queries YouTube for songs and pipes the audio through to the microphone input, enabling all users to hear the music in real-time. It supports various commands for adding, skipping, and managing the playlist, providing a seamless and interactive way for users to share and enjoy music together. This project highlights my skills in bot development, API integration, and creating engaging tools for online communities.",
+      image: "filthy-bot.png",
+      tags: [""],
+      repo: "",
+      link: "",
+      type: PROJECT_CATEGORY.BOT_APPLICATION
+    },
+    {
+      name: "Shot Ball",
+      description: "Shot Ball is a 2D multiplayer online space shooting game developed in Go. The game features real-time combat in a dynamic space environment, where players can compete against each other using a click to shoot mechanic. Developing Shot Ball involved leveraging the Go programming language to create a responsive and engaging multiplayer experience. This project demonstrates my skills in game development, network programming, and real-time interaction, showcasing the ability to create complex and entertaining applications.",
+      image: "",
+      tags: [""],
+      repo: "",
+      link: "",
+      type: PROJECT_CATEGORY.FULL_STACK
+    },
+    {
+      name: "HTML5 Video Player",
+      description: "I developed an HTML5 video player for seamless integration into websites, utilizing pure HTML and JavaScript without relying on external libraries. This project involved creating a custom video player interface with controls such as play, pause, volume, and fullscreen functionalities. The player is lightweight and easily customizable, providing a versatile solution for embedding video content on web pages. This project demonstrates my proficiency in HTML5 and JavaScript, as well as my ability to create efficient, standalone web components.",
+      image: "html5-video-player.png",
+      tags: [""],
+      repo: "",
+      link: "",
+      type: PROJECT_CATEGORY.FRONT_END
+    },
+    {
+      name: "Busy Brisbane",
+      description: "Busy Brisbane is a personal hobby project I developed to help users find and create activities in Brisbane, QLD. The platform features full CRUD (Create, Read, Update, Delete) capabilities, allowing users to manage activities effortlessly. I designed and implemented the entire project from scratch, handling both the front-end and back-end development. This project not only showcases my ability to build user-friendly applications but also highlights my skills in web development and user experience design.",
+      image: "busybrisbane.jpg",
+      tags: ["HTML", "CSS", "vue.js", "node.js", "Express", "PostgreSQL"],
+      repo: "https://github.com/TrevorWheeler/busy-brisbane",
+      link: "",
+      type: PROJECT_CATEGORY.FULL_STACK
+    },
+    {
+      name: "Guess The Colour",
+      description: "Guess the Colour is a learning project I developed to enhance my understanding of RGB color values and improve my programming skills. The game presents users with RGB values and challenges them to guess the correct color from a set of options. This project was instrumental in reinforcing my knowledge of color theory and web development fundamentals.",
+      image: "guess-the-colour.png",
+      tags: [""],
+      repo: "",
+      link: "",
+      type: PROJECT_CATEGORY.FRONT_END
+    },
+    {
+      name: "Score Keeper",
+      description: "Score-Keeper is an application designed to help users easily keep track of scores in turn-based games. The app provides a simple and intuitive interface for recording and managing scores, ensuring that players can focus on the game without worrying about keeping accurate tallies. Developed to enhance my skills in app design and user experience, this project showcases my ability to create practical and user-friendly applications.",
+      image: "score-keeper.png",
+      tags: [""],
+      repo: "",
+      link: "",
+      type: PROJECT_CATEGORY.FRONT_END
+    },
+
+
+
     {
       name: "Kerbside City",
       description: "Kerbside City is an application I developed to simplify the process of finding kerbside pickup dates for residents in Brisbane. Frustrated with the user experience on the council website, I created an intuitive platform where users can simply type in their suburb and instantly receive the relevant pickup dates. The application crawls the council website to gather the necessary information and presents it in a user-friendly format. This project not only addressed a common pain point for residents but also showcases my skills in web scraping, data presentation, and improving user experience.",
       image: "kerbside-city.png",
       tags: [""],
       repo: "",
-      link: ""
+      link: "",
+      type: PROJECT_CATEGORY.FULL_STACK
     },
     {
       name: "Float Out",
@@ -142,7 +170,8 @@ const projects: ComputedRef<Project[]> = computed(() => {
       image: "floatout.jpg",
       tags: [""],
       repo: "",
-      link: ""
+      link: "",
+      type: PROJECT_CATEGORY.FRONT_END
     },
 
     {
@@ -151,15 +180,8 @@ const projects: ComputedRef<Project[]> = computed(() => {
       image: "CRUDapi.jpg",
       tags: [""],
       repo: "",
-      link: ""
-    },
-    {
-      name: "Shot Ball",
-      description: "Shot Ball is a 2D multiplayer online space shooting game developed in Go. The game features real-time combat in a dynamic space environment, where players can compete against each other using a click to shoot mechanic. Developing Shot Ball involved leveraging the Go programming language to create a responsive and engaging multiplayer experience. This project demonstrates my skills in game development, network programming, and real-time interaction, showcasing the ability to create complex and entertaining applications.",
-      image: "",
-      tags: [""],
-      repo: "",
-      link: ""
+      link: "",
+      type: PROJECT_CATEGORY.BACK_END
     },
 
   ]
