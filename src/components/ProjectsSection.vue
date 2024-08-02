@@ -1,0 +1,348 @@
+<template>
+  <section class="projects">
+    <h3 class="projects--category">Commercial Projects</h3>
+    <div class="projects--container">
+      <div class="project--item" v-for="(project, index) in projects" :key="index" data-aos="fade-up"
+        data-aos-duration="500">
+        <div class="project--top">
+          <h4 class="project--name">{{ project.name }}</h4>
+          <img class="cld-responsive project--img" :data-src="'/images/' + project.image" :alt="project.name"
+            :src="'/images/' + project.image">
+          <P class="project--description">{{ project.description }}</p>
+        </div>
+        <div class="project--bottom">
+          <div class="project--tag--container">
+            <div class="project--tag" v-for="(tag, index) in project.tags" :key="index"> <span>{{ tag }}</span></div>
+          </div>
+          <div class="project--links--container">
+            <a :href="project.link" target="_blank" rel="noreferrer" class="project--link project--link--live"
+              v-bind:class="{ active: project.link.length == 0 }">Live Site
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+              </svg></a>
+            <a :href="project.repo" target="_blank" rel="noreferrer" class="project--link project--link--github"
+              v-bind:class="{ active: project.repo === null }">View Repo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import { computed, onMounted, ref, Ref, watch, type ComputedRef } from 'vue';
+interface Project {
+  name: string,
+  description: String;
+  tags: string[];
+  image: string;
+  repo: string;
+  link: string;
+}
+const projects: ComputedRef<Project[]> = computed(() => {
+  enum PROJECT_CATEGORY {
+    PROFESSIONAL = 'COMMERCIAL_PROJECTS',
+    HOBBY = 'HOBBY'
+  }
+  return [
+    {
+      name: "GoDesta 2019 - 2024",
+      description: "Employed At Godesta, I was integral to the initial development and subsequent enhancement of a comprehensive transport logistics system, overseeing its growth from inception through to the successful onboarding of their first client. My contributions spanned both frontend and backend development, employing TypeScript and Java to establish a robust, scalable platform. I engineered critical functionalities for the entire operational lifecycle, including job booking, tracking, and a fully integrated accounting and invoicing flow. Additionally, I managed complex integrations with third-party services, ensuring seamless data synchronization and functionality enhancements. My role required a blend of technical expertise and project management skills, enabling me to deliver high-quality solutions that significantly improved operational efficiencies and enhanced client engagement.",
+      tags: ["Apache Kafka", "Git", "HTML", "CSS", "Docker Products", "Node.js", "TypeScript", "Vue.js", "MongoDB", "JavaScript", "Spring Framework", "Jasper Reports", "Java", "Redis"],
+      image: "GoDesta.png",
+      repo: "",
+      link: ""
+    },
+    {
+      name: "The Caf",
+      description: "I was tasked with updating an existing WordPress website for The Caf, a vibrant coffee shop in Coolum Beach. The goal was to create a dynamic and engaging online presence that showcased the café's events and menu. Throughout the project, I gained deeper expertise in WordPress and web design. The client was very pleased with the outcome, noting a significant improvement over their outdated previous website.",
+      image: "thecaf.jpg",
+      tags: ["HTML5", "CSS3", "Bootstrap", "jQuery", "Wordpress"],
+      repo: "",
+      link: ""
+    },
+    {
+      name: "Sandy Pages Books",
+      description: "I was tasked to upgrade their existing website with a more modern approach. An E-commerce solution was required as Sandy Pages books partnered with local schools to provide an outlet for students to purchase books during the schools book fest week.",
+      tags: ["HTML5", "CSS3", "Bootstrap", "jQuery", "Wordpress", "Woo-commerce", "cPanel", "Email"],
+      image: "sandypagesbooks.jpg",
+      repo: "",
+      link: ""
+    },
+    {
+      name: "North Shore Realty",
+      description: "I was tasked with creating professional and cohesive email signatures for North Shore Realty, a real estate company in Coolum Beach. Utilizing HTML and CSS, I designed email signatures that were not only visually appealing but also cross-compatible with major email providers such as Outlook and Gmail. Ensuring consistency across the organization, the signatures were easily applied to their Outlook email clients. This project involved meticulous attention to detail to guarantee that the design rendered correctly across different platforms, enhancing the company's branding and communication efforts.",
+      tags: ["HTML, CSS"],
+      image: "northshorerealty.jpg",
+      repo: "",
+      link: ""
+    },
+
+    {
+      name: "Busy Brisbane",
+      description: "Busy Brisbane is a personal hobby project I developed to help users find and create activities in Brisbane, QLD. The platform features full CRUD (Create, Read, Update, Delete) capabilities, allowing users to manage activities effortlessly. I designed and implemented the entire project from scratch, handling both the front-end and back-end development. This project not only showcases my ability to build user-friendly applications but also highlights my skills in web development and user experience design.",
+      image: "busybrisbane.jpg",
+      tags: [""],
+      repo: "",
+      link: ""
+    },
+    {
+      name: "Guess The Colour",
+      description: "Guess the Colour is a learning project I developed to enhance my understanding of RGB color values and improve my programming skills. The game presents users with RGB values and challenges them to guess the correct color from a set of options. This project was instrumental in reinforcing my knowledge of color theory and web development fundamentals.",
+      image: "guess-the-colour.png",
+      tags: [""],
+      repo: "",
+      link: ""
+    },
+    {
+      name: "Score Keeper",
+      description: "Score-Keeper is an application designed to help users easily keep track of scores in turn-based games. The app provides a simple and intuitive interface for recording and managing scores, ensuring that players can focus on the game without worrying about keeping accurate tallies. Developed to enhance my skills in app design and user experience, this project showcases my ability to create practical and user-friendly applications.",
+      image: "score-keeper.png",
+      tags: [""],
+      repo: "",
+      link: ""
+    },
+    {
+      name: "HTML5 Video Player",
+      description: "I developed an HTML5 video player for seamless integration into websites, utilizing pure HTML and JavaScript without relying on external libraries. This project involved creating a custom video player interface with controls such as play, pause, volume, and fullscreen functionalities. The player is lightweight and easily customizable, providing a versatile solution for embedding video content on web pages. This project demonstrates my proficiency in HTML5 and JavaScript, as well as my ability to create efficient, standalone web components.",
+      image: "html5-video-player.png",
+      tags: [""],
+      repo: "",
+      link: ""
+    },
+    {
+      name: "Filthy Bot",
+      description: "Filthy Bot is a playful yet functional Discord bot created for the 'Filthy 5' Discord server. Developed before Spotify Sessions became available, this bot allows users to queue and manage songs directly within the Discord server, enhancing the communal listening experience. The bot queries YouTube for songs and pipes the audio through to the microphone input, enabling all users to hear the music in real-time. It supports various commands for adding, skipping, and managing the playlist, providing a seamless and interactive way for users to share and enjoy music together. This project highlights my skills in bot development, API integration, and creating engaging tools for online communities.",
+      image: "filthy-bot.png",
+      tags: [""],
+      repo: "",
+      link: ""
+    },
+    {
+      name: "Forum Generator",
+      description: "Forum is a dynamic project designed to quickly spin up new forums as needed. The platform supports both anonymous users and account creation, providing flexibility in user engagement. Posts on the forum are short-lived, ensuring that the content remains fresh and the website can adapt to changing discussions. Drawing inspiration from various famous forum and social media websites, I aimed to create an intuitive and user-friendly experience. This project demonstrates my ability to integrate features from different platforms, innovate on traditional forum structures, and develop a versatile and responsive web application.",
+      image: "forum-generator.png",
+      tags: [""],
+      repo: "",
+      link: ""
+    },
+    {
+      name: "Kerbside City",
+      description: "Kerbside City is an application I developed to simplify the process of finding kerbside pickup dates for residents in Brisbane. Frustrated with the user experience on the council website, I created an intuitive platform where users can simply type in their suburb and instantly receive the relevant pickup dates. The application crawls the council website to gather the necessary information and presents it in a user-friendly format. This project not only addressed a common pain point for residents but also showcases my skills in web scraping, data presentation, and improving user experience.",
+      image: "kerbside-city.png",
+      tags: [""],
+      repo: "",
+      link: ""
+    },
+    {
+      name: "Float Out",
+      description: "Float Out is an application I developed to streamline cash handling tasks during my time working in hospitality. The app calculates the difference between the float amount and profits made in a straightforward, linear manner. Instead of manually adding up each denomination of coins and notes, users can simply input the total number of each denomination, and the app automatically tallies the amounts. This tool significantly simplifies the process of reconciling the cash drawer, allowing users to quickly determine the amount to take out of the float. 'Float Out' highlights my ability to identify practical problems in everyday tasks and develop efficient, user-friendly solutions to address them.",
+      image: "floatout.jpg",
+      tags: [""],
+      repo: "",
+      link: ""
+    },
+
+    {
+      name: "CRUD Boilerplate",
+      description: "CRUD Boilerplate is a deprecated starter template for backend Node.js applications, designed to streamline the development process. This boilerplate includes built-in JWT authentication for secure user management and a simple projects route to demonstrate basic CRUD operations. The project served as a foundational template for quickly setting up new backend applications, ensuring consistent structure and best practices. Although it is no longer actively maintained, CRUD Boilerplate highlights my proficiency in Node.js, authentication mechanisms, and creating reusable code for efficient project initialization.",
+      image: "CRUDapi.jpg",
+      tags: [""],
+      repo: "",
+      link: ""
+    },
+    {
+      name: "Shot Ball",
+      description: "Shot Ball is a 2D multiplayer online space shooting game developed in Go. The game features real-time combat in a dynamic space environment, where players can compete against each other using a click to shoot mechanic. Developing Shot Ball involved leveraging the Go programming language to create a responsive and engaging multiplayer experience. This project demonstrates my skills in game development, network programming, and real-time interaction, showcasing the ability to create complex and entertaining applications.",
+      image: "",
+      tags: [""],
+      repo: "",
+      link: ""
+    },
+
+  ]
+})
+</script>
+
+<style lang="scss">
+.active {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+h4 {
+  color: var(--primary);
+}
+
+.projects {
+  padding: 7em 1.5em 0;
+  background-color: var(--primary);
+
+  @media only screen and (max-height: 450px) {
+    padding: 7em 4em 0;
+  }
+
+  @media only screen and (min-width: 1366px) {
+    padding: 10em 1.5em 0;
+  }
+
+  @media only screen and (min-width: 1650px) {
+    padding: 15em 1.5em 0;
+  }
+
+  .projects--category {
+    font-weight: 600;
+    font-size: 2.4em;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 70px 0;
+
+    @media only screen and (min-width: 1366px) {
+      margin: 0 0 100px 0;
+      font-size: 2.8em;
+    }
+
+    @media only screen and (min-width: 1650px) {
+      margin: 0 0 150px 0;
+    }
+  }
+
+  .projects--container {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      width: 1255px;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+    @media only screen and (min-width: 1650px) {
+      width: 1450px;
+    }
+
+    .project--item {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.24);
+      width: 100%;
+      margin: 0 0 7em 0;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--primary);
+      position: relative;
+      justify-content: space-between;
+      border-radius: 3px;
+      overflow: hidden;
+
+      @media only screen and (min-width: 768px) {
+        width: calc(50% - 0.5em);
+        margin: 0 0 7em;
+
+        &:nth-child(odd) {
+          margin-right: 0.5em;
+        }
+
+        &:nth-child(even) {
+          margin-left: 0.5em;
+        }
+      }
+
+      @media only screen and (min-width: 1280px) {
+        width: 397px;
+
+        &:nth-child(odd) {
+          margin-right: 0;
+        }
+
+        &:nth-child(even) {
+          margin-left: 0;
+        }
+      }
+
+      @media only screen and (min-width: 1366px) {
+        margin: 0 0 10em 0;
+      }
+
+      @media only screen and (min-width: 1650px) {
+        margin: 0 0 15em 0;
+        width: 450px;
+      }
+
+      .project--name {
+        font-size: 2em;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        background-color: var(--secondary);
+        margin: 0;
+        line-height: 72px;
+        color: --text-light;
+      }
+
+      .project--img {
+        width: 100%;
+        height: auto;
+      }
+
+      .project--description {
+        margin: 1.4em 0;
+        padding: 0 20px;
+        font-size: 1.8em;
+        font-weight: 400;
+      }
+
+      .project--tag--container {
+        padding: 0 20px 25px;
+
+        .project--tag {
+          border: 2px solid var(--accent);
+          display: inline-flex;
+          margin: 0 1em 1em 0;
+          border-radius: 2px;
+
+          span {
+            font-size: 1.45em;
+            padding: 0.5em;
+            font-weight: 600;
+            line-height: 1.3rem;
+          }
+        }
+      }
+
+      .project--links--container {
+        display: flex;
+        justify-content: space-between;
+        padding: 2em 20px;
+        background-color: var(--secondary);
+
+        .project--link {
+          color: var(--accent);
+          text-decoration: none;
+          font-size: 1.7em;
+          text-transform: uppercase;
+          font-weight: 600;
+          position: relative;
+          display: inline-block;
+
+          svg {
+            position: absolute;
+            right: -23px;
+            top: -0.08em;
+            width: 18px;
+            fill: var(--accent);
+          }
+        }
+      }
+    }
+  }
+}
+</style>
