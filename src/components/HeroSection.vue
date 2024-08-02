@@ -4,11 +4,13 @@
       <h2 data-aos="fade-up" data-aos-duration="1000" class="hero--name"> Trevor Wheeler </h2>
     </div>
     <div class="hero--content--container">
+      <!-- Web <span>Developer</span> - Problem Solver and Eager Learner -->
       <h1 class="summary hero--summary" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> Web
-        <span>Developer</span> - Problem Solver and Eager Learner
+        <span>Developer</span> - Innovating Solutions & Enhancing User Experiences
       </h1>
       <div class="hero--links--container">
-        <div class="hero--link--container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <div class="hero--link--container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
+          @click="scrollToProjects">
           <a class="link hero--link hero--link--projects" v-scroll-to="'.projects'">
             <span>Explore Projects</span>
           </a>

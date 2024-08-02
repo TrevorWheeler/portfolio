@@ -41,7 +41,6 @@
     </a>
   </header>
   <header class="menu--desktop">
-
     <router-link to="/" data-aos="fade" data-aos-duration="1000" v-slot="{ href, navigate }">
       <h1 class="name" :href="href" @click="navigate">Trevor Wheeler</h1>
     </router-link>
@@ -50,7 +49,8 @@
         data-aos-duration="1000"> Github </a>
       <a href="mailto: sendtrevmail@gmail.com" target="_blank" rel="noreferrer" data-aos="fade" data-aos-delay="300"
         data-aos-duration="1000"> Contact </a>
-      <a href="#" data-aos="fade" data-aos-delay="400" data-aos-duration="1000"> LinkedIn </a>
+      <a href="https://www.linkedin.com/in/trevor-wheeler-95a46659/" target="_blank" rel="noreferrer" data-aos="fade"
+        data-aos-delay="400" data-aos-duration="1000"> LinkedIn </a>
     </div>
   </header>
 
