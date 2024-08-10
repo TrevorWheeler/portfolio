@@ -5,8 +5,8 @@
       <div class="card" v-for="(project, index) in projects" :key="index" data-aos="fade-up" data-aos-duration="500">
         <div class="project-top">
           <h4 class="project-name">{{ project.name }}</h4>
-          <!-- <img class="project-img" :data-src="'src/assets/images/' + project.image" :alt="project.name"
-            :src="'src/assets/images/' + project.image"> -->
+          <img class="project-img" :data-src="'images/' + project.image" :alt="project.name"
+            :src="'images/' + project.image">
 
           <P class="project-description">{{ project.description }}</p>
         </div>
