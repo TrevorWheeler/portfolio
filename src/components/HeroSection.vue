@@ -11,9 +11,9 @@
       <div class="hero--links--container">
         <div class="hero--link--container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
           @click="scrollToProjects">
-          <a class="link hero--link hero--link--projects" v-scroll-to="'.projects'">
+          <div class="link hero--link hero--link--projects" v-scroll-to="'.projects'">
             <span>Explore Projects</span>
-          </a>
+          </div>
         </div>
         <div class="hero--link--container" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
           <a class="link hero--link hero--link--contact" href="mailto: sendtrevmail@gmail.com" target="_blank"
