@@ -30,7 +30,6 @@ import IconEmail from './icons/IconEmail.vue';
 import IconGithub from './icons/IconGithub.vue';
 import IconLinkedIn from './icons/IconLinkedIn.vue';
 
-
 </script>
 <style scoped lang="scss">
 a {

@@ -1,10 +1,9 @@
 <template>
-  <section class="hero" id="hero">
-    <div class="hero--mobile--name--container">
-      <h2 data-aos="fade-up" data-aos-duration="1000" class="hero--name"> Trevor Wheeler </h2>
+  <section id="hero-section">
+    <div class="hero-mobile-name-container">
+      <h2 data-aos="fade-up" data-aos-duration="1000" class="hero-name"> Trevor Wheeler </h2>
     </div>
     <div class="hero--content--container">
-      <!-- Web <span>Developer</span> - Problem Solver and Eager Learner -->
       <h1 class="summary hero--summary" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> Web
         <span>Developer</span> - Innovating Solutions & Enhancing User Experiences
       </h1>
@@ -35,7 +34,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue';
 
-const scrollToProjects = () => {
+function scrollToProjects() {
   const projectsElement = document.getElementById('projects');
   if (projectsElement) {
     projectsElement.scrollIntoView({ behavior: 'smooth' });
@@ -46,14 +45,7 @@ const scrollToProjects = () => {
 
 
 <style lang="scss">
-.active {
-  opacity: 0.3;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-
-.hero {
+#hero-section {
   height: calc(100vh - 70px);
   background-color: var(--secondary);
   display: flex;
@@ -70,7 +62,7 @@ const scrollToProjects = () => {
     height: 100vh;
   }
 
-  .hero--mobile--name--container {
+  .hero-mobile-name-container {
     width: 100vw;
     position: absolute;
     top: 0;

@@ -1,20 +1,19 @@
 <template>
-  <section class="footer">
+  <section id="footer-section">
     <div class="container">
-      <h5 class="footer--heading"> <span>Thanks</span> for taking the time to check out my portfolio. </h5>
-      <!-- <p class="footer--build"> Built with Vue, Vuex, Node.js, Express, MongoDb, JWT and Axios on Digital Ocean VPS.</p> -->
-      <a class="link footer--source--link" href="https://github.com/TrevorWheeler/portfolio" target="_blank"
+      <h5 id="thanks"> <span>Thanks</span> for taking the time to check out my portfolio. </h5>
+      <a id="repository-link" class="link" href="https://github.com/TrevorWheeler/portfolio" target="_blank"
         rel="noreferrer">
         <span>Source Code</span>
       </a>
-      <p class="footer--scroll--top" @click="scrollToTop">Back to top</p>
+      <p id="scroll-top" @click="scrollToTop">Back to top</p>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const scrollToTop = () => {
-  const projectsElement = document.getElementById('hero');
+function scrollToTop() {
+  const projectsElement = document.getElementById('hero-section');
   if (projectsElement) {
     projectsElement.scrollIntoView({ behavior: 'smooth' });
   }
@@ -22,7 +21,7 @@ const scrollToTop = () => {
 </script>
 
 <style lang="scss">
-.footer {
+#footer-section {
   height: 100%;
   padding: 7em 15px 13em;
 
@@ -42,7 +41,7 @@ const scrollToTop = () => {
     padding: 15em 4em;
   }
 
-  .footer--heading {
+  #thanks {
     margin: 0 0 40px 0;
     text-align: center;
     align-self: center;
@@ -64,22 +63,8 @@ const scrollToTop = () => {
     }
   }
 
-  .footer--build {
-    color: var(--primary);
-    font-weight: 400;
-    text-align: center;
-    padding: 0 1em;
-    margin: 0 0 30px 0;
 
-    @media only screen and (min-width: 768px) {
-      margin: 0 0 40px 0;
-      max-width: 450px;
-      margin: 0 auto 40px;
-      font-weight: 300;
-    }
-  }
-
-  .footer--source--link {
+  #repository-link {
     margin: 0 auto 0rem;
 
     @media only screen and (min-width: 768px) {
@@ -87,7 +72,7 @@ const scrollToTop = () => {
     }
   }
 
-  .footer--scroll--top {
+  #scroll-top {
     cursor: pointer;
     display: none;
     margin: 0 auto;
