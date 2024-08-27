@@ -114,7 +114,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Shot Ball",
       description: "Shot Ball is a 2D multiplayer online space shooting game developed in Go. The game features real-time combat in a dynamic space environment, where players can compete against each other using a click to shoot mechanic. Developing Shot Ball involved leveraging the Go programming language to create a responsive and engaging multiplayer experience. This project demonstrates my skills in game development, network programming, and real-time interaction, showcasing the ability to create complex and entertaining applications.",
-      image: "",
+      image: "shotball.png",
       tags: ["Personal Project", "Online Multiplayer", "Typescript", "Vue.js", "node.js", "express", "HTML", "CSS"],
       repo: "https://github.com/TrevorWheeler/shotball-server",
       link: "",
