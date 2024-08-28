@@ -16,7 +16,7 @@
           </div>
           <div class="project-links-container">
             <a :href="project.link" target="_blank" rel="noreferrer" class="project-link project-link-live"
-              v-bind:class="{ active: project.link.length == 0 }">Live Site
+              v-bind:class="{ inactive: project.link === '' }">Live Site
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M0 0h24v24H0z" fill="none" />
                 <path
@@ -55,15 +55,17 @@ enum PROJECT_CATEGORY {
   BOT_APPLICATION = 'BOT_APPLICATION'
 }
 
+
+
 const projects: ComputedRef<Project[]> = computed(() => {
   return [
     {
       name: "GoDesta",
-      description: "At Godesta, I played a key role in developing and enhancing a comprehensive transport logistics system, guiding it from inception to the successful onboarding of the first client. I worked on both frontend and backend using TypeScript and Java to create a robust, scalable platform. I implemented critical features for job booking, tracking, and integrated accounting and invoicing, while managing complex third-party integrations. My role combined technical expertise and project management, delivering high-quality solutions that improved operational efficiency and client engagement.",
+      description: "I played a key role in developing and enhancing a comprehensive transport logistics system, guiding it from inception to the successful onboarding of the first client at GoDesta.I worked on both frontend and backend using TypeScript and Java to create a robust, scalable platform.I implemented critical features for job booking, tracking, and integrated accounting and invoicing, while managing complex third- party integrations.My role combined technical expertise and project management, delivering high - quality solutions that improved operational efficiency and client engagement.",
       tags: ["Professional Project", "Apache Kafka", "Java", "Spring Framework", "TypeScript", "Node.js", "JavaScript", "Vue.js", "HTML", "CSS", "webpack", "MongoDB", "Redis", "Jasper Reports", "Email", "TeamCity", "Docker", "Rancher", "Atlassian products"],
       image: "GoDesta.png",
       repo: "",
-      link: "",
+      link: "https://godesta.com.au/",
       type: PROJECT_CATEGORY.COMMERCIAL
     },
     {
