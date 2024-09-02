@@ -61,7 +61,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
   return [
     {
       name: "GoDesta",
-      description: "I played a key role in developing and enhancing a comprehensive transport logistics system, guiding it from inception to the successful onboarding of the first client at GoDesta.I worked on both frontend and backend using TypeScript and Java to create a robust, scalable platform.I implemented critical features for job booking, tracking, and integrated accounting and invoicing, while managing complex third- party integrations.My role combined technical expertise and project management, delivering high - quality solutions that improved operational efficiency and client engagement.",
+      description: "During my five years of employment at GoDesta, I played a pivotal role in the development and enhancement of a comprehensive transport logistics system, guiding the project from its inception through to the successful onboarding of our first client.I worked on both frontend and backend using TypeScript and Java to create a robust, scalable platform.I implemented critical features for job booking, tracking, and integrated accounting and invoicing, while managing complex third- party integrations.My role combined technical expertise and project management, delivering high - quality solutions that improved operational efficiency and client engagement.",
       tags: ["Professional Project", "Apache Kafka", "Java", "Spring Framework", "TypeScript", "Node.js", "JavaScript", "Vue.js", "HTML", "CSS", "webpack", "MongoDB", "Redis", "Jasper Reports", "Email", "TeamCity", "Docker", "Rancher", "Atlassian products"],
       image: "GoDesta.png",
       repo: "",
@@ -69,10 +69,28 @@ const projects: ComputedRef<Project[]> = computed(() => {
       type: PROJECT_CATEGORY.COMMERCIAL
     },
     {
+      name: "Trevy",
+      description: "Trevy is a personal passion project aimed at creating a comprehensive business management solution to streamline operations across various service industries. Currently in early development, Trevy features a landing page, user sign-up, dashboard, client management, and interactive maps powered by Mapbox. This project highlights my expertise in modern web development and my commitment to delivering high-quality, maintainable, and visually appealing applications.",
+      image: "trevy.png",
+      tags: ["Personal Project", "HTML5", "CSS3", "Vite", "Vue.js", "Go", "Echo", "AWS SES", "MongoDB"],
+      repo: "",
+      link: "",
+      type: PROJECT_CATEGORY.COMMERCIAL
+    },
+    {
+      name: "Koala Cuts",
+      description: "Koala Cuts is a fictional business website created as a fun project to explore and showcase my web development and design skills. Designed for an imaginary landscaping service, the site offers a clear and inviting overview of various services to potential clients. This project focused on experimenting with Lerna and monorepos to efficiently manage and scale multiple packages within a single codebase. I also created all vector designs and the logo using Figma, demonstrating my ability to handle both development and design aspects to build robust, maintainable, and visually appealing web applications.",
+      image: "koala-cuts.jpg",
+      tags: ["Personal Project", "Monorepo", "Lerna", "HTML5", "CSS3", "Vue.js", "fastify", "Figma"],
+      repo: "https://github.com/TrevorWheeler/koala-cuts",
+      link: "",
+      type: PROJECT_CATEGORY.COMMERCIAL
+    },
+    {
       name: "The Caf",
       description: "I was tasked with updating an existing WordPress website for The Caf, a vibrant coffee shop in Coolum Beach. The goal was to create a dynamic and engaging online presence that showcased the café's events and menu. Throughout the project, I gained deeper expertise in WordPress and web design. The client was very pleased with the outcome, noting a significant improvement over their outdated previous website.",
       image: "thecaf.jpg",
-      tags: ["Professional Project", "HTML5", "CSS3", "Bootstrap", "jQuery", "Wordpress"],
+      tags: ["Professional Project", "HTML5", "CSS3", "Bootstrap", "jQuery", "Wordpress", "Figma"],
       repo: "",
       link: "",
       type: PROJECT_CATEGORY.COMMERCIAL
@@ -317,6 +335,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
         width: 100%;
         height: auto;
         aspect-ratio: 16 / 9;
+        object-position: top;
         object-fit: cover;
       }
 
