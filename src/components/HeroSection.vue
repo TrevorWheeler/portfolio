@@ -3,26 +3,26 @@
     <div class="hero-mobile-name-container">
       <h2 data-aos="fade-up" data-aos-duration="1000" class="hero-name"> Trevor Wheeler </h2>
     </div>
-    <div class="hero--content--container">
-      <h1 class="summary hero--summary" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> Web
+    <div class="hero-content-container">
+      <h1 class="summary hero-summary" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> Web
         <span>Developer</span> - Innovating Solutions & Enhancing User Experiences
       </h1>
-      <div class="hero--links--container">
-        <div class="hero--link--container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
+      <div class="hero-links-container">
+        <div class="hero-link-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
           @click="scrollToProjects">
-          <div class="link hero--link hero--link--projects" v-scroll-to="'.projects'">
+          <div class="link hero-link hero-link-projects" v-scroll-to="'.projects'">
             <span>Explore Projects</span>
           </div>
         </div>
-        <div class="hero--link--container" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-          <a class="link hero--link hero--link--contact" href="mailto: sendtrevmail@gmail.com" target="_blank"
+        <div class="hero-link-container" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+          <a class="link hero-link hero-link-contact" href="mailto: sendtrevmail@gmail.com" target="_blank"
             rel="noreferrer">
             <span>Contact</span>
           </a>
         </div>
       </div>
     </div>
-    <svg class="chevron--down" width="46" height="26" viewBox="0 0 46 26" fill="none" @click="scrollToProjects"
+    <svg class="chevron-down" width="46" height="26" viewBox="0 0 46 26" fill="none" @click="scrollToProjects"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M21.3644 25.3029C22.2844 26.2324 23.7667 26.2324 24.6356 25.3029L45.2333 4.49255C46.2556 3.45978 46.2556 1.80735 45.2333 0.774578C44.2111 -0.258193 42.5756 -0.258193 41.5533 0.774578L24.6356 17.8669C23.7156 18.7964 22.2333 18.7964 21.3644 17.8669L4.44667 0.826217C3.42445 -0.206554 1.78889 -0.206554 0.766667 0.826217C-0.255556 1.85899 -0.255556 3.51142 0.766667 4.54419L21.3644 25.3029Z"
@@ -32,9 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
-
-function scrollToProjects() {
+function scrollToProjects(): void {
   const projectsElement = document.getElementById('projects');
   if (projectsElement) {
     projectsElement.scrollIntoView({ behavior: 'smooth' });
@@ -78,7 +76,7 @@ function scrollToProjects() {
       display: none;
     }
 
-    .hero--name {
+    .hero-name {
       color: var(--primary);
       font-size: 1.8em;
       text-transform: uppercase;
@@ -87,7 +85,7 @@ function scrollToProjects() {
     }
   }
 
-  .hero--content--container {
+  .hero-content-container {
     max-width: 854px;
     align-self: center;
     padding: 45px 0 50px;
@@ -129,7 +127,7 @@ function scrollToProjects() {
     }
   }
 
-  .hero--links--container {
+  .hero-links-container {
     @media only screen and (min-width: 768px) {
       display: flex;
       width: 484px;
@@ -137,7 +135,7 @@ function scrollToProjects() {
     }
   }
 
-  .hero--link--projects {
+  .hero-link-projects {
     margin-bottom: 35px;
 
     @media only screen and (min-width: 768px) {
@@ -145,7 +143,7 @@ function scrollToProjects() {
     }
   }
 
-  .hero--link--contact {
+  .hero-link-contact {
     transition: 1s ease-out;
     background: none;
     color: var(--primary);
@@ -159,7 +157,7 @@ function scrollToProjects() {
     }
   }
 
-  .chevron--down {
+  .chevron-down {
     display: none;
     position: absolute;
     bottom: 50px;

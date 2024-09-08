@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, watch, type ComputedRef } from 'vue';
+import { computed, type ComputedRef } from 'vue';
 interface Project {
   name: string,
   description: String;
@@ -43,9 +43,6 @@ interface Project {
   link: string;
   type: PROJECT_CATEGORY;
 }
-// tooltip category ideas:
-// Professional Projects - for projects i was employed at or freelanced (paid work).
-// Personal Projects - projects done for fun or learning.
 
 enum PROJECT_CATEGORY {
   COMMERCIAL = 'COMMERCIAL_PROJECTS',

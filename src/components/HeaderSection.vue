@@ -1,26 +1,18 @@
 <template>
-  <header class="menu--mobile">
-    <a href="https://github.com/trevorwheeler" target="_blank" rel="noreferrer">
-      <IconGithub />
-    </a>
-    <a href="mailto: sendtrevmail@gmail.com" target="_blank" rel="noreferrer">
-      <IconEmail />
-    </a>
-    <a href="https://www.linkedin.com/in/trevor-wheeler-95a46659/" target="_blank" rel="noreferrer">
-      <IconLinkedIn />
+  <header class="menu-mobile">
+    <a v-for="link in LINKS" :key="link.url" :href="link.url" target="_blank" rel="noreferrer">
+      <component :is="link.icon" />
     </a>
   </header>
-  <header class="menu--desktop">
-    <router-link to="/" data-aos="fade" data-aos-duration="1000" v-slot="{ href, navigate }">
+  <header class="menu-desktop">
+    <router-link to="/" data-aos="fade" data-aos-duration="1000" custom v-slot="{ href, navigate }">
       <h1 class="name" :href="href" @click="navigate">Trevor Wheeler</h1>
     </router-link>
     <div class="links">
-      <a href="https://github.com/trevorwheeler" target="_blank" rel="noreferrer" data-aos="fade" data-aos-delay="200"
-        data-aos-duration="1000"> Github </a>
-      <a href="mailto: sendtrevmail@gmail.com" target="_blank" rel="noreferrer" data-aos="fade" data-aos-delay="300"
-        data-aos-duration="1000"> Contact </a>
-      <a href="https://www.linkedin.com/in/trevor-wheeler-95a46659/" target="_blank" rel="noreferrer" data-aos="fade"
-        data-aos-delay="400" data-aos-duration="1000"> LinkedIn </a>
+      <a v-for="link in LINKS" :key="link.url" :href="link.url" target="_blank" rel="noreferrer" data-aos="fade"
+        :data-aos-delay="link.delay" data-aos-duration="1000">
+        {{ link.label }}
+      </a>
     </div>
   </header>
 </template>
@@ -30,13 +22,27 @@ import IconEmail from './icons/IconEmail.vue';
 import IconGithub from './icons/IconGithub.vue';
 import IconLinkedIn from './icons/IconLinkedIn.vue';
 
+
+interface Link {
+  url: string;
+  label: string;
+  icon: typeof IconEmail | typeof IconGithub | typeof IconLinkedIn;
+  delay: number;
+}
+
+const LINKS: Link[] = [
+  { url: 'https://github.com/trevorwheeler', label: 'Github', icon: IconGithub, delay: 200 },
+  { url: 'mailto:sendtrevmail@gmail.com', label: 'Contact', icon: IconEmail, delay: 300 },
+  { url: 'https://www.linkedin.com/in/trevor-wheeler-95a46659/', label: 'LinkedIn', icon: IconLinkedIn, delay: 400 },
+];
+
 </script>
 <style scoped lang="scss">
 a {
   align-self: center;
 }
 
-.menu--mobile {
+.menu-mobile {
   z-index: 2;
   position: fixed;
   bottom: 0;
@@ -56,7 +62,7 @@ a {
   }
 }
 
-.menu--desktop {
+.menu-desktop {
   padding: 0 3vw;
   width: 100%;
   height: 70px;

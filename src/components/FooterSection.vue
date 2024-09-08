@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-function scrollToTop() {
+function scrollToTop(): void {
   const projectsElement = document.getElementById('hero-section');
   if (projectsElement) {
     projectsElement.scrollIntoView({ behavior: 'smooth' });
