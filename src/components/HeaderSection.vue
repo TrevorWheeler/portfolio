@@ -102,7 +102,7 @@ a {
 
     a {
       color: var(--primary);
-      font-weight: 400;
+      font-weight: 500;
       display: inline-block;
       letter-spacing: 1px;
       font-size: 1.8em;

@@ -99,7 +99,7 @@ function scrollToProjects(): void {
   .summary {
     font-size: 3.6em;
     animation-delay: 0.1s;
-    font-weight: 300;
+    font-weight: 400;
     align-self: center;
     text-align: center;
     color: var(--primary);

@@ -47,7 +47,7 @@ function scrollToTop(): void {
     align-self: center;
     color: var(--primary);
     font-size: 3.6em;
-    font-weight: 300;
+    font-weight: 400;
 
     @media only screen and (min-width: 768px) {
       font-size: 3.6em;
