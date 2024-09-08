@@ -5,7 +5,6 @@ This is the front-end application for my software development portfolio, built w
 ## Features
 
 - **Vue 3:** The latest version of Vue.js for a reactive and modular front-end.
-- **Pinia:** State management using Pinia, a simpler and more intuitive alternative to Vuex.
 - **Vue Router:** Navigation management with Vue Router for a single-page application experience.
 - **TypeScript:** Strong typing with TypeScript for enhanced code quality.
 - **AOS:** Animate on scroll library for smooth, modern animations.
