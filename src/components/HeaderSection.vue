@@ -5,7 +5,7 @@
     </a>
   </header>
   <header class="menu-desktop">
-    <router-link to="/" data-aos="fade" data-aos-duration="1000" custom v-slot="{ href, navigate }">
+    <router-link to="/" data-aos="fade" data-aos-duration="1000" v-slot="{ href, navigate }">
       <h1 class="name" :href="href" @click="navigate">Trevor Wheeler</h1>
     </router-link>
     <div class="links">

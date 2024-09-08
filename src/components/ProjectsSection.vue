@@ -8,7 +8,7 @@
           <img class="project-img" :data-src="'images/' + project.image" :alt="project.name"
             :src="'images/' + project.image">
 
-          <P class="project-description">{{ project.description }}</p>
+          <p class="project-description">{{ project.description }}</p>
         </div>
         <div class="project-bottom">
           <div class="project-tag-container">
@@ -60,7 +60,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
       name: "GoDesta",
       description: "During my five years of employment at GoDesta, I played a pivotal role in the development and enhancement of a comprehensive transport logistics system, guiding the project from its inception through to the successful onboarding of our first client.I worked on both frontend and backend using TypeScript and Java to create a robust, scalable platform.I implemented critical features for job booking, tracking, and integrated accounting and invoicing, while managing complex third- party integrations.My role combined technical expertise and project management, delivering high - quality solutions that improved operational efficiency and client engagement.",
       tags: ["Professional Project", "Apache Kafka", "Java", "Spring Framework", "TypeScript", "Node.js", "JavaScript", "Vue.js", "HTML", "CSS", "webpack", "MongoDB", "Redis", "Jasper Reports", "Email", "TeamCity", "Docker", "Rancher", "Atlassian products"],
-      image: "GoDesta.png",
+      image: "GoDesta.webp",
       repo: "",
       link: "https://godesta.com.au/",
       type: PROJECT_CATEGORY.COMMERCIAL
@@ -68,7 +68,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Trevy",
       description: "Trevy is a personal passion project aimed at creating a comprehensive business management solution to streamline operations across various service industries. Currently in early development, Trevy features a landing page, user sign-up, dashboard, client management, and interactive maps powered by Mapbox. This project highlights my expertise in modern web development and my commitment to delivering high-quality, maintainable, and visually appealing applications.",
-      image: "trevy.png",
+      image: "trevy.webp",
       tags: ["Personal Project", "HTML5", "CSS3", "Vite", "Vue.js", "Go", "Echo", "AWS SES", "MongoDB"],
       repo: "",
       link: "",
@@ -77,7 +77,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Koala Cuts",
       description: "Koala Cuts is a fictional business website created as a fun project to explore and showcase my web development and design skills. Designed for an imaginary landscaping service, the site offers a clear and inviting overview of various services to potential clients. This project focused on experimenting with Lerna and monorepos to efficiently manage and scale multiple packages within a single codebase. I also created all vector designs and the logo using Figma, demonstrating my ability to handle both development and design aspects to build robust, maintainable, and visually appealing web applications.",
-      image: "koala-cuts.jpg",
+      image: "koala-cuts.webp",
       tags: ["Personal Project", "Monorepo", "Lerna", "HTML5", "CSS3", "Vue.js", "fastify", "Figma"],
       repo: "https://github.com/TrevorWheeler/koala-cuts",
       link: "",
@@ -86,7 +86,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "The Caf",
       description: "I was tasked with updating an existing WordPress website for The Caf, a vibrant coffee shop in Coolum Beach. The goal was to create a dynamic and engaging online presence that showcased the café's events and menu. Throughout the project, I gained deeper expertise in WordPress and web design. The client was very pleased with the outcome, noting a significant improvement over their outdated previous website.",
-      image: "thecaf.jpg",
+      image: "thecaf.webp",
       tags: ["Professional Project", "HTML5", "CSS3", "Bootstrap", "jQuery", "Wordpress", "Figma"],
       repo: "",
       link: "",
@@ -96,7 +96,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
       name: "Sandy Pages Books",
       description: "I was tasked to upgrade their existing website with a more modern approach. An E-commerce solution was required as Sandy Pages books partnered with local schools to provide an outlet for students to purchase books during the schools book fest week.",
       tags: ["Professional Project", "HTML5", "CSS3", "Bootstrap", "jQuery", "Wordpress", "Woo-commerce", "cPanel", "Email"],
-      image: "sandypagesbooks.jpg",
+      image: "sandypagesbooks.webp",
       repo: "",
       link: "",
       type: PROJECT_CATEGORY.COMMERCIAL
@@ -105,7 +105,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
       name: "North Shore Realty",
       description: "I was tasked with creating professional and cohesive email signatures for North Shore Realty, a real estate company in Coolum Beach. Utilizing HTML and CSS, I designed email signatures that were not only visually appealing but also cross-compatible with major email providers such as Outlook and Gmail. Ensuring consistency across the organization, the signatures were easily applied to their Outlook email clients. This project involved meticulous attention to detail to guarantee that the design rendered correctly across different platforms, enhancing the company's branding and communication efforts.",
       tags: ["Professional Project", "HTML", "CSS", "Email"],
-      image: "northshorerealty.jpg",
+      image: "northshorerealty.webp",
       repo: "",
       link: "",
       type: PROJECT_CATEGORY.COMMERCIAL
@@ -113,7 +113,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Forum Generator",
       description: "Forum is a dynamic project designed to quickly spin up new forums as needed. The platform supports both anonymous users and account creation, providing flexibility in user engagement. Posts on the forum are short-lived, ensuring that the content remains fresh and the website can adapt to changing discussions. Drawing inspiration from various famous forum and social media websites, I aimed to create an intuitive and user-friendly experience. This project demonstrates my ability to integrate features from different platforms, innovate on traditional forum structures, and develop a versatile and responsive web application.",
-      image: "forum-generator.png",
+      image: "forum-generator.webp",
       tags: ["Personal Project", "Typescript", "Vue.js", "node.js", "express", "HTML", "CSS"],
       repo: "https://github.com/TrevorWheeler/forum-server",
       link: "",
@@ -122,7 +122,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Filthy Bot",
       description: "Filthy Bot is a playful yet functional Discord bot created for the 'Filthy 5' Discord server. Developed before Spotify Sessions became available, this bot allows users to queue and manage songs directly within the Discord server, enhancing the communal listening experience. The bot queries YouTube for songs and pipes the audio through to the microphone input, enabling all users to hear the music in real-time. It supports various commands for adding, skipping, and managing the playlist, providing a seamless and interactive way for users to share and enjoy music together. This project highlights my skills in bot development, API integration, and creating engaging tools for online communities.",
-      image: "filthy-bot.png",
+      image: "filthy-bot.webp",
       tags: ["Personal Project", "Bot Application", "node", "puppeteer", "discord.js", "FFmpeg"],
       repo: "https://github.com/TrevorWheeler/filthy-bot",
       link: "",
@@ -131,7 +131,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "ShotBall",
       description: "Shot Ball is a 2D multiplayer online space shooting game developed in Go. The game features real-time combat in a dynamic space environment, where players can compete against each other using a click to shoot mechanic. Developing Shot Ball involved leveraging the Go programming language to create a responsive and engaging multiplayer experience. This project demonstrates my skills in game development, network programming, and real-time interaction, showcasing the ability to create complex and entertaining applications.",
-      image: "shotball.png",
+      image: "shotball.webp",
       tags: ["Personal Project", "Online Multiplayer", "Typescript", "Vue.js", "node.js", "express", "HTML", "CSS"],
       repo: "https://github.com/TrevorWheeler/shotball-server",
       link: "",
@@ -140,7 +140,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "HTML5 Video Player",
       description: "I developed an HTML5 video player for seamless integration into websites, utilizing pure HTML and JavaScript without relying on external libraries. This project involved creating a custom video player interface with controls such as play, pause, volume, and fullscreen functionalities. The player is lightweight and easily customizable, providing a versatile solution for embedding video content on web pages. This project demonstrates my proficiency in HTML5 and JavaScript, as well as my ability to create efficient, standalone web components.",
-      image: "html5-video-player.png",
+      image: "html5-video-player.webp",
       tags: ["Personal Project", "Javascript", "HTML", "CSS"],
       repo: "https://github.com/TrevorWheeler/html5-video-player",
       link: "",
@@ -149,7 +149,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Busy Brisbane",
       description: "Busy Brisbane is a personal hobby project I developed to help users find and create activities in Brisbane, QLD. The platform features full CRUD (Create, Read, Update, Delete) capabilities, allowing users to manage activities effortlessly. I designed and implemented the entire project from scratch, handling both the front-end and back-end development. This project not only showcases my ability to build user-friendly applications but also highlights my skills in web development and user experience design.",
-      image: "busybrisbane.jpg",
+      image: "busybrisbane.webp",
       tags: ["HTML", "CSS", "vue.js", "node.js", "Express", "PostgreSQL"],
       repo: "https://github.com/TrevorWheeler/busy-brisbane",
       link: "",
@@ -158,7 +158,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Guess The Colour",
       description: "Guess the Colour is a learning project I developed to enhance my understanding of RGB color values and improve my programming skills. The game presents users with RGB values and challenges them to guess the correct color from a set of options. This project was instrumental in reinforcing my knowledge of color theory and web development fundamentals.",
-      image: "guess-the-colour.png",
+      image: "guess-the-colour.webp",
       tags: ["Personal Project", "Javascript", "HTML", "CSS"],
       repo: "https://github.com/TrevorWheeler/guess-the-colour",
       link: "",
@@ -167,7 +167,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Score Keeper",
       description: "Score-Keeper is an application designed to help users easily keep track of scores in turn-based games. The app provides a simple and intuitive interface for recording and managing scores, ensuring that players can focus on the game without worrying about keeping accurate tallies. Developed to enhance my skills in app design and user experience, this project showcases my ability to create practical and user-friendly applications.",
-      image: "score-keeper.png",
+      image: "score-keeper.webp",
       tags: ["Personal Project", "Javascript", "HTML", "CSS"],
       repo: "https://github.com/TrevorWheeler/score-keeper",
       link: "",
@@ -177,7 +177,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Kerbside City",
       description: "Kerbside City is an application I developed to simplify the process of finding kerbside pickup dates for residents in Brisbane. Frustrated with the user experience on the council website, I created an intuitive platform where users can simply type in their suburb and instantly receive the relevant pickup dates. The application crawls the council website to gather the necessary information and presents it in a user-friendly format. This project not only addressed a common pain point for residents but also showcases my skills in web scraping, data presentation, and improving user experience.",
-      image: "kerbside-city.png",
+      image: "kerbside-city.webp",
       tags: ["Personal Project", "Typescript", "Nuxt.js", "node.js", "express", "HTML", "CSS"],
       repo: "https://github.com/TrevorWheeler/kerbside-city",
       link: "",
@@ -186,7 +186,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Float Out",
       description: "Float Out is an application I developed to streamline cash handling tasks during my time working in hospitality. The app calculates the difference between the float amount and profits made in a straightforward, linear manner. Instead of manually adding up each denomination of coins and notes, users can simply input the total number of each denomination, and the app automatically tallies the amounts. This tool significantly simplifies the process of reconciling the cash drawer, allowing users to quickly determine the amount to take out of the float. 'Float Out' highlights my ability to identify practical problems in everyday tasks and develop efficient, user-friendly solutions to address them.",
-      image: "floatout.jpg",
+      image: "floatout.webp",
       tags: ["Personal Project", "Javascript", "HTML", "CSS"],
       repo: "https://github.com/TrevorWheeler/float-out",
       link: "",
@@ -196,7 +196,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "CRUD Boilerplate",
       description: "CRUD Boilerplate is a deprecated starter template for backend Node.js applications, designed to streamline the development process. This boilerplate includes built-in JWT authentication for secure user management and a simple projects route to demonstrate basic CRUD operations. The project served as a foundational template for quickly setting up new backend applications, ensuring consistent structure and best practices. Although it is no longer actively maintained, CRUD Boilerplate highlights my proficiency in Node.js, authentication mechanisms, and creating reusable code for efficient project initialization.",
-      image: "CRUDapi.jpg",
+      image: "CRUDapi.webp",
       tags: ["Personal Project", "javascript", "node.js", "express", "HTML", "CSS"],
       repo: "https://github.com/TrevorWheeler/express-mongodb-crud-jwt",
       link: "",

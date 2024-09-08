@@ -10,7 +10,7 @@
       <div class="hero-links-container">
         <div class="hero-link-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
           @click="scrollToProjects">
-          <div class="link hero-link hero-link-projects" v-scroll-to="'.projects'">
+          <div class="link hero-link hero-link-projects">
             <span>Explore Projects</span>
           </div>
         </div>
