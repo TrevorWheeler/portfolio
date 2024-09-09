@@ -1,7 +1,7 @@
 <template>
   <section id="hero-section">
     <div class="hero-mobile-name-container">
-      <h2 data-aos="fade-up" data-aos-duration="1000" class="hero-name"> Trevor Wheeler </h2>
+      <h1 data-aos="fade-up" data-aos-duration="1000" class="hero-name"> Trevor Wheeler </h1>
     </div>
     <div class="hero-content-container">
       <h1 class="summary hero-summary" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> Web

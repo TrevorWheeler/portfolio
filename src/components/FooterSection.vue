@@ -1,7 +1,7 @@
 <template>
   <section id="footer-section">
     <div class="container">
-      <h5 id="thanks"> <span>Thanks</span> for taking the time to check out my portfolio. </h5>
+      <h4 id="thanks"> <span>Thanks</span> for taking the time to check out my portfolio. </h4>
       <a id="repository-link" class="link" href="https://github.com/TrevorWheeler/portfolio" target="_blank"
         rel="noreferrer">
         <span>Source Code</span>

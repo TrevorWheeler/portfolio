@@ -1,10 +1,10 @@
 <template>
   <section id="projects">
-    <h3>Professional & Personal Projects</h3>
+    <h2 class="projects-title">Professional & Personal Projects</h2>
     <div class="container">
       <div class="card" v-for="(project, index) in projects" :key="index" data-aos="fade-up" data-aos-duration="500">
         <div class="project-top">
-          <h4 class="project-name">{{ project.name }}</h4>
+          <h3 class="project-name">{{ project.name }}</h3>
           <img class="project-img" :data-src="'images/' + project.image" :alt="project.name"
             :src="'images/' + project.image">
 
@@ -223,7 +223,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     padding: 15em 1.5em 0;
   }
 
-  h3 {
+  .projects-title {
     font-weight: 600;
     font-size: 2.4em;
     color: var(--text-dark);
@@ -325,7 +325,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
         background-color: var(--secondary);
         margin: 0;
         line-height: 72px;
-        color: --text-light;
+        color: var(--text-light);
       }
 
       .project-img {
