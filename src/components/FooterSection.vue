@@ -13,11 +13,11 @@
 
 <script setup lang="ts">
 function scrollToTop(): void {
-  const projectsElement = document.getElementById('hero-section');
-  if (projectsElement) {
-    projectsElement.scrollIntoView({ behavior: 'smooth' });
+  const heroElement = document.getElementById('hero-section');
+  if (heroElement) {
+    heroElement.scrollIntoView({ behavior: 'smooth' });
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -63,7 +63,6 @@ function scrollToTop(): void {
     }
   }
 
-
   #repository-link {
     margin: 0 auto 0rem;
 
@@ -74,7 +73,7 @@ function scrollToTop(): void {
 
   #scroll-top {
     cursor: pointer;
-    display: none;
+    display: none; // Hide by default on mobile
     margin: 0 auto;
     color: var(--primary);
     text-align: center;
@@ -83,7 +82,7 @@ function scrollToTop(): void {
     transition: 0.2s linear;
 
     @media only screen and (min-width: 768px) {
-      display: block;
+      display: block; // Show on larger screens
     }
 
     &:hover {

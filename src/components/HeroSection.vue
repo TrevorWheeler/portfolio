@@ -8,15 +8,13 @@
         <span>Developer</span> - Innovating Solutions & Enhancing User Experiences
       </h1>
       <div class="hero-links-container">
-        <div class="hero-link-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
-          @click="scrollToProjects">
-          <div class="link hero-link hero-link-projects">
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" @click="scrollToProjects">
+          <div class="link hero-link-projects">
             <span>Explore Projects</span>
           </div>
         </div>
-        <div class="hero-link-container" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-          <a class="link hero-link hero-link-contact" href="mailto: sendtrevmail@gmail.com" target="_blank"
-            rel="noreferrer">
+        <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+          <a class="link hero-link-contact" href="mailto: sendtrevmail@gmail.com" target="_blank" rel="noreferrer">
             <span>Contact</span>
           </a>
         </div>
