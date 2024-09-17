@@ -75,6 +75,15 @@ const projects: ComputedRef<Project[]> = computed(() => {
       type: PROJECT_CATEGORY.COMMERCIAL
     },
     {
+      name: "Discord Jukebox",
+      description: "Discord Jukebox is a feature-rich Discord bot enhancing communal music experiences. Developed before Spotify Sessions, it allows users to queue and manage songs from various sources, including YouTube, directly within Discord. The bot pipes audio through the microphone input, enabling real-time listening for all users. With commands for playlist management and additional fun features, Discord Jukebox showcases skills in bot development, API integration, and creating engaging community tools, though it's now largely deprecated due to Spotify's introduction of shared listening features.",
+      image: "filthy-bot.webp",
+      tags: ["Personal Project", "Bot Application", "node", "puppeteer", "discord.js", "FFmpeg"],
+      repo: "https://github.com/TrevorWheeler/filthy-bot",
+      link: "",
+      type: PROJECT_CATEGORY.BOT_APPLICATION
+    },
+    {
       name: "Koala Cuts",
       description: "Koala Cuts is a fictional business website created as a fun project to explore and showcase my web development and design skills. Designed for an imaginary landscaping service, the site offers a clear and inviting overview of various services to potential clients. This project focused on experimenting with Lerna and monorepos to efficiently manage and scale multiple packages within a single codebase. I also created all vector designs and the logo using Figma, demonstrating my ability to handle both development and design aspects to build robust, maintainable, and visually appealing web applications.",
       image: "koala-cuts.webp",
@@ -111,7 +120,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
       type: PROJECT_CATEGORY.COMMERCIAL
     },
     {
-      name: "Forum Generator",
+      name: "Forum",
       description: "Forum is a dynamic project designed to quickly spin up new forums as needed. The platform supports both anonymous users and account creation, providing flexibility in user engagement. Posts on the forum are short-lived, ensuring that the content remains fresh and the website can adapt to changing discussions. Drawing inspiration from various famous forum and social media websites, I aimed to create an intuitive and user-friendly experience. This project demonstrates my ability to integrate features from different platforms, innovate on traditional forum structures, and develop a versatile and responsive web application.",
       image: "forum-generator.webp",
       tags: ["Personal Project", "Typescript", "Vue.js", "node.js", "express", "HTML", "CSS"],
@@ -119,15 +128,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
       link: "",
       type: PROJECT_CATEGORY.FULL_STACK
     },
-    {
-      name: "Filthy Bot",
-      description: "Filthy Bot is a playful yet functional Discord bot created for the 'Filthy 5' Discord server. Developed before Spotify Sessions became available, this bot allows users to queue and manage songs directly within the Discord server, enhancing the communal listening experience. The bot queries YouTube for songs and pipes the audio through to the microphone input, enabling all users to hear the music in real-time. It supports various commands for adding, skipping, and managing the playlist, providing a seamless and interactive way for users to share and enjoy music together. This project highlights my skills in bot development, API integration, and creating engaging tools for online communities.",
-      image: "filthy-bot.webp",
-      tags: ["Personal Project", "Bot Application", "node", "puppeteer", "discord.js", "FFmpeg"],
-      repo: "https://github.com/TrevorWheeler/filthy-bot",
-      link: "",
-      type: PROJECT_CATEGORY.BOT_APPLICATION
-    },
+
     {
       name: "ShotBall",
       description: "Shot Ball is a 2D multiplayer online space shooting game developed in Go. The game features real-time combat in a dynamic space environment, where players can compete against each other using a click to shoot mechanic. Developing Shot Ball involved leveraging the Go programming language to create a responsive and engaging multiplayer experience. This project demonstrates my skills in game development, network programming, and real-time interaction, showcasing the ability to create complex and entertaining applications.",
