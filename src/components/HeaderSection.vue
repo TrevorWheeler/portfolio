@@ -16,7 +16,6 @@
     </div>
   </header>
 </template>
-
 <script setup lang="ts">
 import IconEmail from './icons/IconEmail.vue';
 import IconGithub from './icons/IconGithub.vue';
