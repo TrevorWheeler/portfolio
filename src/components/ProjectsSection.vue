@@ -1,13 +1,12 @@
 <template>
-  <section id="projects">
-    <h2 class="projects-title">Professional & Personal Projects</h2>
+  <section id="projects-section-container">
+    <h2 class="projects-section-title">Professional & Personal Projects</h2>
     <div class="container">
       <div class="card" v-for="(project, index) in projects" :key="index" data-aos="fade-up" data-aos-duration="500">
         <div class="project-top">
           <h3 class="project-name">{{ project.name }}</h3>
           <img class="project-img" :data-src="'images/' + project.image" :alt="project.name"
             :src="'images/' + project.image">
-
           <p class="project-description">{{ project.description }}</p>
         </div>
         <div class="project-bottom">
@@ -51,7 +50,6 @@ enum PROJECT_CATEGORY {
   BACK_END = 'BACK_END',
   BOT_APPLICATION = 'BOT_APPLICATION'
 }
-
 
 
 const projects: ComputedRef<Project[]> = computed(() => {
@@ -207,8 +205,8 @@ const projects: ComputedRef<Project[]> = computed(() => {
 </script>
 
 <style lang="scss">
-#projects {
-  padding: 7em 1.5em 0;
+#projects-section-container {
+  padding: 7em 1em 0;
   background-color: var(--primary);
 
   @media only screen and (max-height: 450px) {
@@ -223,7 +221,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     padding: 15em 1.5em 0;
   }
 
-  .projects-title {
+  .projects-section-title {
     font-weight: 600;
     font-size: 2.4em;
     color: var(--text-dark);

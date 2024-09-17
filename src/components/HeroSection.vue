@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 function scrollToProjects(): void {
-  const projectsElement = document.getElementById('projects');
+  const projectsElement = document.getElementById('projects-section-container');
   if (projectsElement) {
     projectsElement.scrollIntoView({ behavior: 'smooth' });
   }
