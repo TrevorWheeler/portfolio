@@ -93,6 +93,25 @@ const projects: ComputedRef<Project[]> = computed(() => {
       type: PROJECT_CATEGORY.COMMERCIAL
     },
     {
+      name: "Forum",
+      description: "Forum is a dynamic project designed to quickly spin up new forums as needed. The platform supports both anonymous users and account creation, providing flexibility in user engagement. Posts on the forum are short-lived, ensuring that the content remains fresh and the website can adapt to changing discussions. Drawing inspiration from various famous forum and social media websites, I aimed to create an intuitive and user-friendly experience. This project demonstrates my ability to integrate features from different platforms, innovate on traditional forum structures, and develop a versatile and responsive web application.",
+      image: "forum-generator.webp",
+      tags: ["Personal Project", "Typescript", "Vue.js", "node.js", "express", "HTML", "CSS"],
+      repo: "https://github.com/TrevorWheeler/forum-server",
+      link: "",
+      type: PROJECT_CATEGORY.FULL_STACK
+    },
+
+    {
+      name: "ShotBall",
+      description: "Shot Ball is a 2D multiplayer online space shooting game developed in Go. The game features real-time combat in a dynamic space environment, where players can compete against each other using a click to shoot mechanic. Developing Shot Ball involved leveraging the Go programming language to create a responsive and engaging multiplayer experience. This project demonstrates my skills in game development, network programming, and real-time interaction, showcasing the ability to create complex and entertaining applications.",
+      image: "shotball.webp",
+      tags: ["Personal Project", "Online Multiplayer", "Typescript", "Vue.js", "node.js", "express", "HTML", "CSS"],
+      repo: "https://github.com/TrevorWheeler/shotball-server",
+      link: "",
+      type: PROJECT_CATEGORY.FULL_STACK
+    },
+    {
       name: "The Caf",
       description: "I was tasked with updating an existing WordPress website for The Caf, a vibrant coffee shop in Coolum Beach. The goal was to create a dynamic and engaging online presence that showcased the café's events and menu. Throughout the project, I gained deeper expertise in WordPress and web design. The client was very pleased with the outcome, noting a significant improvement over their outdated previous website.",
       image: "thecaf.webp",
@@ -118,25 +137,6 @@ const projects: ComputedRef<Project[]> = computed(() => {
       repo: "",
       link: "",
       type: PROJECT_CATEGORY.COMMERCIAL
-    },
-    {
-      name: "Forum",
-      description: "Forum is a dynamic project designed to quickly spin up new forums as needed. The platform supports both anonymous users and account creation, providing flexibility in user engagement. Posts on the forum are short-lived, ensuring that the content remains fresh and the website can adapt to changing discussions. Drawing inspiration from various famous forum and social media websites, I aimed to create an intuitive and user-friendly experience. This project demonstrates my ability to integrate features from different platforms, innovate on traditional forum structures, and develop a versatile and responsive web application.",
-      image: "forum-generator.webp",
-      tags: ["Personal Project", "Typescript", "Vue.js", "node.js", "express", "HTML", "CSS"],
-      repo: "https://github.com/TrevorWheeler/forum-server",
-      link: "",
-      type: PROJECT_CATEGORY.FULL_STACK
-    },
-
-    {
-      name: "ShotBall",
-      description: "Shot Ball is a 2D multiplayer online space shooting game developed in Go. The game features real-time combat in a dynamic space environment, where players can compete against each other using a click to shoot mechanic. Developing Shot Ball involved leveraging the Go programming language to create a responsive and engaging multiplayer experience. This project demonstrates my skills in game development, network programming, and real-time interaction, showcasing the ability to create complex and entertaining applications.",
-      image: "shotball.webp",
-      tags: ["Personal Project", "Online Multiplayer", "Typescript", "Vue.js", "node.js", "express", "HTML", "CSS"],
-      repo: "https://github.com/TrevorWheeler/shotball-server",
-      link: "",
-      type: PROJECT_CATEGORY.FULL_STACK
     },
     {
       name: "HTML5 Video Player",
