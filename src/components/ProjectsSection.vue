@@ -56,7 +56,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
   return [
     {
       name: "GoDesta",
-      description: "During my five years of employment at GoDesta, I played a pivotal role in the development and enhancement of a comprehensive transport logistics system, guiding the project from its inception through to the successful onboarding of our first client.I worked on both frontend and backend using TypeScript and Java to create a robust, scalable platform.I implemented critical features for job booking, tracking, and integrated accounting and invoicing, while managing complex third- party integrations. My role combined technical expertise and project management, delivering high - quality solutions that improved operational efficiency and client engagement.",
+      description: "During my five years of employment at GoDesta, I played a pivotal role in the development and enhancement of a comprehensive transport logistics system, guiding the project from its inception through to the successful onboarding of our first client.I worked on both frontend and backend using TypeScript and Java to create a robust, scalable platform. I implemented critical features for job booking, tracking, and integrated accounting and invoicing, while managing complex third- party integrations. My role combined technical expertise and project management, delivering high - quality solutions that improved operational efficiency and client engagement.",
       tags: ["Professional Project", "Apache Kafka", "Java", "Spring Framework", "TypeScript", "Node.js", "JavaScript", "Vue.js", "HTML", "CSS", "webpack", "MongoDB", "Redis", "Jasper Reports", "Email", "TeamCity", "Docker", "Rancher", "Atlassian products"],
       image: "GoDesta.webp",
       repo: "",
@@ -138,7 +138,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     },
     {
       name: "HTML5 Video Player",
-      description: "I developed an HTML5 video player for seamless integration into websites, utilizing pure HTML and JavaScript without relying on external libraries. This project involved creating a custom video player interface with controls such as play, pause, volume, and fullscreen functionalities. The player is lightweight and easily customizable, providing a versatile solution for embedding video content on web pages. This project demonstrates my proficiency in HTML5 and JavaScript, as well as my ability to create efficient, standalone web components.",
+      description: "I developed a lightweight, customizable HTML5 video player using pure HTML and JavaScript, featuring controls for play, pause, volume, and fullscreen. This project showcases my proficiency in HTML5 and JavaScript, and my ability to create standalone web components for website integration.",
       image: "html5-video-player.webp",
       tags: ["Personal Project", "Javascript", "HTML", "CSS"],
       repo: "https://github.com/TrevorWheeler/html5-video-player",
@@ -147,7 +147,7 @@ const projects: ComputedRef<Project[]> = computed(() => {
     },
     {
       name: "Busy Brisbane",
-      description: "Busy Brisbane is a personal hobby project I developed to help users find and create activities in Brisbane, QLD. The platform features full CRUD (Create, Read, Update, Delete) capabilities, allowing users to manage activities effortlessly. I designed and implemented the entire project from scratch, handling both the front-end and back-end development. This project not only showcases my ability to build user-friendly applications but also highlights my skills in web development and user experience design.",
+      description: "Busy Brisbane is a personal hobby project that helps users find and create activities in Brisbane, QLD, with full CRUD functionality for easy activity management. This project introduced me to styled components and Vuetify, enhancing my front-end skills. I developed it from scratch, handling both front-end and back-end tasks, showcasing my expertise in user-friendly web applications and design.",
       image: "busybrisbane.webp",
       tags: ["HTML", "CSS", "vue.js", "Node.js", "Express.js", "PostgreSQL"],
       repo: "https://github.com/TrevorWheeler/busy-brisbane",
