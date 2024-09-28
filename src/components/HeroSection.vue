@@ -4,8 +4,11 @@
       <h1 data-aos="fade-up" data-aos-duration="1000" class="hero-name"> Trevor Wheeler </h1>
     </div>
     <div class="hero-content-container">
-      <h1 class="summary hero-summary" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> Web
+      <!-- <h1 class="summary hero-summary" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> Software
         <span>Developer</span> - Innovating Solutions & Enhancing User Experiences
+      </h1> -->
+      <h1 class="summary hero-summary" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> Passionate
+        <span>Developer</span> - Transforming Ideas into Impactful Software Solutions
       </h1>
       <div class="hero-links-container">
         <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" @click="scrollToProjects">

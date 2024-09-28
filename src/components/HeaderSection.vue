@@ -51,6 +51,10 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 0 4em;
+  background-image: radial-gradient(circle at 2px 2px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 0);
+  background-size: 20px 20px;
 
   @media only screen and (min-width: 768px) {
     display: none;
