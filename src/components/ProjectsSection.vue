@@ -2,37 +2,48 @@
   <section id="projects-section-container">
     <h2 class="projects-section-title">Professional & Personal Projects</h2>
     <div class="container">
-      <div class="card" v-for="(project, index) in projects" :key="index" data-aos="fade-up" data-aos-duration="500">
-        <div class="project-top">
-          <h3 class="project-name">{{ project.name }}</h3>
-          <img class="project-img" :data-src="'images/' + project.image" :alt="project.name"
-            :src="'images/' + project.image">
-          <p class="project-description">{{ project.description }}</p>
-        </div>
-        <div class="project-bottom">
-          <div class="project-tag-container">
-            <div class="project-tag" v-for="(tag, index) in project.tags" :key="index"> <span>{{ tag }}</span></div>
+      <masonry-wall :items="projects" :max-columns="3" :column-width="300" :gap="16" data-aos="fade-up"
+        data-aos-duration="500">
+        <template #default="{ item }">
+          <div class="card">
+            <div class="project-top">
+              <h3 class="project-name">{{ item.name }}</h3>
+              <img class="project-img" :data-src="'images/' + item.image" :alt="item.name"
+                :src="'images/' + item.image">
+              <p class="project-description">{{ item.description }}</p>
+            </div>
+            <div class="project-bottom">
+              <div class="project-tag-container">
+                <div class="project-tag" v-for="(tag, index) in item.tags" :key="index">
+                  <span>{{ tag }}</span>
+                </div>
+              </div>
+              <div class="project-links-container">
+                <a :href="item.link" target="_blank" rel="noreferrer" class="project-link project-link-live"
+                  v-bind:class="{ inactive: item.link === '' }">Live Site
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                  </svg>
+                </a>
+                <a :href="item.repo" target="_blank" rel="noreferrer" class="project-link project-link-github"
+                  v-bind:class="{ inactive: item.repo === '' }">
+                  {{ item.repo !== '' ? 'View Repository' : 'Private' }}
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="project-links-container">
-            <a :href="project.link" target="_blank" rel="noreferrer" class="project-link project-link-live"
-              v-bind:class="{ inactive: project.link === '' }">Live Site
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
-              </svg></a>
-            <a :href="project.repo" target="_blank" rel="noreferrer" class="project-link project-link-github"
-              v-bind:class="{ inactive: project.repo === '' }">{{ project.repo !== '' ? 'View Repository' : 'Private'
-              }}</a>
-          </div>
-        </div>
-      </div>
+        </template>
+      </masonry-wall>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { computed, type ComputedRef } from 'vue';
+import MasonryWall from '@yeger/vue-masonry-wall'
+
 interface Project {
   name: string,
   description: String;
@@ -206,19 +217,19 @@ const projects: ComputedRef<Project[]> = computed(() => {
 
 <style lang="scss">
 #projects-section-container {
-  padding: 7em 1em 0;
+  padding: 7em 1em;
   background-color: var(--primary);
 
   @media only screen and (max-height: 450px) {
-    padding: 7em 4em 0;
+    padding: 7em 4em;
   }
 
   @media only screen and (min-width: 1366px) {
-    padding: 10em 1.5em 0;
+    padding: 10em 1.5em;
   }
 
   @media only screen and (min-width: 1650px) {
-    padding: 15em 1.5em 0;
+    padding: 15em 1.5em;
   }
 
   .projects-section-title {
@@ -250,18 +261,10 @@ const projects: ComputedRef<Project[]> = computed(() => {
   }
 
   .container {
-    display: flex;
-    flex-direction: column;
 
-    @media only screen and (min-width: 768px) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
 
     @media only screen and (min-width: 1280px) {
       width: 1255px;
-      justify-content: space-between;
       margin: 0 auto;
     }
 
@@ -271,7 +274,6 @@ const projects: ComputedRef<Project[]> = computed(() => {
 
     .card {
       width: 100%;
-      margin: 0 0 7em 0;
       display: flex;
       flex-direction: column;
       background-color: var(--primary);
@@ -284,40 +286,6 @@ const projects: ComputedRef<Project[]> = computed(() => {
 
       &:hover {
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.24);
-      }
-
-      @media only screen and (min-width: 768px) {
-        width: calc(50% - 0.5em);
-        margin: 0 0 7em;
-
-        &:nth-child(odd) {
-          margin-right: 0.5em;
-        }
-
-        &:nth-child(even) {
-          margin-left: 0.5em;
-        }
-      }
-
-      @media only screen and (min-width: 1280px) {
-        width: 397px;
-
-        &:nth-child(odd) {
-          margin-right: 0;
-        }
-
-        &:nth-child(even) {
-          margin-left: 0;
-        }
-      }
-
-      @media only screen and (min-width: 1366px) {
-        margin: 0 0 10em 0;
-      }
-
-      @media only screen and (min-width: 1650px) {
-        margin: 0 0 15em 0;
-        width: 450px;
       }
 
       .project-name {
