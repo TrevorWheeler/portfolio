@@ -280,7 +280,6 @@ const projects: ComputedRef<Project[]> = computed(() => {
       border-radius: 4px;
       overflow: hidden;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
-      transition: box-shadow 0.3s ease-in-out;
 
       &:hover {
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.24);
