@@ -75,9 +75,9 @@ const projects: ComputedRef<Project[]> = computed(() => {
     {
       name: "Discord Jukebox",
       description: "Discord Jukebox is a feature-rich Discord bot enhancing communal music experiences. Developed before Spotify Sessions, it allows users to queue and manage songs from various sources, including YouTube, directly within Discord. The bot pipes audio through the microphone input, enabling real-time listening for all users. With commands for playlist management and additional fun features, Discord Jukebox showcases skills in bot development, API integration, and creating engaging community tools, though it's now largely deprecated due to Spotify's introduction of shared listening features.",
-      image: "filthy-bot.webp",
+      image: "discord-jukebox.webp",
       tags: ["Bot Application", "Node.js", "Typescript", "Puppeteer", "Discord.js", "FFmpeg"],
-      repo: "https://github.com/TrevorWheeler/filthy-bot",
+      repo: "https://github.com/TrevorWheeler/discord-jukebox",
       link: "",
       type: PROJECT_CATEGORY.BOT_APPLICATION
     },
