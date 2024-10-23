@@ -65,9 +65,9 @@ const projects: ComputedRef<Project[]> = computed(() => {
     },
     {
       name: "Trevy",
-      description: "Trevy is a personal passion project aimed at creating a comprehensive business management solution to streamline operations across various service industries. Currently in early development, Trevy features a landing page, user sign-up, operations dashboard, client management, invoicing and interactive maps powered by Mapbox. This project highlights my expertise in modern web development and my commitment to delivering high-quality, maintainable, and visually appealing applications.",
+      description: "Trevy is a personal passion project aimed at creating a comprehensive business management solution to streamline operations across various service industries. Currently in early development, Trevy features a landing page, user sign-up, operations dashboard, client management, invoicing, interactive maps powered by Mapbox and Stripe payment subscriptions. This project highlights my expertise in modern web development and my commitment to delivering high-quality, maintainable, and visually appealing applications.",
       image: "trevy.webp",
-      tags: ["HTML5", "CSS3", "Vite", "Vue.js", "Go", "Echo", "AWS SES", "AWS S3", "Dart", "Flutter", "MongoDB"],
+      tags: ["HTML5", "CSS3", "Vite", "Vue.js", "Go", "Echo", "Dart", "Flutter", "Stripe", "AWS SES", "AWS S3", "MongoDB"],
       repo: "",
       link: "",
       type: PROJECT_CATEGORY.COMMERCIAL
