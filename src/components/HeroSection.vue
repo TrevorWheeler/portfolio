@@ -4,7 +4,7 @@
       <h1 data-aos="fade-up" data-aos-duration="1000" class="hero-name"> Trevor Wheeler </h1>
     </div>
     <div class="hero-content-container">
-      <h1 class="summary hero-summary" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Full-stack
+      <h1 class="summary hero-summary" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Full-Stack
         <span class="hero-summary-accent">Developer</span> - Transforming Ideas into
         Impactful Software
         Solutions
