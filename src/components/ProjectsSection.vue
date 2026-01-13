@@ -54,6 +54,15 @@ enum PROJECT_CATEGORY {
 
 const projects: ComputedRef<Project[]> = computed(() => {
   return [
+{
+      name: "TREVY",
+      description: "My flagship passion project, built entirely from scratch to help tradespeople run their businesses better. TREVY is a complete mobile solution (iOS & Android) featuring professional quoting, estimates, expense tracking, and live 'On My Way' GPS tracking. This project represents my ability to architect and ship a production-grade SaaS product solo, managing everything from the rigorous Golang backend to the polished Flutter mobile experience.",
+      image: "social-feature.jpg",
+      tags: ["Flutter", "Dart", "Golang", "Next.js", "MongoDB", "Stripe", "Mapbox", "AWS"],
+      repo: "",
+      link: "https://trevy.app",
+      type: PROJECT_CATEGORY.COMMERCIAL
+    },
     {
       name: "GoDesta",
       description: "During my five years at GoDesta, I played a key role in developing and enhancing a comprehensive transport logistics platform, guiding the project from inception to client onboarding. I worked across both the frontend and backend, building a robust, scalable system. I implemented essential features, including job booking, real-time tracking, and integrated accounting and invoicing, while managing complex third-party integrations. In addition to my technical responsibilities, I handled aspects of project management, delivering high-quality solutions that significantly improved operational efficiency and client engagement.",
@@ -61,15 +70,6 @@ const projects: ComputedRef<Project[]> = computed(() => {
       image: "GoDesta.webp",
       repo: "",
       link: "https://godesta.com.au/",
-      type: PROJECT_CATEGORY.COMMERCIAL
-    },
-    {
-      name: "Trevy",
-      description: "Trevy is a personal passion project aimed at creating a comprehensive business management solution to streamline operations across various service industries. Currently in early development, Trevy features a landing page, user sign-up, operations dashboard, client management, invoicing, interactive maps powered by Mapbox and Stripe payment subscriptions. This project highlights my expertise in modern web development and my commitment to delivering high-quality, maintainable, and visually appealing applications.",
-      image: "trevy-animation.webp",
-      tags: ["HTML5", "CSS3", "Vite", "Vue.js", "Golang", "Echo", "Dart", "Flutter", "Stripe", "AWS SES", "AWS S3", "MinIO", "Elasticsearch", "Mapbox", "MongoDB"],
-      repo: "",
-      link: "",
       type: PROJECT_CATEGORY.COMMERCIAL
     },
     {
