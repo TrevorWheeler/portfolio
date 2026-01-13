@@ -384,15 +384,14 @@ const projects: ComputedRef<Project[]> = computed(() => {
           font-size: 1.7em;
           text-transform: uppercase;
           font-weight: 600;
-          position: relative;
-          display: inline-block;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
 
           svg {
-            position: absolute;
-            right: -23px;
-            top: -0.08em;
             width: 18px;
             fill: var(--accent);
+            
           }
         }
       }
